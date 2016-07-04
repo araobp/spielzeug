@@ -3,8 +3,8 @@
 ##Infrastructure
 
 ###Devices
-- Arduino
-- Raspberry Pi
+- Arduino Uno (AVR ATmega16U2)
+- Raspberry Pi (ARM Cortex-A53)
 - Parts
 
 ###IoT platform
