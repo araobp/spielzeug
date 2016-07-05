@@ -24,3 +24,15 @@ Initialised, Reading /dev/pi-blaster.
 
 I tested my SG90 servo motor and confirmed that it moved its arm from 0 to 180 degrees.
 
+##Infrastructure
+
+###Messaging
+
+I am going to use Apache Kafka.
+
+###Thing management
+
+ZooKeeper has been used by Apache Kafka, so I want to share ZooKeeper for thing management too.
+
+I confirmed that my test program worked with ZK.
+
