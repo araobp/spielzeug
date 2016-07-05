@@ -48,3 +48,9 @@ Python/Java/Scala
 ```
  [Raspberry Pi]----GPIO/SPI/I2C---[Arduino]
 ```
+
+##Tools
+
+I really want 3D printer to make parts!
+
+For the time being, papercraft is OK.
