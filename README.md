@@ -8,6 +8,7 @@
 ![arduino-uno](./doc/arduino-uno.png)
 
 ####Raspberry Pi (ARM Cortex-A53)
+![rpi3](./doc/rpi3.png)
 
 ####Parts
 
