@@ -1,4 +1,4 @@
-# Internet of Toys
+# Internet of Toys (IoT)
 
 ##Infrastructure
 
