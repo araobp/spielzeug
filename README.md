@@ -3,9 +3,13 @@
 ##Infrastructure
 
 ###Device
-- Arduino Uno (AVR ATmega16U2)
-- Raspberry Pi (ARM Cortex-A53)
-- Parts
+
+####Arduino Uno (AVR ATmega16U2)
+![arduino-uno](./doc/arduino-uno.png)
+
+####Raspberry Pi (ARM Cortex-A53)
+
+####Parts
 
 ###IoT platform
 - Apache ZooKeeper
