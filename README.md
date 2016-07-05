@@ -39,9 +39,10 @@ Python/Java/Scala
 [Gobot](https://gobot.io/) or [Johnny-Five](http://johnny-five.io/)
 
 ```
- [Raspberry Pi]-----USB-----[Arduino]
+ [Raspberry Pi]-----(Firmata/USB)-----[Arduino]
 
 ```
+Unfortunately, Firmata protocol does not support SPI.
 
 ###Autonomous
 
