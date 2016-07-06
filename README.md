@@ -26,16 +26,6 @@
 - Inter-device: GPIO/SPI/I2C/ZigBee/BLE/USB
 - Device to IoT platform: Ethernet and WiFi
 
-##Language
-
-###Device
-
-Golang and JavaScript/Node.js
-
-###IoT platform
-
-Python/Java/Scala
-
 ##Device control
 
 ###Centralized control
