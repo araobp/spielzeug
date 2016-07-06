@@ -38,16 +38,19 @@ Python/Java/Scala
 
 ##Device control
 
-###Framework
-[Gobot](https://gobot.io/) or [Johnny-Five](http://johnny-five.io/)
+###Centralized control
+
+[Gobot](https://gobot.io/) to control Arduino Uno from Raspberry Pi 3 via Firmata:
 
 ```
  [Raspberry Pi]-----(Firmata/USB)-----[Arduino]
 
 ```
+![arduino-rpi](./doc/arduino-rpi.png)
+
 Unfortunately, Firmata protocol does not support SPI.
 
-###Autonomous
+###Autonomous/distributed control
 
 ```
  [Raspberry Pi]----GPIO/SPI/I2C---[Arduino]
