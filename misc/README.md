@@ -1,5 +1,7 @@
 ##Testing parts with Gobot
 
+[Test codes](./gobot)
+
 ###LED
 
 It worked OK.
@@ -24,7 +26,13 @@ Initialised, Reading /dev/pi-blaster.
 
 I tested my SG90 servo motor and confirmed that it moved its arm from 0 to 180 degrees.
 
-##Infrastructure
+##Testing Arduino IDE
+ 
+[Test codes](./arduino)
+
+##Testing IoT platform
+
+[Test codes](./iot_pf)
 
 ###Messaging
 
