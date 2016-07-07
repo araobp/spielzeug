@@ -2,7 +2,7 @@ package main
 
 /*
 
-   [Raspberry Pi 3] /dev/ttyS0 <----- USB -----> [Arduino Uno]
+   [Raspberry Pi 3] /dev/ttyACM0 <----- USB -----> [Arduino Uno]
 
 */
 
