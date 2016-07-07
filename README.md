@@ -5,10 +5,10 @@
 ###Device
 
 ####Arduino Uno (AVR ATmega16U2)
-![arduino-uno](./doc/arduino-uno.png)
+[pic of my arduino-uno](./doc/arduino-uno.png)
 
 ####Raspberry Pi (ARM Cortex-A53)
-![rpi3](./doc/rpi3.png)
+[pic of my rpi3](./doc/rpi3.png)
 
 ####Parts
 
