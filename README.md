@@ -37,7 +37,7 @@ This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduin
 
 ###Centralized control: Firmata
 
-[Gobot](https://gobot.io/) to control Arduino Uno from Raspberry Pi 3 via Firmata:
+[Gobot](https://gobot.io/) controls Arduino Uno from Raspberry Pi 3 via Firmata:
 
 ```
  [Raspberry Pi]-----(Firmata/USB)-----[Arduino]
