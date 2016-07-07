@@ -26,17 +26,14 @@
 - Inter-device: GPIO/SPI/I2C/ZigBee/BLE/USB
 - Device to IoT platform: Ethernet and WiFi
 
-##Language
-
-###Device
-
-Golang and JavaScript/Node.js
-
-###IoT platform
-
-Python/Java/Scala
-
 ##Device control
+
+###Autonomous/distributed control
+
+```
+ [Raspberry Pi]-------USB------------[Arduino]
+```
+This is a standard way.
 
 ###Centralized control
 
@@ -49,12 +46,6 @@ Python/Java/Scala
 ![arduino-rpi](./doc/arduino-rpi.png)
 
 Unfortunately, Firmata protocol does not support SPI.
-
-###Autonomous/distributed control
-
-```
- [Raspberry Pi]----GPIO/SPI/I2C---[Arduino]
-```
 
 ##Tools
 
