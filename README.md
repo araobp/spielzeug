@@ -5,10 +5,10 @@
 ###Device
 
 ####Arduino Uno (AVR ATmega16U2)
-![arduino-uno](./doc/arduino-uno.png)
+[pic of my arduino-uno](./doc/arduino-uno.png)
 
 ####Raspberry Pi (ARM Cortex-A53)
-![rpi3](./doc/rpi3.png)
+[pic of my rpi3](./doc/rpi3.png)
 
 ####Parts
 
@@ -28,24 +28,26 @@
 
 ##Device control
 
-###Autonomous/distributed control
+###Centralized control: standard way
 
 ```
  [Raspberry Pi]-------USB------------[Arduino]
 ```
-This is a standard way.
 
-###Centralized control
+![arduino-rpi](./doc/arduino-rpi.png)
 
-[Gobot](https://gobot.io/) to control Arduino Uno from Raspberry Pi 3 via Firmata:
+This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduino/serial.go) and [this for Arduino](./misc/arduino/sketch_led_blink.ino) to confirm that this configuration works.
+
+###Centralized control: Firmata
+
+[Gobot](https://gobot.io/) controls Arduino Uno from Raspberry Pi via Firmata (MIDI-based protocol):
 
 ```
  [Raspberry Pi]-----(Firmata/USB)-----[Arduino]
 
 ```
-![arduino-rpi](./doc/arduino-rpi.png)
 
-Unfortunately, Firmata protocol does not support SPI.
+This configuration reminds me of [OpenFlow](https://en.wikipedia.org/wiki/OpenFlow). Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
 
 ##Tools
 
