@@ -33,7 +33,7 @@
 ```
  [Raspberry Pi]-------USB------------[Arduino]
 ```
-This is a standard way.
+This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduino/serial.go) and [this for Arduino](./misc/arduino/sketch_led_blink.ino) to confirm that this configuration works.
 
 ###Centralized control
 
@@ -45,7 +45,7 @@ This is a standard way.
 ```
 ![arduino-rpi](./doc/arduino-rpi.png)
 
-Unfortunately, Firmata protocol does not support SPI.
+Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
 
 ##Tools
 
