@@ -33,6 +33,9 @@
 ```
  [Raspberry Pi]-------USB------------[Arduino]
 ```
+
+![arduino-rpi](./doc/arduino-rpi.png)
+
 This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduino/serial.go) and [this for Arduino](./misc/arduino/sketch_led_blink.ino) to confirm that this configuration works.
 
 ###Centralized control: Firmata
@@ -43,7 +46,6 @@ This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduin
  [Raspberry Pi]-----(Firmata/USB)-----[Arduino]
 
 ```
-![arduino-rpi](./doc/arduino-rpi.png)
 
 This configuration reminds me of [OpenFlow](https://en.wikipedia.org/wiki/OpenFlow). Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
 
