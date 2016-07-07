@@ -28,14 +28,14 @@
 
 ##Device control
 
-###Autonomous/distributed control
+###Centralized control: standard way
 
 ```
  [Raspberry Pi]-------USB------------[Arduino]
 ```
 This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduino/serial.go) and [this for Arduino](./misc/arduino/sketch_led_blink.ino) to confirm that this configuration works.
 
-###Centralized control
+###Centralized control: Firmata
 
 [Gobot](https://gobot.io/) to control Arduino Uno from Raspberry Pi 3 via Firmata:
 
@@ -45,7 +45,7 @@ This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduin
 ```
 ![arduino-rpi](./doc/arduino-rpi.png)
 
-Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
+This configuration reminds me of [OpenFlow](https://en.wikipedia.org/wiki/OpenFlow). Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
 
 ##Tools
 
