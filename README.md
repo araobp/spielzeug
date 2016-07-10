@@ -7,6 +7,8 @@
 
 |part              |product name                   |maker        |units    |
 |------------------|-------------------------------|-------------|---------|
+|Board PC          |Raspberry Pi 3                 |Raspberry Pi |1        |
+|Micor controller  |Arduino Uno R3                 |Arduino      |1        |
 |Servo motor       |Micro serve g9 SG90            |?            |1        |
 |AD converer       |MCP3008                        |Microchip    |1        |
 |Thermister        |MCP9700                        |Microchip    |1        |
