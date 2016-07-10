@@ -18,7 +18,7 @@
 |LED(blue)             |                               |             |1        |
 |Luminousity sensor    |                               |             |1        |
 |Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |
-|FET                   |2SK1122                        |NEC/Renesas  |2        |
+|Motor driver          |[TA7291](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |
 |Twin gear box         |                               |Tamiya       |1        |
 |Tank kit              |                               |Tamiya       |1        |
 |USB cable             |                               |             |1        |
