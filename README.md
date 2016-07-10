@@ -5,6 +5,16 @@
 ####Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=960&h=600)
 
+|part             |product name                   |maker        |units    |
+|-----------------|-------------------------------|-------------|---------|
+|Servo motor      |Micro serve g9 SG90            |?            |1        |
+|AD converer      |MCPP3008                       |Microchip    |1        |
+|Thermister       |MCP9700                        |Microchip    |1        |
+|Proxymity sensor |HC-SR04                        |SainSmart    |1        |
+|Camera module    |Raspberry Pi Camera Board v1.3 |?            |1        |
+|LED(red)         |                               |             |1        |
+|LED(blue)        |                               |             |1        |
+
 ##Infrastructure
 
 ###Device
