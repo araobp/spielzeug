@@ -17,6 +17,8 @@
 |LED(red)          |                               |             |1        |
 |LED(blue)         |                               |             |1        |
 |Luminousity sensor|                               |             |1        |
+|Speaker           |PKM13EPYH4000-A0               |muRata       |1        |
+|FET               |2SK1122                        |NEC          |2        |
 |Twin gear box     |                               |Tamiya       |1        |
 |Tank kit          |                               |Tamiya       |1        |
 
