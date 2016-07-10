@@ -5,6 +5,18 @@
 ####Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=960&h=600)
 
+##Infrastructure
+
+###Device
+
+####Arduino Uno (AVR ATmega16U2)
+[pic of my arduino-uno](./doc/arduino-uno.png)
+
+####Raspberry Pi (ARM Cortex-A53)
+[pic of my rpi3](./doc/rpi3.png)
+
+####Parts
+
 |part                  |product name                   |maker        |units    |
 |----------------------|-------------------------------|-------------|---------|
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |
@@ -25,18 +37,6 @@
 |Universal board       |                               |             |2        |
 |Register              |                               |             |         |
 |Cables                |                               |             |         |
-
-##Infrastructure
-
-###Device
-
-####Arduino Uno (AVR ATmega16U2)
-[pic of my arduino-uno](./doc/arduino-uno.png)
-
-####Raspberry Pi (ARM Cortex-A53)
-[pic of my rpi3](./doc/rpi3.png)
-
-####Parts
 
 ###IoT platform
 
