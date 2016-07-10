@@ -10,9 +10,9 @@
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |
 |Servo motor           |Micro serve g9 SG90            |?            |1        |
-|AD converer           |MCP3008                        |Microchip    |1        |
-|Thermister            |MCP9700                        |Microchip    |1        |
-|Proxymity sensor      |HC-SR04                        |SainSmart    |1        |
+|AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |
+|Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |
+|Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)                        |SainSmart    |1        |
 |Camera module         |Raspberry Pi Camera Board v1.3 |?            |1        |
 |LED(red)              |                               |             |1        |
 |LED(blue)             |                               |             |1        |
