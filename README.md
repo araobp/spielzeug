@@ -1,7 +1,7 @@
 # Internet of Toys (IoT)
 
 ##Goal
-![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=680&h=480)
+![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=680&h=380)
 
 ##Infrastructure
 
