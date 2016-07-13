@@ -28,8 +28,6 @@ I tested my SG90 servo motor and confirmed that it moved its arm from 0 to 180 d
 
 ##Testing Arduino IDE
  
-[Test codes](./arduino)
-
 I gave up using Gobot, since it does not support SPI and I do not require such abstraction for device control. So I stick to Arduino IDE.
 
 ##Testing IoT platform
