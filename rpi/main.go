@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+
+	// Blinking LED on Raspberry Pi
 	done := make(chan bool, 1)
 	go func(done chan bool) {
 		parts.Blink(parts.GREEN)
@@ -17,4 +19,9 @@ func main() {
 		done <- true
 	}(done)
 	<-done
+
+	// Blinking LED on Arduino Uno
+	parts.LedOn()
+	time.Sleep(time.Second)
+	parts.LedOff()
 }

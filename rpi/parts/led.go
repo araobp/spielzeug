@@ -1,7 +1,6 @@
 package parts
 
 import (
-	"bufio"
 	"fmt"
 	"log"
 	"os"
@@ -22,14 +21,13 @@ var off []byte = []byte("0") // LED OFF
 var on []byte = []byte("1")  // LED ON
 
 func write(path string, data []byte) {
-	f, err := os.OpenFile(path, os.O_RDWR, 0770)
-	w := bufio.NewWriter(f)
+	f, err := os.OpenFile(path, os.O_WRONLY, 0770)
+	defer f.Sync()
 	defer f.Close()
 	if err != nil {
 		panic(err)
 	}
-	_, err = w.Write(data)
-	w.Flush()
+	_, err = f.Write(data)
 	if err != nil {
 		panic(err)
 	}
