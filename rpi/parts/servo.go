@@ -1,19 +1,3 @@
-/*
- * Circuit
- *
- *  GND    5V  GPIO21(PWM)
- *   |     |     |
- *   |     |     |
- *  ++-----+-----++
- *  |  SG90       |
- *  +-------------+
- *         |
- *    -----+ arm
- *
- * You have to run the following command before using this script:
- *
- * $ sudo ./pi-blaster -g 21
- */
 package parts
 
 import (
@@ -25,16 +9,29 @@ import (
 const GPIO = "21" // GPIO 21
 
 /*
+ Circuit
+
+  GND    5V  GPIO21(PWM)
+   |     |     |
+   |     |     |
+  ++-----+-----++
+  |  SG90       |
+  +-------------+
+         |
+    -----+ arm
+
+ You have to run the following command before using this script:
+ $ sudo ./pi-blaster -g 21
+
   frequency: 100Hz
 
   PWM
   degree      duty cycle
   ----------------------
-     -90      0.05%
-       0      0.15%
-     +90      0.25%
+     -90       5%
+       0      15%
+     +90      25%
 */
-
 func Rotate(angle int) {
 	if angle < -90 || angle > 90 {
 		panic("angle out of range")
