@@ -24,4 +24,11 @@ func main() {
 	parts.LedOn()
 	time.Sleep(time.Second)
 	parts.LedOff()
+
+	// Rorate the arm of SG90 servo motor
+	parts.Rotate(-90)
+	time.Sleep(time.Second)
+	parts.Rotate(0)
+	time.Sleep(time.Second)
+	parts.Rotate(+90)
 }
