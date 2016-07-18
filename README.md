@@ -17,26 +17,28 @@
 
 ####Parts
 
-|part                  |product name                   |maker        |units    |
-|----------------------|-------------------------------|-------------|---------|
-|Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |
-|Micro controller      |Arduino Uno R3                 |Arduino      |1        |
-|Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |
-|AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |
-|Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |
-|Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)                        |SainSmart    |1        |
-|Camera module         |Raspberry Pi Camera Board v1.3 |?            |1        |
-|LED(red)              |                               |             |1        |
-|LED(blue)             |                               |             |1        |
-|CdS                   |MI5                            |Macron       |1        |
-|Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |
-|Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |
-|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |
-|Tank kit              |Tank kit No.108                |Tamiya       |1        |
-|USB cable             |                               |             |1        |
-|Universal board       |                               |             |2        |
-|Register              |                               |             |         |
-|Cables                |                               |             |         |
+|part                  |product name                   |maker        |units    |in stock|
+|----------------------|-------------------------------|-------------|---------|--------|
+|Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
+|Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
+|Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
+|Condensor             |                               |             |1        |Y       |
+|AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
+|Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
+|Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)                        |SainSmart    |1        |Y       |
+|Camera module         |Raspberry Pi Camera Board v1.3 |?            |1        |Y       |
+|LED(red)              |                               |             |1        |Y       |
+|LED(blue)             |                               |             |1        |Y       |
+|CdS                   |MI5                            |Macron       |1        |Y       |
+|Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |Y       |
+|Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |N        |
+|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |N       |
+|Tank kit              |Tank kit No.108                |Tamiya       |1        |N       |
+|USB cable             |                               |             |1        |Y       |
+|Universal board       |                               |             |2        |Y       |
+|terminal block        |2pin                           |             |4        |N       |
+|Registers             |                               |             |many     |Y       |
+|Cables                |                               |             |many     |Y       |
 
 ###IoT platform
 
