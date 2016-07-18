@@ -30,9 +30,9 @@
 |LED(blue)             |                               |             |1        |
 |Luminousity sensor    |                               |             |1        |
 |Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |
-|Motor driver          |[TA7291](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |
-|Twin gear box         |                               |Tamiya       |1        |
-|Tank kit              |                               |Tamiya       |1        |
+|Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |
+|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |
+|Tank kit              |Tank kit No.108                |Tamiya       |1        |
 |USB cable             |                               |             |1        |
 |Universal board       |                               |             |2        |
 |Register              |                               |             |         |
@@ -75,8 +75,6 @@ This is a standard way. I made [this sample code for Raspberry Pi](./misc/arduin
 
 This configuration reminds me of [OpenFlow](https://en.wikipedia.org/wiki/OpenFlow). Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
 
-##Tools
+##Gear box
 
-I really want 3D printer to make parts!
-
-For the time being, papercraft is OK.
+[Reference](http://www.marutsu.co.jp/contents/shop/marutsu/mame/81.html)
