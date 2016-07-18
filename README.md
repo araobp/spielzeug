@@ -36,7 +36,7 @@
 |Tank kit              |Tank kit No.108                |Tamiya       |1        |N       |
 |USB cable             |                               |             |1        |Y       |
 |Universal board       |                               |             |2        |Y       |
-|terminal block        |2pin                           |             |4        |N       |
+|Terminal block        |2pin                           |             |4        |N       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 
