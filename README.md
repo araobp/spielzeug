@@ -25,7 +25,7 @@
 |Condensor             |                               |             |1        |Y       |
 |AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
 |Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
-|Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)                        |SainSmart    |1        |Y       |
+|Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)                        |SainSmart    |1        |N       |
 |Camera module         |Raspberry Pi Camera Board v1.3 |?            |1        |Y       |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |Y       |
