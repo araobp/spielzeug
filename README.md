@@ -17,7 +17,7 @@
 
 ####Parts
 
-|part                  |product name                   |maker        |units    |in stock|
+|part                  |product name                   |maker        |units    |procured|
 |----------------------|-------------------------------|-------------|---------|--------|
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
@@ -31,8 +31,8 @@
 |LED(blue)             |                               |             |1        |Y       |
 |CdS                   |MI5                            |Macron       |1        |Y       |
 |Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |Y       |
-|Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |N        |
-|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |N       |
+|Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
+|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |Y       |
 |Tank kit              |Tank kit No.108                |Tamiya       |1        |N       |
 |USB cable             |                               |             |1        |Y       |
 |Universal board       |                               |             |2        |Y       |
