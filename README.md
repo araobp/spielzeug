@@ -40,6 +40,33 @@
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 
+
+###Protocol between Rapsberry Pi and Arudino Uno
+
+####Motor control
+
+Right motor, forward, power level
+```
+mt 0 0 255
+```
+
+Left motor, backward, power level
+```
+mt 1 1 22
+```
+
+####Servo motor control
+
+Servo motor #0, plus, 90 degrees
+```
+sm 0 0 90
+```
+
+Servo motor #1, minus, 22 degrees
+```
+sm 1 1 22
+```
+
 ###IoT platform
 
 - Apache ZooKeeper
