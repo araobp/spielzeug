@@ -45,26 +45,33 @@
 
 ####Motor control
 
-Right motor, forward, power level
+Right motor(0), forward(0), power level(255)
 ```
 mt 0 0 255
 ```
 
-Left motor, backward, power level
+Left motor(1), backward(1), power level(22)
 ```
 mt 1 1 22
 ```
 
 ####Servo motor control
 
-Servo motor #0, plus, 90 degrees
+Servo motor #0, plus(0), 90 degrees
 ```
 sm 0 0 90
 ```
 
-Servo motor #1, minus, 22 degrees
+Servo motor #1, minus(1), 22 degrees
 ```
 sm 1 1 22
+```
+
+####Proximity sensor
+
+Proximity sensor #0, get
+```
+px 0
 ```
 
 ###IoT platform
