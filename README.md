@@ -43,35 +43,38 @@
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
+Format for setter: six digits decimal number in ASCII code + '\n'
+Format for getter: two digits decimal number in ASCII code + '\n'
+
 ####Motor control
 
-Right motor(0), forward(0), power level(255)
+motor(1), right(0), forward(0), power level(255)
 ```
-mt 0 0 255
+100255\n
 ```
 
-Left motor(1), backward(1), power level(22)
+motor(1), left(1), backward(1), power level(022)
 ```
-mt 1 1 22
+111022\n
 ```
 
 ####Servo motor control
 
-Servo motor #0, plus(0), 90 degrees
+Servo motor(2), unit#0(0), plus(0), 90 degrees(090)
 ```
-sm 0 0 90
+200090\n
 ```
 
-Servo motor #1, minus(1), 22 degrees
+Servo motor(2), unit#1(1), minus(1), 22 degrees(022)
 ```
-sm 1 1 22
+211022\n
 ```
 
 ####Proximity sensor
 
-Proximity sensor #0, get
+Proximity sensor(3), unit#0(0), get
 ```
-px 0
+30\n
 ```
 
 ###IoT platform
