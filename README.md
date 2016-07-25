@@ -43,8 +43,10 @@
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
+```
 Format for setter: six digits decimal number in ASCII code + '\n'
 Format for getter: two digits decimal number in ASCII code + '\n'
+```
 
 ####Motor control
 
