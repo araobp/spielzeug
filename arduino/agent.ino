@@ -1,5 +1,6 @@
 // 2016/07/26
 #define LED_PIN 13
+#define LED 0
 #define MOTOR 1
 #define SERVO_MOTOR 2
 #define PROXIMITY_SENSOR 3
@@ -39,6 +40,10 @@ void loop(){
       int sign = cmd.substring(3,4).toInt();
       int value = cmd.substring(4,7).toInt();
       switch(device) {
+        case LED:
+          digitalWrite(LED_PIN, value);
+          Serial.println("0");  // OK
+          break;
         case MOTOR:
           //Serial.println("motor");
           //Serial.println(unit);
@@ -55,7 +60,6 @@ void loop(){
       //Serial.println(sign);
       //Serial.println(value);
     }
-    blink();
   }
 }
 

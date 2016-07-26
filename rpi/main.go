@@ -18,7 +18,7 @@ func main() {
 		time.Sleep(time.Second)
 		parts.Blink(parts.GREEN)
 		log.Printf("temperature: %.1f\n", parts.GetTemp())
-		log.Printf("luminousity: %.1f\n", parts.GetLumi())
+		log.Printf("illuminance: %.1f\n", parts.GetLumi())
 		done <- true
 	}(done)
 	<-done
@@ -29,9 +29,9 @@ func main() {
 	parts.LedOff()
 
 	// Rorate the arm of SG90 servo motor
-	parts.Rotate(-90)
-	time.Sleep(time.Second)
-	parts.Rotate(0)
-	time.Sleep(time.Second)
-	parts.Rotate(+90)
+	//parts.Rotate(-90)
+	//time.Sleep(time.Second)
+	//parts.Rotate(0)
+	//time.Sleep(time.Second)
+	//parts.Rotate(+90)
 }

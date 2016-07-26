@@ -19,23 +19,43 @@ func init() {
 }
 
 const (
-	LED_HIGH = iota
-	LED_LOW
+	READ  = "0"
+	WRITE = "1"
 )
 
-func control(command int) {
+const (
+	LED              = "0"
+	MOTOR            = "1"
+	SERVO_MOTOR      = "2"
+	PROXIMITY_SENSOR = "3"
+)
+
+const (
+	RIGHT  = "0"
+	LEFT   = "1"
+	UNIT_0 = "0"
+	UNIT_1 = "1"
+)
+
+const (
+	FORWARD  = "0"
+	BACKWARD = "1"
+	PLUS     = "0"
+	MINUS    = "1"
+)
+
+const (
+	LED_LOW  = "000"
+	LED_HIGH = "001"
+)
+
+func control(command string) {
 	if port == nil {
 		log.Print("Arduino inaccessible")
 		return
 	}
-	switch command {
-	case LED_HIGH:
-		port.Write([]byte("h"))
-		log.Printf("Command to Arduino: h")
-	case LED_LOW:
-		port.Write([]byte("l"))
-		log.Printf("Command to Arduino: l")
-	}
+	port.Write([]byte(command))
+	log.Printf("Command to Arduino: %s", command)
 	reader := bufio.NewReader(port)
 	ack, err := reader.ReadBytes('\x0a')
 	if err != nil {
@@ -45,9 +65,11 @@ func control(command int) {
 }
 
 func LedOn() {
-	control(LED_HIGH)
+	command := WRITE + LED + UNIT_0 + PLUS + LED_HIGH
+	control(command)
 }
 
 func LedOff() {
-	control(LED_LOW)
+	command := WRITE + LED + UNIT_0 + PLUS + LED_LOW
+	control(command)
 }
