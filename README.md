@@ -48,6 +48,17 @@ Format for setter: seven digits decimal number in ASCII code + '\n'
 Format for getter:  three digits decimal number in ASCII code + '\n'
 ```
 
+####LED(pin13) control
+
+write(1), led_pin13(0), unit#0(0), plus(0), high(001)
+```
+1000001\n
+```
+
+write(1), led_pin13(0), unit#0(0), plus(0), low(000)
+```
+1000000\n
+```
 ####Motor control
 
 write(1), motor(1), right(0), forward(0), power level(255)
