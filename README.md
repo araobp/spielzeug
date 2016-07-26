@@ -43,10 +43,20 @@
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
+Command over USB:
+```
+   [Arduino Uno R3]<---- command ----[Raspberry Pi 3]
+```
+
+Command format:
 ```
 Format for setter: seven digits decimal number in ASCII code + '\n'
-Format for getter:  three digits decimal number in ASCII code + '\n'
+Format for getter: three digits decimal number in ASCII code + '\n'
 ```
+
+Acknowledgement:
+- Setter commands return OK(0) or NG(-1)
+- Getter commands return a requested value
 
 ####LED(pin13) control
 
