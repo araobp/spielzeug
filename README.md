@@ -27,7 +27,7 @@
 |Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
-|Photo micro sensor    |[GP2Y0A21YK0F](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
+|Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
 |Camera module         |Raspberry Pi Camera Board v1.3 |?            |1        |Y       |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |Y       |
