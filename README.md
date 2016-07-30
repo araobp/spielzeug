@@ -35,7 +35,7 @@
 |CdS                   |MI5                            |Macron       |1        |Y       |
 |Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
-|Double gearbox        |Double gearbox No.168          |Tamiya       |1        |Y       |
+|Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
 |Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
 |Universal plate       |[Universal plate set 70157](http://www.tamiya.com/japan/products/70157plate/index.htm)|Tamiya       |1        |Y       |
 |USB cable             |                               |             |1        |Y       |
