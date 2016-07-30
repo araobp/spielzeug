@@ -22,7 +22,8 @@
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
-|Condensor             |                               |             |1        |Y       |
+|Condensor             |100 micor farad                |Rubicon      |1        |Y       |
+|Condensor             |10　micor farad                |Rubicon      |2        |Y       |
 |AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
 |Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
@@ -35,12 +36,14 @@
 |Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |Double gearbox No.168          |Tamiya       |1        |Y       |
-|Tank kit              |Tank kit No.108                |Tamiya       |1        |N       |
+|Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
+|Universal plate       |[Universal plate set 70157](http://www.tamiya.com/japan/products/70157plate/index.htm)|Tamiya       |1        |Y       |
 |USB cable             |                               |             |1        |Y       |
 |Universal board       |                               |             |2        |Y       |
 |Terminal block        |2pin                           |             |4        |N       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
+|Battery box           |AA X 2 (3V)                    |             |1        |N       |
 
 
 ###Protocol between Rapsberry Pi and Arudino Uno
