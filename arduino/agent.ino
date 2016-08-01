@@ -1,4 +1,4 @@
-032// 2016/07/26
+// 2016/07/26
 //#define LED_PIN 13
 #define LED 0
 #define MOTOR 1
