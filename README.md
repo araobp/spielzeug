@@ -45,6 +45,7 @@
 |Cables                |                               |             |many     |Y       |
 |Battery box           |AA X 2 (3V)                    |             |1        |N       |
 
+![tank](./doc/tank.png)
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
@@ -104,6 +105,7 @@ read(0), proximity sensor(3), unit#0(0)
 ```
 030\n
 ```
+![proximity_sensors](./doc/proximity_sensors.png)
 
 ###IoT platform
 
