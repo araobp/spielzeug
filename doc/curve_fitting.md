@@ -1,6 +1,6 @@
-# Curve fitting for proximity sensor
+# Curve fitting
 
-## Sharp GP2Y0A21YK0F
+## Proximity sensor: Sharp GP2Y0A21YK0F
 
 [Reference](http://www.sharpsma.com/webfm_send/1489)
 
