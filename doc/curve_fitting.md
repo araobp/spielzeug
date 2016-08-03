@@ -2,7 +2,7 @@
 
 ## Proximity sensor: Sharp GP2Y0A21YK0F
 
-[Reference](http://www.sharpsma.com/webfm_send/1489)
+[Data sheet](http://www.sharpsma.com/webfm_send/1489)
 
 |Distance (cm)|Output voltage|
 |-------------|--------------|
