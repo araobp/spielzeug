@@ -48,7 +48,9 @@ Vo    Voltage output from the sensor
 Vl    Voltage output (0 ~ 1023 levels) from Arduino
 
 Vo(V) = Ca / (Distance(cm) + Cb)
+Vo(V) = Vl / 1023 * 5
 
-Distance(cm) = Ca / (Vl/1023 * 5) - Cb
+Distance(cm) = Ca / Vo - Cb
+             = Ca / (Vl / 1023 * 5) - Cb
 ```
 To get a better function, install the following package, then use Jupyter/IPython for curve fitting: https://pypi.python.org/pypi/scipy-data_fitting
