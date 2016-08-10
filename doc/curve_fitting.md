@@ -37,4 +37,18 @@ This is a CSV version of the table:
 80,0.4
 ```
 
-Install the following package, then use Jupyter/IPython for curve fitting: https://pypi.python.org/pypi/scipy-data_fitting
+For example, a function like this might be used to measure the distance: 
+```
+Constants:
+Ca = 32
+Cb = 4
+
+Vcc = 5(V)
+Vo    Voltage output from the sensor
+Vl    Voltage output (0 ~ 1023 levels) from Arduino
+
+Vo(V) = Ca / (Distance(cm) + Cb)
+
+Distance(cm) = Ca / (Vl/1023 * 5) - Cb
+```
+To get a better function, install the following package, then use Jupyter/IPython for curve fitting: https://pypi.python.org/pypi/scipy-data_fitting
