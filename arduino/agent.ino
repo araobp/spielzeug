@@ -1,10 +1,12 @@
 // 2016/07/26
+#include<Servo.h>
 //#define LED_PIN 13
 #define LED 0
 #define MOTOR 1
 #define SERVO_MOTOR 2
 #define PROXIMITY_SENSOR 3
 
+#define PIN_SERVO 9
 #define PIN_TRIGGER 13
 #define PIN_ECHO 12
 #define PIN_OPTICAL1 0  // Analog in 0
@@ -14,10 +16,13 @@
 #define OPTICAL1 1
 #define OPTICAL2 2
 
+Servo servo;
+
 void setup(){
   //pinMode(LED_PIN, OUTPUT);
   pinMode(PIN_TRIGGER, OUTPUT);
   pinMode(PIN_ECHO, INPUT);
+  servo.attach(PIN_SERVO);
   Serial.begin(9600);
 }
 
@@ -66,7 +71,11 @@ void loop(){
           break;
       }
     } else {
-      int sign = cmd.substring(3,4).toInt();
+      String sign_s = cmd.substring(3,4);
+      int sign = 1;
+      if (sign_s == "0") {
+        sign = -1;
+      }
       int value = cmd.substring(4,7).toInt();
       switch(device) {
 //        case LED:
@@ -80,14 +89,13 @@ void loop(){
           Serial.println("0");  // OK
           break;
         case SERVO_MOTOR:
-          //Serial.println("servo motor");
-          //Serial.println(unit);
-          //TODO: servo motor control
-          Serial.println("0");  // OK
+          // from -90 degrees to +90 degrees
+          if (value > 90) {
+            break; 
+          }
+          servo.write(sign * value + 90);
           break;
       }
-      //Serial.println(sign);
-      //Serial.println(value);
     }
   }
 }
