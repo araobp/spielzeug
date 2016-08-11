@@ -79,12 +79,12 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 
 write(1), motor(1), right(1), forward(0), power level(255)
 ```
-1100255\n
+1110255\n
 ```
 
 write(1), motor(1), left(2), backward(1), power level(022)
 ```
-1111022\n
+1121022\n
 ```
 
 ####Servo motor control
