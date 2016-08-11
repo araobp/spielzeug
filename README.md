@@ -40,10 +40,10 @@
 |Universal plate       |[Universal plate set 70157](http://www.tamiya.com/japan/products/70157plate/index.htm)|Tamiya       |1        |Y       |
 |USB cable             |                               |             |1        |Y       |
 |Universal board       |                               |             |2        |Y       |
-|Terminal block        |2pin                           |             |4        |N       |
+|Terminal block        |2pin                           |             |4        |Y       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |AA X 2 (3V)                    |ELPA         |1        |N       |
+|Battery box           |AA X 2 (3V)                    |ELPA         |1        |Y       |
 
 ![tank](./doc/tank.png)
 
