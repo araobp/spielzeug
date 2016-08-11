@@ -43,7 +43,7 @@
 |Terminal block        |2pin                           |             |4        |N       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |AA X 2 (3V)                    |             |1        |N       |
+|Battery box           |AA X 2 (3V)                    |ELPA         |1        |N       |
 
 ![tank](./doc/tank.png)
 
