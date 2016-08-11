@@ -77,12 +77,12 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 ####Motor control
 
-write(1), motor(1), right(0), forward(0), power level(255)
+write(1), motor(1), right(1), forward(0), power level(255)
 ```
 1100255\n
 ```
 
-write(1), motor(1), left(1), backward(1), power level(022)
+write(1), motor(1), left(2), backward(1), power level(022)
 ```
 1111022\n
 ```
