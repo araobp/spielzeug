@@ -49,6 +49,7 @@
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
+####Commands
 Command over USB:
 ```
    [Arduino Uno R3]<---- command ----[Raspberry Pi 3]
@@ -64,7 +65,7 @@ Acknowledgement:
 - Setter commands return OK(0) or NG(-1)
 - Getter commands return a requested value
 
-####LED(pin13) control
+#####LED(pin13) control
 
 write(1), led_pin13(0), unit#0(0), plus(0), high(001)
 ```
@@ -75,7 +76,7 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 1000000\n
 ```
-####Motor control
+#####Motor control
 
 write(1), motor(1), right(1), forward(0), power level(255)
 ```
@@ -87,7 +88,7 @@ write(1), motor(1), left(2), backward(1), power level(022)
 1121022\n
 ```
 
-####Servo motor control
+#####Servo motor control
 
 write(1), servo motor(2), unit#0(0), plus(0), 90 degrees(090)
 ```
@@ -99,13 +100,32 @@ write(1), servo motor(2), unit#1(1), minus(1), 22 degrees(022)
 1211022\n
 ```
 
-####Proximity sensor
+#####Proximity sensor
 
 read(0), proximity sensor(3), unit#0(0)
 ```
 030\n
 ```
 ![proximity_sensors](./doc/proximity_sensors.png)
+
+####Events
+
+Event over USB:
+```
+   [Arduino Uno R3]---- event ---->[Raspberry Pi 3]
+```
+
+#####Rotation events detected by photo micro sensors (Omron EE-SX-460-P1)
+
+event(2), photo micro sensor(1), right(1), forward(0), one rotation(001)
+```
+2110001\n
+```
+
+event(2), photo micro sensor(1), left(2), reverse(1), one rotation(001)
+```
+2121001\n
+```
 
 ###IoT platform
 
