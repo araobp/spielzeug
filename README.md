@@ -80,13 +80,13 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 
 write(1), motor(1), right(1), forward(0), power level(150)
 ```
-1110255\n
+1110150\n
 ```
 ![motor_forward](./doc/motor_forward.png)
 
 write(1), motor(1), left(2), reverse(1), power level(150)
 ```
-1121022\n
+1121150\n
 ```
 ![motor_reverse](./doc/motor_reverse.png)
 
