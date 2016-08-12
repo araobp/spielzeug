@@ -78,15 +78,23 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 #####Motor control
 
-write(1), motor(1), right(1), forward(0), power level(255)
+write(1), motor(1), right(1), forward(0), power level(150)
 ```
 1110255\n
 ```
+![motor_forward](./doc/motor_forward.png)
 
-write(1), motor(1), left(2), backward(1), power level(022)
+write(1), motor(1), left(2), reverse(1), power level(150)
 ```
 1121022\n
 ```
+![motor_reverse](./doc/motor_reverse.png)
+
+write(1), motor(1), right(1), break(2), power level(000)
+```
+1112000\n
+```
+![motor_break](./doc/motor_break.png)
 
 #####Servo motor control
 
