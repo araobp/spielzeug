@@ -85,6 +85,14 @@ Vref = 0 ~ 3(V) (PWM: 0 ~ 150)
 Vcc = 5(V)
 ```
 
+Voltage output range:
+
+|IN1 |IN2 |OUT1(V)    |
+|----|----|-----------|
+|H   |L   |+0.7 ~ +1.8|
+|L   |H   |-0.7 ~ -1.8|
+|H   |H   |0.0        |
+
 write(1), motor(1), right(1), forward(0), Vref level(150)
 ```
 1110150\n
