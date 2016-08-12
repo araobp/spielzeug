@@ -127,6 +127,8 @@ event(2), photo micro sensor(1), left(2), reverse(1), one rotation(001)
 2121001\n
 ```
 
+![layer-1](https://docs.google.com/drawings/d/1_IUCJ2d_mDrADVNzblp95OzeoWL9WBVYllOt7iUtwKM/pub?w=480&h=270)
+
 ###IoT platform
 
 - Apache ZooKeeper
