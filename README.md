@@ -131,10 +131,10 @@ event(2), photo micro sensor(1), left(2), reverse(1), one rotation(001)
 
 ###IoT platform
 
-- Apache ZooKeeper
-- Apache Kafka
-- Apache Cassandra
-- Apache Spark
+- Apache ZooKeeper for thing management
+- Apache Kafka for data buffering
+- Apache Cassandra, MongoDB etc for data collection
+- Apache Spark, IPython etc for data analysis
 
 ![IoTPlatform](https://docs.google.com/drawings/d/14bmvJhQgG_oQu2N0SiiUWonsNiNL7f1yPZ_jepIAEMU/pub?w=960&h=411)
 
