@@ -79,19 +79,17 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 #####Motor control
 
 ```
-TA7291P input voltage info:
-Vs = 3(V)
-Vref = 0 ~ 3(V) (PWM: 0 ~ 150)
+TA7291P input/output voltage:
+Vs = Vref = 3(V)
 Vcc = 5(V)
 ```
 
-Voltage output range:
-
-|IN1 |IN2 |Vref(PWM Max. 255)  |OUT1(V)    |
-|----|----|--------------------|-----------|
-|H   |L   |0 ~ 150             |+0.7 ~ +1.8|
-|L   |H   |0 ~ 150             |-0.7 ~ -1.8|
-|H   |H   |0 ~ 150             |0.0        |
+|unit# |direction|PWM level|IN1|IN2|OUT1| 
+|------|---------|-----|---|---|----|
+|1(right) or 2(left)|0(forward)        |255  |255|0  |+2.6|
+|1(right) or 2(left)|2(break)        |ANY  |0  |0  |0   |
+|0(right & left)     |1(reverse)        |255  |0  |255|-2.6|
+|1(right) or 2(left)|1(reverse) is not accepted| | | | |
 
 write(1), motor(1), right(1), forward(0), Vref level(150)
 ```
