@@ -12,12 +12,9 @@
 
 // Digital
 // Note: PWM on pin 9,10 and 11 does not seem to work after servo.attach() is called. 
-#define PIN_MOTOR2_IN2 2  // TA7291P IN2
-#define PIN_MOTOR2_IN1 4  // TA7291P IN1
-#define PIN_MOTOR2_VREF 5  // PWM: TA7291P VREF
-#define PIN_MOTOR1_IN2 7  // TA7291P IN2
-#define PIN_MOTOR1_IN1 8  // TA7291P IN1
-#define PIN_MOTOR1_VREF 6  // PWM: TA7291P VREF
+#define PIN_MOTOR_IN2 3  // TA7291P IN2
+#define PIN_MOTOR1_IN1 6  // TA7291P IN1
+#define PIN_MOTOR2_IN1 5  // TA7291P IN1
 #define PIN_SERVO 11  // PWM: Tower Pro SG90
 #define PIN_ECHO 12  // Sain Smart HC-SR04
 #define PIN_TRIGGER 10  // Sain Smart HC-SR04
@@ -30,6 +27,7 @@
 #define ULTRASONIC 0
 #define OPTICAL1 1
 #define OPTICAL2 2
+#define MOTOR1AND2 0
 #define MOTOR1 1
 #define MOTOR2 2
 
@@ -49,11 +47,9 @@ void setup(){
   pinMode(PIN_TRIGGER, OUTPUT);
   pinMode(PIN_ECHO, INPUT);
   pinMode(PIN_MOTOR1_IN1, OUTPUT);
-  pinMode(PIN_MOTOR1_IN2, OUTPUT);
-  pinMode(PIN_MOTOR1_VREF, OUTPUT);
+  pinMode(PIN_MOTOR_IN2, OUTPUT);
   pinMode(PIN_MOTOR2_IN1, OUTPUT);
-  pinMode(PIN_MOTOR2_IN2, OUTPUT);
-  pinMode(PIN_MOTOR2_VREF, OUTPUT);
+  pinMode(PIN_MOTOR_IN2, OUTPUT);
   servo.attach(PIN_SERVO);
   Serial.begin(9600);
 }
@@ -129,32 +125,35 @@ void loop(){
           case MOTOR:  // Toshiba TA7291P
             switch(sign) {
               case 1:  // forward
-                in1 = HIGH;
+                in1 = value;
                 in2 = LOW;
                 break;
               case -1:  // reverse
                 in1 = LOW;
-                in2 = HIGH;
+                in2 = value;
                 break;
               case 0:  // break
-                in1 = HIGH;
-                in2 = HIGH;
+                in1 = LOW;
+                in2 = LOW;
                 break;
-            }
-            if (value > 150) {
-              Serial.println(-1);  // Vref > Vs(3V)
-              break;
             }
             switch(unit) {
+              case MOTOR1AND2:
+                analogWrite(PIN_MOTOR1_IN1, in1);
+                analogWrite(PIN_MOTOR_IN2, in2);
+                analogWrite(PIN_MOTOR_IN2, in2);
+                break;                
               case MOTOR1:
-                digitalWrite(PIN_MOTOR1_IN1, in1);
-                digitalWrite(PIN_MOTOR1_IN2, in2);
-                analogWrite(PIN_MOTOR1_VREF, value);
+                if (in2 == LOW) {  // forward or break
+                  analogWrite(PIN_MOTOR1_IN1, in1);
+                  analogWrite(PIN_MOTOR_IN2, in2);
+                }
                 break;
               case MOTOR2:
-                digitalWrite(PIN_MOTOR2_IN1, in1);
-                digitalWrite(PIN_MOTOR2_IN2, in2);
-                analogWrite(PIN_MOTOR2_VREF, value);
+                if (in2 == LOW) {  // forward or break
+                  analogWrite(PIN_MOTOR2_IN1, in1);
+                  analogWrite(PIN_MOTOR_IN2, in2);
+                }
                 break;
             }
             Serial.println(0);
