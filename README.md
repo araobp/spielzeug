@@ -109,14 +109,6 @@ write(1), motor(1), right(1), break(2), Vref level(000)
 ```
 ![motor_break](./doc/motor_break.png)
 
-Note: 
-
-This circuit does not work very well, because Vref is 5(V) that is larger than Vs(3V). I am going to change the circuit for motor control
-```
-  Vs is connected to Vref: Vs = Vref = 3(V)
-  Use PWM on IN1 and IN2.
-```
-
 #####Servo motor control
 
 write(1), servo motor(2), unit#0(0), plus(0), 90 degrees(090)
