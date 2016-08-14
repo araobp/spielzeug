@@ -91,7 +91,7 @@ Vcc = 5(V)
 |1(right) or 2(left)|2(break)        |ANY  |0  |0  |0   |
 |1(right) or 2(left)|1(reverse) is not accepted|- |- |- |- |
 
-Note: The pictures below shows max +/-2.6(V) w/o a motor(i.e., 0(A)). The Vs voltage 3(V) is not large enough: 4.5(V) or 6(V) seems to be the best.
+Note: The pictures below shows max +/-2.6(V) w/o a motor(i.e., 0(A)). The Vs voltage 3(V) is not large enough: 4.5(V) seems to be the best.
 
 write(1), motor(1), right(1), forward(0), Vref level(255)
 ```
