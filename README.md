@@ -84,22 +84,22 @@ Vs = Vref = 3(V)
 Vcc = 5(V)
 ```
 
-|unit# |direction|PWM level|IN1|IN2|OUT1| 
+|unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
 |------|---------|-----|---|---|----|
-|1(right) or 2(left)|0(forward)        |255  |255|0  |+2.6|
+|1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 255|0  |0 ~ +2.6|
+|0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 255|0 ~ -2.6|
 |1(right) or 2(left)|2(break)        |ANY  |0  |0  |0   |
-|0(right & left)     |1(reverse)        |255  |0  |255|-2.6|
-|1(right) or 2(left)|1(reverse) is not accepted| | | | |
+|1(right) or 2(left)|1(reverse) is not accepted|- |- |- |- |
 
-write(1), motor(1), right(1), forward(0), Vref level(150)
+write(1), motor(1), right(1), forward(0), Vref level(255)
 ```
-1110150\n
+1110255\n
 ```
 ![motor_forward](./doc/motor_forward.png)
 
-write(1), motor(1), left(2), reverse(1), Vref level(150)
+write(1), motor(1), right & left(0), reverse(1), Vref level(255)
 ```
-1121150\n
+1101255\n
 ```
 ![motor_reverse](./doc/motor_reverse.png)
 
