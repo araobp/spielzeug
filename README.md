@@ -23,7 +23,7 @@
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
 |Condensor             |100 micro farad                |Rubicon      |1        |Y       |
-|Condensor             |10　micro farad                |Rubicon      |2        |Y       |
+|Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
 |AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
 |Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
