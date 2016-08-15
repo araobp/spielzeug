@@ -47,7 +47,6 @@
 // Timers
 #define TIMER_A 50    // 50msec
 #define TIMER_B 1000  // 1sec
-#define TIMER_C 5000  // 5sec
 
 // Servo motor class
 Servo servo;
@@ -68,8 +67,25 @@ void setup(){
   Serial.begin(9600);
 }
 
+// SainSmart "HC-SR04" ultrasonic proximity sensor
+int calc_dist() {
+  long duration, distance;
+  digitalWrite(PIN_TRIGGER, LOW);
+  delayMicroseconds(2);
+  digitalWrite(PIN_TRIGGER, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(PIN_TRIGGER, LOW);
+  duration = pulseIn(PIN_ECHO, HIGH);
+  distance = (duration/2)/29.1;
+  if (distance < 2 || distance > 180) {
+    return -1;  // Out of range 
+  } else {
+    return distance;
+  }
+}
+
 // Sharp "GP2Y0AAA21YK0F" optical proximity sensor
-int calc_dist(int pin) {
+int calc_dist_opt(int pin) {
   float vl = (float)analogRead(pin);
   float vo = 5.0*vl/1023.0;
   float distance = C_A / vo - C_B;
@@ -80,16 +96,40 @@ int calc_dist(int pin) {
 }
 
 // Omron "EE-SX460-P1" photo micro sensor
-int photo_micro(int unit, int *current, int *prev, int pin) { 
-  *current = digitalRead(pin);
+void photo_micro(int unit, int *prev, int pin) { 
+  int current = digitalRead(pin);
   //Serial.println(*current);
-  if (*current != *prev) {
+  if (current != *prev) {
     Serial.print(EVENT);
     Serial.print(PHOTO_MICRO_SENSOR);
     Serial.print(unit);
-    Serial.println("00" + String(*current));
+    Serial.println("00" + String(current));
   }
-  *prev = *current;
+  *prev = current;
+}
+
+void proximity() {
+  int dist;
+  
+  dist = calc_dist();
+  if (dist > 0) {
+    Serial.print(EVENT);
+    Serial.println(PROXIMITY_SENSOR * 10000 + ULTRASONIC * 1000 + calc_dist());
+  }
+  
+  dist = calc_dist_opt(PIN_OPTICAL1);
+  if (dist > 0) {
+    Serial.print(EVENT);
+    Serial.print(PROXIMITY_SENSOR);
+    Serial.println(OPTICAL1 * 1000 + dist);
+  }
+  
+  dist = calc_dist_opt(PIN_OPTICAL2);
+  if (dist > 0) {
+    Serial.print(EVENT);
+    Serial.print(PROXIMITY_SENSOR);
+    Serial.println(OPTICAL2 * 1000 + dist);
+  }
 }
 
 unsigned long now = millis();
@@ -97,25 +137,19 @@ unsigned long prev_a = now;
 unsigned long prev_b = now;
 unsigned long prev_c = now;
 
-int current_pm1 = LOW;
-int current_pm2 = LOW;
 int prev_pm1 = LOW;
 int prev_pm2 = LOW;
 
 void periodic_task_a() {
-   photo_micro(PHOTOMICRO1, &current_pm1, &prev_pm1, PIN_PHOTOMICRO1);
-   //photo_micro(PHOTOMICRO2, &current_pm2, &prev_pm2, PIN_PHOTOMICRO2);
+   photo_micro(PHOTOMICRO1, &prev_pm1, PIN_PHOTOMICRO1);
+   photo_micro(PHOTOMICRO2, &prev_pm2, PIN_PHOTOMICRO2);
   //Serial.print("task a");
   //Serial.println(now);
 }
 
 void periodic_task_b() {
+  proximity();
   //Serial.print("task b");
-  //Serial.println(now);
-}
-
-void periodic_task_c() {
-  //Serial.print("task c");
   //Serial.println(now);
 }
 
@@ -135,35 +169,23 @@ void loop(){
           case PROXIMITY_SENSOR:
             switch(unit) {
               case ULTRASONIC:
-                long duration, distance;
-                digitalWrite(PIN_TRIGGER, LOW);
-                delayMicroseconds(2);
-                digitalWrite(PIN_TRIGGER, HIGH);
-                delayMicroseconds(10);
-                digitalWrite(PIN_TRIGGER, LOW);
-                duration = pulseIn(PIN_ECHO, HIGH);
-                distance = (duration/2)/29.1;
-                if (distance < 2 || distance > 180) {
-                  Serial.println(-1);  // Out of range 
-                } else {
-                  Serial.println(distance);
-                }
+                Serial.println(calc_dist());
                 break;
               case OPTICAL1:
-                Serial.println(calc_dist(PIN_OPTICAL1));
+                Serial.println(calc_dist_opt(PIN_OPTICAL1));
                 break;
               case OPTICAL2:
-                Serial.println(calc_dist(PIN_OPTICAL2));
+                Serial.println(calc_dist_opt(PIN_OPTICAL2));
                 break;
             }
             break;
             case PHOTO_MICRO_SENSOR:
               switch(unit) {
                 case PHOTOMICRO1:
-                  photo_micro(PHOTOMICRO1, &current_pm1, &prev_pm1, PIN_PHOTOMICRO1);
+                  Serial.println(digitalRead(PIN_PHOTOMICRO1));
                   break;
                 case PHOTOMICRO2:
-                  photo_micro(PHOTOMICRO2, &current_pm2, &prev_pm2, PIN_PHOTOMICRO2);
+                  Serial.println(digitalRead(PIN_PHOTOMICRO2));
                   break;
               }
         }
@@ -244,9 +266,5 @@ void loop(){
   if (now - prev_b > TIMER_B) {
     periodic_task_b();
     prev_b = now;
-  }
-  if (now - prev_c > TIMER_C) {
-    periodic_task_c();
-    prev_c = now;
   }
 }
