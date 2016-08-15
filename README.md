@@ -49,22 +49,19 @@
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
-####Centralized control
-
+Commands(Request/Response)
 ```
- [Raspberry Pi]-------USB------------[Arduino]
+   [Arduino Uno R3]<---- command ----[Raspberry Pi 3]
+```
+
+Events
+```
+   [Arduino Uno R3]---- event ---->[Raspberry Pi 3]
 ```
 
 ![arduino-rpi](./doc/arduino-rpi.png)
 
-This configuration reminds me of [OpenFlow](https://en.wikipedia.org/wiki/OpenFlow). Unfortunately, Firmata protocol does not support SPI, so I do not use Gobot...
-
 ####Commands(Request/Response)
-
-Command over USB:
-```
-   [Arduino Uno R3]<---- command ----[Raspberry Pi 3]
-```
 
 Command format:
 ```
@@ -143,11 +140,6 @@ read(0), proximity sensor(3), unit#0(0)
 ![proximity_sensors](./doc/proximity_sensors.png)
 
 ####Events
-
-Event over USB:
-```
-   [Arduino Uno R3]---- event ---->[Raspberry Pi 3]
-```
 
 #####Events detected by photo micro sensors (Omron EE-SX-460-P1)
 
