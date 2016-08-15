@@ -138,14 +138,14 @@ Event over USB:
    [Arduino Uno R3]---- event ---->[Raspberry Pi 3]
 ```
 
-#####Rotation events detected by photo micro sensors (Omron EE-SX-460-P1)
+#####Events detected by photo micro sensors (Omron EE-SX-460-P1)
 
-event(2), photo micro sensor(1), right(1), forward(0), one rotation(001)
+event(2), photo micro sensor(4), right(1), high(001)
 ```
 2110001\n
 ```
 
-event(2), photo micro sensor(1), left(2), reverse(1), one rotation(001)
+event(2), photo micro sensor(4), left(2), low(000)
 ```
 2121001\n
 ```
