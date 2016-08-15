@@ -9,6 +9,7 @@
 #define MOTOR 1
 #define SERVO_MOTOR 2
 #define PROXIMITY_SENSOR 3
+#define PHOTO_MICRO_SENSOR 4
 
 // Digital
 // Note: PWM on pin 9,10 and 11 does not seem to work after servo.attach() is called. 
@@ -18,6 +19,8 @@
 #define PIN_SERVO 11  // PWM: Tower Pro SG90
 #define PIN_ECHO 12  // Sain Smart HC-SR04
 #define PIN_TRIGGER 10  // Sain Smart HC-SR04
+#define PIN_PHOTOMICRO1 9  // Omron EE-SX460-P1
+#define PIN_PHOTOMICRO2 8  // Omron EE-SX460-P1
 
 // Analog in
 #define PIN_OPTICAL1 0  // Sharp GP2Y0AAA21YK0F
@@ -30,10 +33,21 @@
 #define MOTOR1AND2 0
 #define MOTOR1 1
 #define MOTOR2 2
+#define PHOTOMICRO1 1
+#define PHOTOMICRO2 2
+
+#define READ 0
+#define WRITE 1
+#define EVENT 2
 
 // Constants
 #define C_A 32.0
 #define C_B 4.0
+
+// Timers
+#define TIMER_A 50    // 50msec
+#define TIMER_B 1000  // 1sec
+#define TIMER_C 5000  // 5sec
 
 // Servo motor class
 Servo servo;
@@ -65,6 +79,46 @@ int calc_dist(int pin) {
   return (int)distance;
 }
 
+// Omron "EE-SX460-P1" photo micro sensor
+int photo_micro(int unit, int *current, int *prev, int pin) { 
+  *current = digitalRead(pin);
+  //Serial.println(*current);
+  if (*current != *prev) {
+    Serial.print(EVENT);
+    Serial.print(PHOTO_MICRO_SENSOR);
+    Serial.print(unit);
+    Serial.println("00" + String(*current));
+  }
+  *prev = *current;
+}
+
+unsigned long now = millis();
+unsigned long prev_a = now;
+unsigned long prev_b = now;
+unsigned long prev_c = now;
+
+int current_pm1 = LOW;
+int current_pm2 = LOW;
+int prev_pm1 = LOW;
+int prev_pm2 = LOW;
+
+void periodic_task_a() {
+   photo_micro(PHOTOMICRO1, &current_pm1, &prev_pm1, PIN_PHOTOMICRO1);
+   //photo_micro(PHOTOMICRO2, &current_pm2, &prev_pm2, PIN_PHOTOMICRO2);
+  //Serial.print("task a");
+  //Serial.println(now);
+}
+
+void periodic_task_b() {
+  //Serial.print("task b");
+  //Serial.println(now);
+}
+
+void periodic_task_c() {
+  //Serial.print("task c");
+  //Serial.println(now);
+}
+
 void loop(){
   if (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
@@ -76,7 +130,7 @@ void loop(){
       int unit = cmd.substring(2,3).toInt();
       //Serial.println(rw);
       //Serial.println(device);
-      if (rw == 0) {
+      if (rw == READ) {
         switch(device) {
           case PROXIMITY_SENSOR:
             switch(unit) {
@@ -103,8 +157,17 @@ void loop(){
                 break;
             }
             break;
+            case PHOTO_MICRO_SENSOR:
+              switch(unit) {
+                case PHOTOMICRO1:
+                  photo_micro(PHOTOMICRO1, &current_pm1, &prev_pm1, PIN_PHOTOMICRO1);
+                  break;
+                case PHOTOMICRO2:
+                  photo_micro(PHOTOMICRO2, &current_pm2, &prev_pm2, PIN_PHOTOMICRO2);
+                  break;
+              }
         }
-      } else {
+      } else if (rw == WRITE) {
         String sign_s = cmd.substring(3,4);
         int sign = 1;
         if (sign_s == "1") {
@@ -170,5 +233,20 @@ void loop(){
         }
       }
     }
+  }
+
+  // Periodic tasks
+  now = millis();
+  if (now - prev_a > TIMER_A) {
+    periodic_task_a();
+    prev_a = now;
+  }
+  if (now - prev_b > TIMER_B) {
+    periodic_task_b();
+    prev_b = now;
+  }
+  if (now - prev_c > TIMER_C) {
+    periodic_task_c();
+    prev_c = now;
   }
 }
