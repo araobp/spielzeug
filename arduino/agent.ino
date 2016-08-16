@@ -206,7 +206,7 @@ void loop(){
         int value = cmd.substring(4,7).toInt();
         switch(device) {
           case LED:
-            if (sign > 0) {
+            if (value > 0) {
               digitalWrite(PIN_LED, HIGH);
             } else {
               digitalWrite(PIN_LED, LOW);
