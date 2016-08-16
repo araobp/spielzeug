@@ -2,7 +2,7 @@
 
 ```
 Arduino Uno                        RaspberryPi 3
-  [ agent ]<------------------------>[ agent ]<-------------------------->[IoT platform]
+  [ agent ]<--------- USB ---------->[ agent ]<------ The Internet ------>[IoT platform]
       |                                  |
   sensors                             sensors
   actuators                           LEDs
