@@ -1,8 +1,7 @@
-// 2016/07/26
+// initial version: 2016/07/26
+// latest version: 2016/08/16
 
 #include<Servo.h>
-
-#define LED_PIN 13
 
 // sensor/actuator ID
 #define LED 0
@@ -13,14 +12,15 @@
 
 // Digital
 // Note: PWM on pin 9,10 and 11 does not seem to work after servo.attach() is called. 
-#define PIN_MOTOR_IN2 3  // TA7291P IN2
-#define PIN_MOTOR1_IN1 6  // TA7291P IN1
-#define PIN_MOTOR2_IN1 5  // TA7291P IN1
-#define PIN_SERVO 11  // PWM: Tower Pro SG90
-#define PIN_ECHO 12  // Sain Smart HC-SR04
-#define PIN_TRIGGER 10  // Sain Smart HC-SR04
-#define PIN_PHOTOMICRO1 9  // Omron EE-SX460-P1
+#define PIN_MOTOR_IN2 3    // TA7291P IN2
+#define PIN_MOTOR2_IN1 5   // TA7291P IN1
+#define PIN_MOTOR1_IN1 6   // TA7291P IN1
 #define PIN_PHOTOMICRO2 8  // Omron EE-SX460-P1
+#define PIN_PHOTOMICRO1 9  // Omron EE-SX460-P1
+#define PIN_TRIGGER 10     // Sain Smart HC-SR04
+#define PIN_SERVO 11       // PWM: Tower Pro SG90
+#define PIN_ECHO 12        // Sain Smart HC-SR04
+#define PIN_LED 13         // Built-in LED
 
 // Analog in
 #define PIN_OPTICAL1 0  // Sharp GP2Y0AAA21YK0F
@@ -47,6 +47,7 @@
 // Timers
 #define TIMER_A 50    // 50msec
 #define TIMER_B 1000  // 1sec
+#define TIMER_C 5000  // 5sec
 
 // Servo motor class
 Servo servo;
@@ -56,13 +57,15 @@ int in1 = HIGH;
 int in2 = LOW;
 
 void setup(){
-  pinMode(LED_PIN, OUTPUT);
+  pinMode(PIN_LED, OUTPUT);
   pinMode(PIN_TRIGGER, OUTPUT);
   pinMode(PIN_ECHO, INPUT);
   pinMode(PIN_MOTOR1_IN1, OUTPUT);
   pinMode(PIN_MOTOR_IN2, OUTPUT);
   pinMode(PIN_MOTOR2_IN1, OUTPUT);
   pinMode(PIN_MOTOR_IN2, OUTPUT);
+  pinMode(PIN_PHOTOMICRO1, INPUT_PULLUP);  // uses the internal pull-up register
+  pinMode(PIN_PHOTOMICRO2, INPUT_PULLUP);  // uses the internal pull-up register
   servo.attach(PIN_SERVO);
   Serial.begin(9600);
 }
@@ -108,6 +111,7 @@ void photo_micro(int unit, int *prev, int pin) {
   *prev = current;
 }
 
+// Proximity measurements
 void proximity() {
   int dist;
   
@@ -140,17 +144,19 @@ unsigned long prev_c = now;
 int prev_pm1 = LOW;
 int prev_pm2 = LOW;
 
+// Periodict task A w/ TIMER_A
 void periodic_task_a() {
    photo_micro(PHOTOMICRO1, &prev_pm1, PIN_PHOTOMICRO1);
    photo_micro(PHOTOMICRO2, &prev_pm2, PIN_PHOTOMICRO2);
-  //Serial.print("task a");
-  //Serial.println(now);
 }
 
+// Periodict task B w/ TIMER_B
 void periodic_task_b() {
   proximity();
-  //Serial.print("task b");
-  //Serial.println(now);
+}
+
+// Periodict task C w/ TIMER_C
+void periodic_task_c() {
 }
 
 void loop(){
@@ -201,9 +207,9 @@ void loop(){
         switch(device) {
           case LED:
             if (sign > 0) {
-              digitalWrite(LED_PIN, HIGH);
+              digitalWrite(PIN_LED, HIGH);
             } else {
-              digitalWrite(LED_PIN, LOW);
+              digitalWrite(PIN_LED, LOW);
             }
             Serial.println("0");  // OK
             break;
@@ -243,15 +249,15 @@ void loop(){
             }
             Serial.println(0);
             break;
-          case SERVO_MOTOR:
-            // from -90 degrees to +90 degrees
-            if (value > 90) {
-              Serial.println(-1);
-              break; 
-            }
-            servo.write(sign * value + 90);
-            Serial.println(0);
-            break;
+        case SERVO_MOTOR:
+          // from -90 degrees to +90 degrees
+          if (value > 90) {
+            Serial.println(-1);
+            break; 
+          }
+          servo.write(sign * value + 90);
+          Serial.println(0);
+          break;
         }
       }
     }
@@ -259,12 +265,20 @@ void loop(){
 
   // Periodic tasks
   now = millis();
+  // TIMER_A
   if (now - prev_a > TIMER_A) {
     periodic_task_a();
     prev_a = now;
   }
+  // TIMER_B
   if (now - prev_b > TIMER_B) {
     periodic_task_b();
     prev_b = now;
   }
+  // TIMER_C
+  if (now - prev_c > TIMER_C) {
+    periodic_task_c();
+    prev_c = now;
+  }
+
 }
