@@ -155,6 +155,10 @@ event(2), photo micro sensor(4), left(2), low(000)
 
 ![layer-1](https://docs.google.com/drawings/d/1_IUCJ2d_mDrADVNzblp95OzeoWL9WBVYllOt7iUtwKM/pub?w=480&h=270)
 
+My toy has just been equipped with Omron's photo micro sensors:
+
+![photo_micro](./doc/photo_micro.png)
+
 ###IoT platform
 
 - Apache ZooKeeper for thing management
