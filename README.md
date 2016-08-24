@@ -43,7 +43,7 @@
 |Terminal block        |2pin                           |             |4        |Y       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |AA X 2 (4.5V)                  |             |1        |N       |
+|Battery box           |AA X 3 (4.5V)                  |             |1        |Y       |
 
 ![tank](./doc/tank.png)
 
@@ -88,18 +88,16 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 
 ```
 TA7291P input/output voltage:
-Vs = Vref = 3(V)
+Vs = Vref = 4.5(V)
 Vcc = 5(V)
 ```
 
 |unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
 |------|---------|-----|---|---|----|
-|1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 255|0  |0 ~ +1.1|
-|0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 255|0 ~ -1.1|
+|1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 255|0  |0 ~ +3|
+|0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 255|0 ~ -3|
 |1(right) or 2(left)|2(break)        |ANY  |0  |0  |0   |
 |1(right) or 2(left)|1(reverse) is not accepted|- |- |- |- |
-
-Note: The pictures below shows max +/-2.6(V) w/o a motor(i.e., 0(A)). The Vs voltage 3(V) is not large enough: 4.5(V) seems to be the best.
 
 write(1), motor(1), right(1), forward(0), Vref level(255)
 ```
