@@ -121,9 +121,9 @@ write(1), motor(1), right(1), break(2), Vref level(000)
 
 #####Servo motor control
 
-write(1), servo motor(2), unit#0(0), plus(0), 90 degrees(090)
+write(1), servo motor(2), unit#1(1), plus(0), 90 degrees(090)
 ```
-1200090\n
+1210090\n
 ```
 
 write(1), servo motor(2), unit#1(1), minus(1), 22 degrees(022)
@@ -145,12 +145,12 @@ read(0), proximity sensor(3), unit#0(0)
 
 event(2), photo micro sensor(4), right(1), high(001)
 ```
-2110001\n
+241001\n
 ```
 
 event(2), photo micro sensor(4), left(2), low(000)
 ```
-2121001\n
+242000\n
 ```
 
 ![layer-1](https://docs.google.com/drawings/d/1_IUCJ2d_mDrADVNzblp95OzeoWL9WBVYllOt7iUtwKM/pub?w=480&h=270)
