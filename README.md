@@ -12,6 +12,9 @@
 ####Arduino Uno (AVR ATmega16U2)
 [pic of my arduino-uno](./doc/arduino-uno.png)
 
+####Original shield for Arduino Uno
+![shield](./doc/shield.png)
+
 ####Raspberry Pi (ARM Cortex-A53)
 [pic of my rpi3](./doc/rpi3.png)
 
@@ -92,6 +95,8 @@ Vs = Vref = 4.5(V)
 Vcc = 5(V)
 ```
 
+![shield_and_tank](./doc/shield_and_tank.png)
+
 |unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
 |------|---------|-----|---|---|----|
 |1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 255|0  |0 ~ +3|
@@ -109,14 +114,10 @@ write(1), motor(1), right & left(0), reverse(1), Vref level(255)
 ```
 1101255\n
 ```
-![motor_reverse](./doc/motor_reverse.png)
-
 write(1), motor(1), right(1), break(2), Vref level(000)
 ```
 1112000\n
 ```
-![motor_break](./doc/motor_break.png)
-
 #####Servo motor control
 
 write(1), servo motor(2), unit#1(1), plus(0), 90 degrees(090)
