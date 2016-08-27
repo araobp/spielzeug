@@ -33,7 +33,7 @@
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
-|Camera module         |Raspberry Pi Camera Board v1.3 |Element      |1        |Y       |
+|Camera module         |Camera module for Arduino      |             |1        |N       |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |Y       |
 |CdS                   |MI5                            |Macron       |1        |Y       |
