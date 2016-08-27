@@ -25,11 +25,11 @@ Control unit for motors.
 
 "IoT gateway" for connectivity to the Internet.
 
+[pic of my rpi3](./doc/rpi3.png)
+
 ####WiFi module
 
 [ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) for connectivity to the IoT gateway.
-
-[pic of my rpi3](./doc/rpi3.png)
 
 ####Parts
 
