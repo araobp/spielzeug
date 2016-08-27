@@ -10,12 +10,25 @@
 ###Device
 
 ####Arduino Uno (AVR ATmega16U2)
+
+Main controller.
+
 [pic of my arduino-uno](./doc/arduino-uno.png)
 
 ####Original shield for Arduino Uno
+
+Control unit for motors.
+
 ![shield](./doc/shield.png)
 
 ####Raspberry Pi (ARM Cortex-A53)
+
+"IoT gateway" for connectivity to the Internet.
+
+####WiFi module
+
+[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) for connectivity to the IoT gateway.
+
 [pic of my rpi3](./doc/rpi3.png)
 
 ####Parts
