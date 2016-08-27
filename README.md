@@ -24,6 +24,7 @@
 |----------------------|-------------------------------|-------------|---------|--------|
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
+|WiFi module           |[SP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|N|
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
 |Condensor             |100 micro farad                |Rubicon      |1        |Y       |
 |Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
