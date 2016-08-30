@@ -4,6 +4,17 @@
 
 ##Goal
 
+I often see robots at museums on weekends.
+
+My favorit robots:
+- [Asimo](http://asimo.honda.com/)
+- [Pepper](http://www.softbank.jp/en/robot/)
+- [PaPeRo](https://en.wikipedia.org/wiki/PaPeRo)
+- [Robokyu](http://www.tfd.metro.tokyo.jp/ts/soubi/robo/05.htm)
+- [Mindstorms](https://en.wikipedia.org/wiki/Lego_Mindstorms)
+
+I want to make a toy robot on my own.
+
 ####Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=960&h=600)
 
