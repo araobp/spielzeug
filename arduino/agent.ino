@@ -255,7 +255,7 @@ void loop(){
             Serial.println(-1);
             break; 
           }
-          servo.write(sign * value + 90);
+          servo.write(-1 * sign * value + 90);
           Serial.println(0);
           break;
         }
@@ -266,19 +266,19 @@ void loop(){
   // Periodic tasks
   now = millis();
   // TIMER_A
-  if (now - prev_a > TIMER_A) {
+  if (now - prev_a >= TIMER_A) {
     periodic_task_a();
-    prev_a = now;
+    prev_a = prev_a + TIMER_A;
   }
   // TIMER_B
-  if (now - prev_b > TIMER_B) {
+  if (now - prev_b >= TIMER_B) {
     periodic_task_b();
-    prev_b = now;
+    prev_b = prev_b + TIMER_B;
   }
   // TIMER_C
-  if (now - prev_c > TIMER_C) {
+  if (now - prev_c >= TIMER_C) {
     periodic_task_c();
-    prev_c = now;
+    prev_c = prev_c + TIMER_C;
   }
 
 }
