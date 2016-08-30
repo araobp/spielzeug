@@ -1,5 +1,7 @@
 # Internet of Toys (IoT)
 
+![robot_eyes](./doc/robot_eyes.png)
+
 ##Goal
 
 ####Model 001
