@@ -168,7 +168,9 @@ read(0), proximity sensor(3), unit#0(0)
 
 ####Events
 
-#####Events detected by proximitt sensors
+#####Events detected by proximity sensors
+
+Arduino Uno emits distance info events every 5 seconds.
 
 event(2), proximity sensor(3), unit#0(0), value(073)
 ```
