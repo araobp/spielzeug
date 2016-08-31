@@ -168,6 +168,23 @@ read(0), proximity sensor(3), unit#0(0)
 
 ####Events
 
+#####Events detected by proximitt sensors
+
+event(2), proximity sensor(3), unit#0(0), value(073)
+```
+230073\n
+```
+
+event(2), proximity sensor(3), unit#1(1), value(020)
+```
+231020\n
+```
+
+event(2), proximity sensor(3), unit#2(2), value(033)
+```
+232033\n
+```
+
 #####Events detected by photo micro sensors (Omron EE-SX-460-P1)
 
 event(2), photo micro sensor(4), right(1), high(001)
