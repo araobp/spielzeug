@@ -46,7 +46,7 @@ Control unit for motors.
 
 ![esp-wroom-02](./doc/esp-wroom-02.png)
 
-Thanks to [TORANGISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx).
+Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx).
 
 ####Parts
 
