@@ -42,7 +42,9 @@ Control unit for motors.
 
 ####WiFi module
 
-[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) for connectivity to the IoT gateway.
+[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) as an additional micro controller as well as for connectivity to the IoT gateway.
+
+![esp-wroom-02](./doc/esp-wroom-02.png)
 
 ####Parts
 
