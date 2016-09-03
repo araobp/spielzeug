@@ -11,7 +11,7 @@ const char* ssid = "********";
 const char* password = "*************";
 
 // MQTT server
-const char* mqtt_server = "192.168.57.130";
+const char* mqtt_server = "192.168.***.***";
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -37,6 +37,9 @@ void setup(){
   client.setServer(mqtt_server, 1883);
 }
 
+byte mac[6];
+char mac_addr[18];
+
 void setup_wifi() {
   delay(100);
   WiFi.begin(ssid, password);
@@ -45,6 +48,9 @@ void setup_wifi() {
     Serial.println(".");
   }
   Serial.println(WiFi.localIP());
+  WiFi.macAddress(mac);
+  sprintf(mac_addr, "%02X:%02X:%02X:%02X:%02X:%02X",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]); 
+  Serial.println(mac_addr);
 }
 
 void reconnect() {
@@ -74,7 +80,12 @@ void loop() {
   // publish the voltage level to MQTT server
   char buf[4];
   String(vout_level).toCharArray(buf, 4);
-  client.publish("temp", buf);  // publish to topic "temp"
+  //0         1         2         3         4
+  //012345678901234567890123456789012345678901234
+  //{"device_id":"AA:BB:CC:DD:EE:FF","temp":1234}
+  char msg[44];
+  sprintf(msg, "{\"device_id\":\"%s\",\"temp\":%s}", mac_addr, buf);
+  client.publish("temp", msg);  // publish to topic "temp"
 
   // blink LED
   digitalWrite(PIN_LED, HIGH);
