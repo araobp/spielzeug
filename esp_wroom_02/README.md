@@ -18,7 +18,28 @@ LED and thermistor                                          Original Shiled
                                                         sensors and actuators
 
 ```
+## Temeperature sensor
 
+ESP-WROOM-02's TOUT accepts 0 ~ 1V input range. Use MCP9700-E/TO thermistor.
+
+```
+Vout = 500 + 10 * T(degress celsius),
+which means:
+- Vout = 0.5v at 0 degress celsius
+- Vout = 1v at 50 degress celsius
+```
+
+Circuit
+```
+   3.3V
+    |
+    |
+[MCP9700]--->TOUT 
+    |
+    |
+   GND
+```
+   
 ## MQTT messaging
 
 ```
