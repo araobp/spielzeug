@@ -64,10 +64,10 @@ PubSubClient.h
 ### MQTT message monitoring at Raspberry Pi 3
 
 ```
-pi@raspberrypi:~/node_modules/mqtt $ ./mqtt.js sub -t temp
-155
-155
-163
-164
- :
+pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t temp
+{"device_id":"5C:CF:7F:08:29:F3","temp":163}
+{"device_id":"5C:CF:7F:08:29:F3","temp":163}
+{"device_id":"5C:CF:7F:08:29:F3","temp":164}
+{"device_id":"5C:CF:7F:08:29:F3","temp":163}
+                :
 ```
