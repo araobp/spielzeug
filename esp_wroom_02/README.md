@@ -19,7 +19,13 @@ LED and thermistor                                          Original Shiled
 
 ```
 
-## MQTT lib
+## MQTT messaging
+
+```
+ESP-WROOM-02 ---- topic: temp ---->    mosquitto on Raspberry Pi 3
+```
+
+### MQTT lib
 
 Download and unzip this in Arduino IDE's libralies folder:
 https://github.com/knolleary/pubsubclient
@@ -32,4 +38,15 @@ PubSubClient.h
 //#ifndef MQTT_VERSION
 //#define MQTT_VERSION MQTT_VERSION_3_1_1
 //#endif
+```
+
+### MQTT message monitoring at Raspberry Pi 3
+
+```
+pi@raspberrypi:~/node_modules/mqtt $ ./mqtt.js sub -t temp
+155
+155
+163
+164
+ :
 ```
