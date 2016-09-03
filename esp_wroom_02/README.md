@@ -43,7 +43,7 @@ Circuit
 ## MQTT messaging
 
 ```
-ESP-WROOM-02 ---- topic: temp ---->    mosquitto on Raspberry Pi 3
+ESP-WROOM-02 ---- topic: temp ----> mosquitto on Raspberry Pi 3
 ```
 
 ### MQTT lib
