@@ -23,10 +23,12 @@ LED and thermistor                                          Original Shiled
 ESP-WROOM-02's TOUT accepts 0 ~ 1V input range. Use MCP9700-E/TO thermistor.
 
 ```
-Vout = 500 + 10 * T(degress celsius),
+Vout(mV) = 500(mV) + 10 * T(degress celsius),
 which means:
-- Vout = 0.5v at 0 degress celsius
+- Vout = 500mv at 0 degress celsius
 - Vout = 1v at 50 degress celsius
+
+T = ( Vout(mv) - 500(mv) ) / 10
 ```
 
 Circuit
