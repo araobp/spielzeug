@@ -69,9 +69,11 @@ PubSubClient.h
 
 ```
 pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t temp
-{"device_id":"5C:CF:7F:08:29:F3","temp":163}
-{"device_id":"5C:CF:7F:08:29:F3","temp":163}
-{"device_id":"5C:CF:7F:08:29:F3","temp":164}
-{"device_id":"5C:CF:7F:08:29:F3","temp":163}
+{"device_id":"5C:CF:7F:08:29:F3","temp":19}
+{"device_id":"5C:CF:7F:08:29:F3","temp":20}
+{"device_id":"5C:CF:7F:08:29:F3","temp":19}
+{"device_id":"5C:CF:7F:08:29:F3","temp":19}
+{"device_id":"5C:CF:7F:08:29:F3","temp":19}
+{"device_id":"5C:CF:7F:08:29:F3","temp":18}
                 :
 ```
