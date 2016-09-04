@@ -41,6 +41,8 @@ Circuit
     |
    GND
 ```
+
+If the precision is no good, use HDC1000 instead (e.g., [AE-HDC1000](http://akizukidenshi.com/catalog/g/gM-08775/)).
    
 ## MQTT messaging
 
