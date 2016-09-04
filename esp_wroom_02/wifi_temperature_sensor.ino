@@ -1,14 +1,18 @@
+// WiFi temperature sensor
+// 2019/09/04
+
 extern "C" {
 #include "user_interface.h"
 }
 #include<ESP8266WiFi.h>
 #include <PubSubClient.h>
 
+#define PIN_THERMISTOR 12
 #define PIN_LED 13
 
 // WiFi setup
-const char* ssid = "********";
-const char* password = "*************";
+const char* ssid = "******";
+const char* password = "******";
 
 // MQTT server
 const char* mqtt_server = "192.168.***.***";
@@ -18,19 +22,16 @@ PubSubClient client(wifiClient);
 
 // Circuit
 //
-// 3.3v
-// |
-// R1 10k ohm
-// |
-// +----> TOUT
-// |
-// R2 510 ohm
-// |
-// GND
-//
-// 3.3(V) * 510 / (10000 + 510) = 0.16(V)
+//  Vdd
+//   |
+// +-+-+ MCP9700-E/TO
+// |   +--Vout --> TOUT
+// +-+-+
+//   |
+//  GND
 //
 void setup(){
+  pinMode(PIN_THERMISTOR,OUTPUT);
   pinMode(PIN_LED,OUTPUT);
   Serial.begin(9600);
   setup_wifi();
@@ -73,18 +74,22 @@ void loop() {
   }
   client.loop();
   //Serial.println(A0);
-  int vout_level = analogRead(A0);  // input MUST be <= 1.0v
-  Serial.println(vout_level); // should be around 0.16
+
+  // Microchip MCP9700-E/TO
+  digitalWrite(PIN_THERMISTOR, HIGH);
+  delay(200);
+  float vout = analogRead(A0) * 1000.0 / 1023.0;  // input MUST be <= 1.0v
+  digitalWrite(PIN_THERMISTOR, LOW);
+  int temp = (int)( (vout - 500.0) / 10.0 + 0.5);
+  Serial.println(temp);
   // it showed "155" on the serial monitor  -- correct!
 
   // publish the voltage level to MQTT server
-  char buf[4];
-  String(vout_level).toCharArray(buf, 4);
   //0         1         2         3         4
   //012345678901234567890123456789012345678901234
   //{"device_id":"AA:BB:CC:DD:EE:FF","temp":1234}
   char msg[44];
-  sprintf(msg, "{\"device_id\":\"%s\",\"temp\":%s}", mac_addr, buf);
+  sprintf(msg, "{\"device_id\":\"%s\",\"temp\":%d}", mac_addr, temp);
   client.publish("temp", msg);  // publish to topic "temp"
 
   // blink LED
