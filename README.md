@@ -80,9 +80,11 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 |Battery box           |AA X 3 (4.5V)                  |             |1        |Y       |
-|Battery box           |9V                             |             |1        |N       |
+|Battery box           |9V, w/ wire lead               |             |1        |N       |
 |DC plug               |[MP-121C](http://akizukidenshi.com/catalog/g/gC-02108/)                        |             |1        |N       |
-|Toggle switch         |2MS1-T1-B4-M2-Q-E              |             |1        |N       |
+|Slide switch         |                         |             |1        |N       |
+|Vanila shield and pins #1|                         |             |1        |Y       |
+|Vanila shield and pins #2|                         |             |1        |N       |
 
 ![tank](./doc/tank.png)
 
