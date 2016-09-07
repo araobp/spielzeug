@@ -57,8 +57,6 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |WiFi module           |[SP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
 |Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |N       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |N       |
-|DC-DC converter       |[http://akizukidenshi.com/catalog/g/gK-04377/]|Akizuki Denshi|1|N|
-|DC plug               |[MP-121C](http://akizukidenshi.com/catalog/g/gC-02108/)                        |             |1        |N       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
 |Condensor             |100 micro farad                |Rubicon      |1        |Y       |
 |Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
@@ -82,6 +80,9 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 |Battery box           |AA X 3 (4.5V)                  |             |1        |Y       |
+|Battery box           |9V                             |             |1        |N       |
+|DC plug               |[MP-121C](http://akizukidenshi.com/catalog/g/gC-02108/)                        |             |1        |N       |
+|Toggle switch         |2MS1-T1-B4-M2-Q-E              |             |1        |N       |
 
 ![tank](./doc/tank.png)
 
