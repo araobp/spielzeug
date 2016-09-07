@@ -222,6 +222,5 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 ###Networking
 
-- Inter-device: GPIO/SPI/I2C/ZigBee/BLE/USB
-- Device to IoT platform: Ethernet and WiFi
-
+- Inter-device: Serial(USB) and WiFi
+- Device to IoT platform: WiFi
