@@ -58,7 +58,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |N       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |N       |
 |DC-DC converter       |[http://akizukidenshi.com/catalog/g/gK-04377/]|Akizuki Denshi|1|N|
-|DC plug               |MP-121C                        |             |1        |N       |
+|DC plug               |[MP-121C](http://akizukidenshi.com/catalog/g/gC-02108/)                        |             |1        |N       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
 |Condensor             |100 micro farad                |Rubicon      |1        |Y       |
 |Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
