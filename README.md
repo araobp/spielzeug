@@ -216,7 +216,7 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 The power source is AA battery 1.5V * 3 = 4.5V:
 - 4.5V to the motors via TA7291P motor drivers
-- 4.5V -> 9V to Arduino via [DC-DC converter][http://akizukidenshi.com/catalog/g/gK-04377/]
+- 4.5V -> 9V to Arduino via [DC-DC converter](http://akizukidenshi.com/catalog/g/gK-04377/)
 - 4.5V -> 3.3V to ESP-WROOM-02 (TA48M033F)
 
 ```
@@ -226,6 +226,8 @@ Battery --+-- TA7291P --> Motor#1
           +-- TA7291P --> Motor#2
           |
           +--- DC-DC converter --> Arduino Uno
+          |
+          +--- TA48M033F --> ESP-WROOM-02
 ```
 
 ###IoT platform
