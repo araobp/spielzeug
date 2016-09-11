@@ -88,6 +88,12 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 ![tank](./doc/tank.png)
 
+###Chassis
+
+I am very good at paper craft, so I use paper with wood glue and acrylic paint to make a chassis of the toy:
+
+![chassis](./doc/chassis.png)
+
 ###Protocol between Rapsberry Pi and Arudino Uno
 
 Commands(Request/Response)
