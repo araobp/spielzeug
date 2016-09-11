@@ -96,6 +96,8 @@ I am very good at paper craft, so I use paper with wood glue and acrylic paint t
 
 ###Protocol between Rapsberry Pi and Arudino Uno
 
+I use Raspberry Pi 3 as a remote controller of the robot. The remote controller sends commands to the robot via WiFi or USB cable. The controller also receives events from the robot.
+
 Commands(Request/Response)
 ```
    [Arduino Uno R3]<---- command ----[Raspberry Pi 3]
