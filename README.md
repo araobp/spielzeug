@@ -24,7 +24,6 @@ September 12th, 2016.
 
 ![model001a](./doc/model001a.png)
 ![model001b](./doc/model001b.png)
-![model001c](./doc/model001c.png)
 ![model001d](./doc/model001d.png)
 
 ##Infrastructure
