@@ -1,7 +1,6 @@
 # Internet of Toys (IoT)
 
 ![robot_eyes](./doc/robot_eyes.png)
-![model001a](./doc/model001a.png)
 
 ##Goal
 
@@ -18,6 +17,15 @@ I want to make a toy robot on my own.
 
 ####Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=960&h=600)
+
+####Current status
+
+September 12th, 2016.
+
+![model001a](./doc/model001a.png)
+![model001b](./doc/model001b.png)
+![model001c](./doc/model001c.png)
+![model001d](./doc/model001d.png)
 
 ##Infrastructure
 
