@@ -74,7 +74,6 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
-|Camera module         |Camera module for Arduino      |             |1        |N       |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |Y       |
 |CdS                   |MI5                            |Macron       |1        |Y       |
@@ -90,7 +89,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Battery box           |AA X 4 (6V)                    |             |1        |Y       |
 |Toggle switch         |                             |             |1        |Y       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
-|Vanila shield and pin headers #2|                         |             |1        |N       |
+|Vanila shield and pin headers #2|                         |             |1        |Y       |
 
 ![tank](./doc/tank.png)
 
