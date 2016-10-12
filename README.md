@@ -232,22 +232,41 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 ###Electric power for the toy
 
-The power source is AA battery 1.5V * 3 = 4.5V:
-- 4.5V to the motors via TA7291P motor drivers
-- 9V to Arduino
-- 9V -> 3.3V to ESP-WROOM-02 (TA48M033F)
+The power source is AA battery 1.5V * 4 = 6V:
+- 6V to the motors via TA7291P motor drivers
+- 6V -> 5V to Arduino via TA48M05F
+- 6V -> 3.3V to ESP-WROOM-02 via TA48M033F
 
 ```
-   
-Battery 4.5V --+-- TA7291P(0 ~ 3V) --> Motor#1
-               |
-               +-- TA7291P(0 ~ 3V) --> Motor#2
-          
-Battery 9V --+---> Arduino Uno
+Battery 6V --+-- TA7291P(0 ~ 3V) --> Motor#1
              |
-             +--- TA48M033F(9V -> 3.3V) --> ESP-WROOM-02
+             +-- TA7291P(0 ~ 3V) --> Motor#2
+             |
+             +-- TA48M05F(6V -> 5V) --> Arduino Uno
+             |
+             +-- TA48M033F(6V -> 3.3V) --> ESP-WROOM-02
 ```
 
+###Serial communication between Arduino Uno and ESP-WROOM-02
+
+ESP-WROOM-02 and Arduino Uno use UART (Serial) to communicate with each other.
+
+Since ESP-WROOM-02 uses 3.3V, a logic level converter is inserted between them.
+
+Arduino language provides "Serial" object for hardware serial, so I just use it.
+
+```
+ ESP-WROOM-02      FXMA108 w/      Arduino Uno
+                bypass condensers
+    +----+   3.3V-> +----+ <- 5V    +----+
+    |    |          |    |          |    |
+    |    +- Tx -----+    +----- Rx -+    |
+    |    |          |    |          |    |
+    |    +- Rx -----+    +----- Tx -+    |
+    |    |          |    |          |    |
+    +----+      GND +----+ OE       +----+
+                          (w/ 10k ohm register for pull down)
+                          
 ###IoT platform
 
 - Apache ZooKeeper for thing management
