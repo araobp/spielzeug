@@ -271,6 +271,8 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
                  |                               |
                 [PC]                            [PC]
                 
+ OE is grounded via a 10k ohm pull down register.
+ 
  Note: USB and PC are used for upgrading/debugging/testing the software.
 ```
 
