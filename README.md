@@ -256,16 +256,22 @@ Since ESP-WROOM-02 uses 3.3V, a logic level converter is inserted between them.
 Arduino language provides "Serial" object for hardware serial, so I just use it.
 
 ```
- ESP-WROOM-02      FXMA108 w/      Arduino Uno
-                bypass condensers
-    +----+   3.3V-> +----+ <- 5V    +----+
-    |    |          |    |          |    |
-    |    +- Tx -----+    +----- Rx -+    |
-    |    |          |    |          |    |
-    |    +- Rx -----+    +----- Tx -+    |
-    |    |          |    |          |    |
-    +----+      GND +----+ OE       +----+
-                          (w/ 10k ohm register for pull down)
+ RPi3       ESP-WROOM-02      FXMA108 w/      Arduino Uno
+                          bypass condensers
++---+          +----+   3.3V-> +----+ <- 5V    +----+
+|   |          |    |          |    |          |    |
+|   |          |    +- Tx -----+    +----- Rx -+    |
+|   +-- WiFi --+    |  UART    |    |     UART |    |
+|   |          |    +- Rx -----+    +----- Tx -+    |
+|   |          |    |          |    |          |    |
++---+          +-+--+      GND +----+ OE       +-+--+
+                 ^                               ^
+                 |                               |
+                USB                             USB
+                 |                               |
+                [PC]                            [PC]
+                
+ Note: USB and PC are used for upgrading/debugging/testing the software.
 ```
 
 ###IoT platform
