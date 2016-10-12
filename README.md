@@ -266,7 +266,8 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
     |    |          |    |          |    |
     +----+      GND +----+ OE       +----+
                           (w/ 10k ohm register for pull down)
-                          
+```
+
 ###IoT platform
 
 - Apache ZooKeeper for thing management
