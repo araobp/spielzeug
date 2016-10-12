@@ -140,6 +140,8 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 #####Motor control
 
+(I am replacing AAX3 battery box with AAX4 one right now)
+
 ```
 TA7291P input/output voltage:
 Vs = Vref = 4.5(V)
