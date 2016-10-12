@@ -63,7 +63,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Single board computer |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |WiFi module           |[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
-|Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |N       |
+|Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |Y       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |Y       |
 |Regulator             |TA48M05F                       |Toshiba      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
