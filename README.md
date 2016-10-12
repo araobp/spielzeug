@@ -60,7 +60,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 |part                  |product name                   |maker        |quantities|procured|
 |----------------------|-------------------------------|-------------|---------|--------|
-|Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
+|Single board computer |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |WiFi module           |[SP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
 |Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |N       |
