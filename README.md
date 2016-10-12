@@ -58,13 +58,14 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 ####Parts
 
-|part                  |product name                   |maker        |units    |procured|
+|part                  |product name                   |maker        |quantities|procured|
 |----------------------|-------------------------------|-------------|---------|--------|
 |Board PC              |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |WiFi module           |[SP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
 |Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |N       |
-|Regulator             |TA48M033F                      |Toshiba      |1        |N       |
+|Regulator             |TA48M033F                      |Toshiba      |1        |Y       |
+|Regulator             |TA48M05F                       |Toshiba      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
 |Condensor             |100 micro farad                |Rubicon      |1        |Y       |
 |Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
@@ -77,7 +78,6 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |Y       |
 |CdS                   |MI5                            |Macron       |1        |Y       |
-|Piezonelectric sounder|PKM13EPYH4000-A0               |muRata       |1        |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
 |Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
@@ -87,12 +87,10 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Terminal block        |2pin                           |             |4        |Y       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |AA X 3 (4.5V)                  |             |1        |Y       |
-|Battery box           |9V, w/ wire lead               |             |1        |N       |
-|DC plug               |[MP-121C](http://akizukidenshi.com/catalog/g/gC-02108/)                        |             |1        |N       |
-|Slide switch         |                         |             |1        |N       |
-|Vanila shield and pins #1|                         |             |1        |Y       |
-|Vanila shield and pins #2|                         |             |1        |N       |
+|Battery box           |AA X 4 (6V)                    |             |1        |Y       |
+|Toggle switch         |                             |             |1        |Y       |
+|Vanila shield and pin headers #1|                         |             |1        |Y       |
+|Vanila shield and pin headers #2|                         |             |1        |N       |
 
 ![tank](./doc/tank.png)
 
