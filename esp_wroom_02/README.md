@@ -2,6 +2,10 @@
 
 I use ESP-WROOM-02 as an additional micro controller as well as WiFi module for Arduino.
 
+## Test code: temperature sensor
+
+[code](./wifi_temperature_sensor.ino)
+
 ```
 [Raspberry Pi 3]
        |
@@ -76,4 +80,31 @@ pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t temp
 {"device_id":"5C:CF:7F:08:29:F3","temp":19}
 {"device_id":"5C:CF:7F:08:29:F3","temp":18}
                 :
+```
+
+## Test code: MQTT-Serial relay
+
+[code](./wifi_serial.ino)
+
+```
+
+  Serial <==> [wifi_serial.ino / ESP-WROOM-02] <==> [MQTT Server / Raspberry Pi 3] <==> MQTT client
+
+```
+
+```
+pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t event
+{"device_id":"5C:CF:7F:08:29:F3","event":1}
+{"device_id":"5C:CF:7F:08:29:F3","event":123}
+{"device_id":"5C:CF:7F:08:29:F3","event":test}
+                :
+```
+
+```
+pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js pub -t 5C:CF:7F:08:29:F3 test
+
+
+On the serial monitor,
+
+test
 ```
