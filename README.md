@@ -260,9 +260,9 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
                           bypass condensers
 +---+          +----+   3.3V-> +----+ <- 5V    +----+
 |   |          |    |          |    |          |    |
-|   |          |    +- Tx -----+    +----- Rx -+    |
+|   |          |    +- TxD-----+    +---- RxD -+    |
 |   +-- WiFi --+    |  UART    |    |     UART |    |
-|   |          |    +- Rx -----+    +----- Tx -+    |
+|   |          |    +- RxD-----+    +---- TxD -+    |
 |   |          |    |          |    |          |    |
 +---+          +-+--+      GND +----+ OE       +-+--+
                  ^                               ^
