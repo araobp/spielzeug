@@ -280,10 +280,6 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
 
 ![bread1](./doc/bread1.png)
 
-#### Connecting ESP-WROOM-02 to Arduino Uno
-
-![bread2](./doc/bread2.png)
-
 ###IoT platform
 
 - Apache ZooKeeper for thing management
