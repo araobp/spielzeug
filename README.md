@@ -300,6 +300,28 @@ Arduino Uno is connected to ESP-WROOM-02 via bi-directional logic level converte
 
 ![logiclevel](./doc/logiclevel.png)
 
+JSON stream from Arduino Uno to MQTT server on Raspberry Pi 3 via ESP-WROOM-02:
+
+```
+{"device_id":"18:FE:34:EF:53:69","event":230025}
+{"device_id":"18:FE:34:EF:53:69","event":231035}
+{"device_id":"18:FE:34:EF:53:69","event":232033}
+{"device_id":"18:FE:34:EF:53:69","event":230036}
+{"device_id":"18:FE:34:EF:53:69","event":231037}
+{"device_id":"18:FE:34:EF:53:69","event":232034}
+{"device_id":"18:FE:34:EF:53:69","event":230036}
+{"device_id":"18:FE:34:EF:53:69","event":231045}
+{"device_id":"18:FE:34:EF:53:69","event":232035}
+{"device_id":"18:FE:34:EF:53:69","event":230036}
+{"device_id":"18:FE:34:EF:53:69","event":231037}
+{"device_id":"18:FE:34:EF:53:69","event":232035}
+{"device_id":"18:FE:34:EF:53:69","event":230038}
+{"device_id":"18:FE:34:EF:53:69","event":231046}
+{"device_id":"18:FE:34:EF:53:69","event":232035}
+{"device_id":"18:FE:34:EF:53:69","event":230034}
+                    :
+```
+
 ###IoT platform
 
 - Apache ZooKeeper for thing management
