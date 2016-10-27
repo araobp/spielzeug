@@ -292,6 +292,12 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
 
 #### Connecting Arduino Uno to ESP-WROOM-02
 
+This is my work:
+
+![work](./doc/work.png)
+
+Arduino Uno is connected to ESP-WROOM-02 via bi-directional logic level converter:
+
 ![logiclevel](./doc/logiclevel.png)
 
 ###IoT platform
