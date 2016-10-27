@@ -290,9 +290,9 @@ Arduino language provides "Serial" object for hardware serial, so I just use it.
  Note: USB and PC are used for upgrading/debugging/testing the software.
 ```
 
-#### Uploading a MQTT-Serial relay program to ESP-WROOM-02
+#### Connecting Arduino Uno to ESP-WROOM-02
 
-![bread1](./doc/bread1.png)
+![logiclevel](./doc/logiclevel.png)
 
 ###IoT platform
 
