@@ -9,11 +9,11 @@ extern "C" {
 #define TOPIC_EVENT "event"
 
 // WiFi setup
-const char* ssid = "*****";
-const char* password = "*****";
+const char* ssid = "****";
+const char* password = "****";
 
 // MQTT server
-const char* mqtt_server = "***.***.***.***";
+const char* mqtt_server = "192.168.***.***";
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
@@ -58,7 +58,7 @@ void reconnect() {
 }
 
 void callback(char* topic, byte* payload, unsigned int len) {
-  Serial.println(len);
+  //Serial.println(len);
   Serial.write(payload, len);  
 }
 
@@ -75,14 +75,14 @@ void loop() {
 
     if (len > 0) {
       
-      event[len] = NULL;
+      event[len-1] = NULL;
       
       //0         1         2         3         4
       //012345678901234567890123456789012345678901234
       //{"device_id":"AA:BB:CC:DD:EE:FF","temp":1234}
       char msg[44];
       sprintf(msg, "{\"device_id\":\"%s\",\"event\":%s}", mac_addr, event);
-      client.publish(TOPIC_EVENT, msg);  // publish to topic "temp"
+      client.publish(TOPIC_EVENT, msg); 
 
       // blink LED
       digitalWrite(PIN_LED, HIGH);
