@@ -183,13 +183,16 @@ write(1), servo motor(2), unit#1(1), minus(1), 22 degrees(022)
 1211022\n
 ```
 
-1211090 -90 degrees
+"1211090" -90 degrees
+
 ![ds202_3](./doc/ds202_3.png)
 
-1210000 0 degrees
+"1210000" 0 degrees
+
 ![ds202_3](./doc/ds202_2.png)
 
-1210090 90 degrees
+"1210090" 90 degrees
+
 ![ds202_3](./doc/ds202_1.png)
 
 #####Proximity sensor
