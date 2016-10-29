@@ -63,12 +63,12 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Single board computer |Raspberry Pi 3                 |Raspberry Pi |1        |Y       |
 |Micro controller      |Arduino Uno R3                 |Arduino      |1        |Y       |
 |WiFi module           |[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
-|Logic level converter |[8bit bidrectional logic level converter](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |Y       |
+|Logic level converter |[8bit bidrectional logic level converter (FXMA408)](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |Y       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |Y       |
 |Regulator             |TA48M05F                       |Toshiba      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
-|Condensor             |100 micro farad                |Rubicon      |1        |Y       |
-|Condensor             |10 micro farad                 |Rubicon      |2        |Y       |
+|Capacitor             |100 micro farad                |Rubycon      |1        |Y       |
+|Capacitor             |10 micro farad                 |Rubycon      |2        |Y       |
 |AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
 |Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
