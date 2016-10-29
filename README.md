@@ -15,6 +15,8 @@ My favorit robots:
 
 I want to make a toy robot on my own.
 
+I am also interested in PLC(Programmable Logic Controller) such as [MELSEC](http://www.mitsubishielectric.com/fa/products/cnt/plc/). Arduino Uno is something like a tiny version of PLC anyway, so I use Arduino Uno as a controller for a robot.
+
 ####Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=960&h=600)
 
