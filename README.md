@@ -333,12 +333,10 @@ $ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
 
 ###IoT platform
 
-- Apache ZooKeeper for thing management
+- Apache ZooKeeper for thing management (i.e., toy management in this project)
 - Apache Kafka for data buffering
 - Apache Cassandra, MongoDB etc for data collection
 - Apache Spark, IPython etc for data analysis
-
-![IoTPlatform](https://docs.google.com/drawings/d/14bmvJhQgG_oQu2N0SiiUWonsNiNL7f1yPZ_jepIAEMU/pub?w=960&h=411)
 
 ###Networking
 
