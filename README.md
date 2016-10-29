@@ -302,7 +302,9 @@ Arduino Uno is connected to ESP-WROOM-02 via bi-directional logic level converte
 
 JSON stream from Arduino Uno to MQTT server on Raspberry Pi 3 via ESP-WROOM-02:
 
+Receiving events from the toy with mqtt.js:
 ```
+$ ./mqtt.js sub -t event
 {"device_id":"18:FE:34:EF:53:69","event":230025}
 {"device_id":"18:FE:34:EF:53:69","event":231035}
 {"device_id":"18:FE:34:EF:53:69","event":232033}
@@ -320,6 +322,11 @@ JSON stream from Arduino Uno to MQTT server on Raspberry Pi 3 via ESP-WROOM-02:
 {"device_id":"18:FE:34:EF:53:69","event":232035}
 {"device_id":"18:FE:34:EF:53:69","event":230034}
                     :
+```
+
+Sendind a command "1210090" to the toy with mqtt.js:
+```
+$ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
 ```
 
 ###IoT platform
