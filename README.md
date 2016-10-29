@@ -267,16 +267,16 @@ ESP-WROOM-02 and Arduino Uno use UART (Serial) to communicate with each other.
 
 Since ESP-WROOM-02 uses 3.3V, a logic level converter is inserted between them.
 
-Arduino language provides "Serial" object for hardware serial, so I just use it.
+Arduino provides "SoftwareSerial", so I use it.
 
 ```
  RPi3       ESP-WROOM-02      FXMA108 w/      Arduino Uno
-                          bypass condensers
+                          bypass capacitors
 +---+          +----+   3.3V-> +----+ <- 5V    +----+
 |   |          |    |          |    |          |    |
-|   |          |    +- TxD-----+    +---- RxD -+    |
+|   |          |    +- Tx------+    +----- D2 -+    |
 |   +-- WiFi --+    |  UART    |    |     UART |    |
-|   |          |    +- RxD-----+    +---- TxD -+    |
+|   |          |    +- Rx------+    +----- D4 -+    |
 |   |          |    |          |    |          |    |
 +---+          +-+--+      GND +----+ OE       +-+--+
                  ^                               ^
