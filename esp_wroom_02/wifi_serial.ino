@@ -58,8 +58,10 @@ void reconnect() {
 }
 
 void callback(char* topic, byte* payload, unsigned int len) {
-  //Serial.println(len);
-  Serial.write(payload, len);  
+  for (int i=0; i<len; i++) {
+    Serial.print((char)payload[i]);
+  }
+  Serial.println();
 }
 
 void loop() {
