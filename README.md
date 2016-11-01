@@ -73,15 +73,12 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Capacitor             |10 micro farad                 |Rubycon      |2        |Y       |
 |Capacitor             |470 micro farad                |Rubycon      |1        |N       |
 |Capacitor             |200 micro farad                |Rubycon      |1        |N       |
-|AD converer           |[MCP3008](http://ww1.microchip.com/downloads/en/DeviceDoc/21295C.pdf)                        |Microchip    |1        |Y        |
-|Thermister            |[MCP9700](http://ww1.microchip.com/downloads/en/DeviceDoc/21942e.pdf)                        |Microchip    |1        |Y        |
+|Tempereature/humidity sensor            |[AE-HDC1000](http://akizukidenshi.com/catalog/g/gM-08775/)                        |Akizuki/Honywell    |1        |N        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
 |Geomagnetic sensor    |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|N|
 |LED(red)              |                               |             |1        |Y       |
-|LED(blue)             |                               |             |1        |Y       |
-|CdS                   |MI5                            |Macron       |1        |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
 |Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
