@@ -73,7 +73,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Capacitor             |10 micro farad                 |Rubycon      |2        |Y       |
 |Capacitor             |470 micro farad                |Rubycon      |1        |N       |
 |Capacitor             |200 micro farad                |Rubycon      |1        |N       |
-|Tempereature/humidity sensor            |[AE-HDC1000](http://akizukidenshi.com/catalog/g/gM-08775/)                        |Akizuki/Honywell    |1        |N        |
+|Tempereature/humidity sensor            |[AE-HDC1000](http://akizukidenshi.com/catalog/g/gM-08775/)                        |Akizuki/TI    |1        |N        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
