@@ -67,12 +67,11 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |WiFi module           |[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
 |Logic level converter |[8bit bidrectional logic level converter (FXMA408)](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |Y       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |Y       |
-|Regulator             |TA48M05F                       |Toshiba      |1        |Y       |
 |Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
-|Capacitor             |100 micro farad                |Rubycon      |1        |Y       |
-|Capacitor             |10 micro farad                 |Rubycon      |2        |Y       |
-|Capacitor             |470 micro farad                |Rubycon      |1        |N       |
-|Capacitor             |200 micro farad                |Rubycon      |1        |N       |
+|Capacitor             |100 micro farad (for servo motor)               |Rubycon      |1        |Y       |
+|Capacitor             |10 micro farad (for photo micro sensors)                |Rubycon      |1        |Y       |
+|Capacitor             |47 micro farad (for TA48M033F)                |Rubycon      |1        |Y       |
+|Capacitor             |0.1 micro farad (for TA48M033F)               |             |1        |Y       |
 |Tempereature/humidity sensor            |[AE-HDC1000](http://akizukidenshi.com/catalog/g/gM-08775/)                        |Akizuki/TI    |1        |N        |
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
@@ -88,7 +87,8 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Terminal block        |2pin                           |             |4        |Y       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |AA X 4 (6V)                    |             |1        |Y       |
+|Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |N       |
+|Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|   1 |N  |
 |Toggle switch         |                             |             |1        |Y       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
 |Vanila shield and pin headers #2|                         |             |1        |Y       |
@@ -248,19 +248,19 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 ###Electric power for the toy
 
-The power source is AA battery 1.5V * 4 = 6V:
-- 6V to the motors via TA7291P motor drivers
-- 6V -> 5V to Arduino via TA48M05F
-- 6V -> 3.3V to ESP-WROOM-02 via TA48M033F
+The power source is AA battery 1.5V * 6 = 9V:
+- 9V to Arduino Uno
+- 9V to the motors via TA7291P motor drivers
+- 9V -> 3.3V to ESP-WROOM-02 via TA48M033F
 
 ```
-Battery 6V --+-- TA7291P(0 ~ 3V) --> Motor#1
-             |
-             +-- TA7291P(0 ~ 3V) --> Motor#2
-             |
-             +-- TA48M05F(6V -> 5V) --> Arduino Uno
-             |
-             +-- TA48M033F(6V -> 3.3V) --> ESP-WROOM-02
+Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
+                      |
+                      +-- TA7291P(0 ~ 3V) --> Motor#1
+                      |
+                      +-- TA7291P(0 ~ 3V) --> Motor#2
+                      |
+                      +-- TA48M033F(3.3V) --> ESP-WROOM-02
 ```
 
 ###Serial communication between Arduino Uno and ESP-WROOM-02
