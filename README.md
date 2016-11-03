@@ -302,14 +302,10 @@ Sendind a command "1210090" to the toy with mqtt.js:
 $ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
 ```
 
-###IoT platform
+### Future work
 
+Currently, this is just a plan:
 - Apache ZooKeeper for thing management (i.e., toy management in this project)
 - Apache Kafka for data buffering
 - Apache Cassandra, MongoDB etc for data collection
 - Apache Spark, IPython etc for data analysis
-
-###Networking
-
-- Inter-device: Serial(USB) and WiFi
-- Device to IoT platform: WiFi
