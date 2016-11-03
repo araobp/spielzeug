@@ -88,7 +88,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 |Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |N       |
-|Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|   1 |N  |
+|Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|  | 1 |N  |
 |Toggle switch         |                             |             |1        |Y       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
 |Vanila shield and pin headers #2|                         |             |1        |Y       |
