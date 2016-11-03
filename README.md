@@ -267,7 +267,7 @@ Battery 6V --+-- TA7291P(0 ~ 3V) --> Motor#1
 
 ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
-![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=960&h=720)
+![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
 
 #### Connecting Arduino Uno to ESP-WROOM-02
 
