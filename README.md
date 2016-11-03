@@ -283,9 +283,11 @@ Since ESP-WROOM-02 uses 3.3V, 5V at TxD on Arduino Uno is pulled down to 3.3V wi
 ```
 
 Voltage at Txd on Arduino Uno:
+
 ![5V](./doc/5V.png)
 
 Voltage at Rx on ESP-WROOM-02:
+
 ![3.3V](./doc/3.3v.png)
 
 #### Connecting Arduino Uno to ESP-WROOM-02
