@@ -267,28 +267,7 @@ Battery 6V --+-- TA7291P(0 ~ 3V) --> Motor#1
 
 ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
-Since ESP-WROOM-02 uses 3.3V, 5V at TxD on Arduino Uno is pulled down to 3.3V with registors:
-
-```
- RPi3       ESP-WROOM-02                    Arduino Uno
-+---+          +----+                          +----+
-|   |          |    |                          |    |
-|   |          |    o- Tx --------------> RxD -o    |
-|   +-- WiFi --+    |          UART            |    |
-|   |          |    o- Rx <--o- 10k ohm - TxD -o    |
-|   |          |    |        |                 |    |
-+---+          +----+     20k ohm              +----+
-                             |
-                            GND
-```
-
-Voltage at Txd on Arduino Uno:
-
-![5V](./doc/5V.png)
-
-Voltage at Rx on ESP-WROOM-02:
-
-![3.3V](./doc/3.3v.png)
+![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=960&h=720)
 
 #### Connecting Arduino Uno to ESP-WROOM-02
 
