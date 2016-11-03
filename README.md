@@ -275,13 +275,7 @@ This is my work:
 
 ![work](./doc/work.png)
 
-Arduino Uno is connected to ESP-WROOM-02 via bi-directional logic level converter:
-
-![logiclevel](./doc/logiclevel.png)
-
 JSON stream from Arduino Uno to MQTT server on Raspberry Pi 3 via ESP-WROOM-02:
-
-Receiving events from the toy with mqtt.js:
 ```
 $ ./mqtt.js sub -t event
 {"device_id":"18:FE:34:EF:53:69","event":230025}
