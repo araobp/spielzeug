@@ -265,24 +265,26 @@ Battery 6V --+-- TA7291P(0 ~ 3V) --> Motor#1
 
 ###Serial communication between Arduino Uno and ESP-WROOM-02
 
-ESP-WROOM-02 and Arduino Uno use UART (Serial) to communicate with each other.
+ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
-Since ESP-WROOM-02 uses 3.3V, a logic level converter is inserted between them.
+Since ESP-WROOM-02 uses 3.3V, 5V at TxD on Arduino Uno is pulled down to 3.3V with registors:
 
 ```
- RPi3       ESP-WROOM-02      FXMA108 w/      Arduino Uno
-                          bypass capacitors
-+---+          +----+   3.3V ->o----o<- 5V     +----+
-|   |          |    |          |    |          |    |
-|   |          |    o- Tx---------------- RxD -o    |
-|   +-- WiFi --+    |  UART    |    |     UART |    |
-|   |          |    o- Rx------o    o---- TxD -o    |
-|   |          |    |          |    |          |    |
-+---+          +----+    GND --o----o-- OE     +----+
-                
- OE is grounded via a 10k ohm pull down register.
- 
+ RPi3       ESP-WROOM-02                    Arduino Uno
++---+          +----+                          +----+
+|   |          |    |                          |    |
+|   |          |    o- Tx --------------> RxD -o    |
+|   +-- WiFi --+    |          UART            |    |
+|   |          |    o- Rx <--o- 10k ohm - TxD -o    |
+|   |          |    |        |                 |    |
++---+          +----+     20k ohm              +----+
+                             |
+                            GND
 ```
+
+![5V](./doc/5V.png)
+
+![3.3V](./doc/3V.png)
 
 #### Connecting Arduino Uno to ESP-WROOM-02
 
