@@ -269,11 +269,11 @@ ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
 ![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
 
-The voltage at TxD on Arduino Uno:
+The voltage(5V) at TxD on Arduino Uno:
 
 ![5V](./doc/5V.png)
 
-The voltage at RxD on ESP-WROOM-02:
+The voltage(3.3V) at RxD on ESP-WROOM-02:
 
 ![3.3v](./doc/3.3v.png)
 
