@@ -150,6 +150,8 @@ Vcc = 5(V)
 
 ![shield_and_tank](./doc/shield_and_tank.png)
 
+Vs = Vref = 9V
+
 |unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
 |------|---------|-----|---|---|----|
 |1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 100(*)|0  |0 ~ +3|
