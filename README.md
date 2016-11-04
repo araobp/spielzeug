@@ -142,11 +142,9 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 #####Motor control
 
-(I am replacing AAX3 battery box with AAX4 one right now)
-
 ```
 TA7291P input/output voltage:
-Vs = Vref = 4.5(V)
+Vs = Vref = 9(V)
 Vcc = 5(V)
 ```
 
@@ -154,20 +152,22 @@ Vcc = 5(V)
 
 |unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
 |------|---------|-----|---|---|----|
-|1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 255|0  |0 ~ +3|
-|0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 255|0 ~ -3|
+|1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 100(*)|0  |0 ~ +3|
+|0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 100(*)|0 ~ -3|
 |1(right) or 2(left)|2(break)        |ANY  |0  |0  |0   |
 |1(right) or 2(left)|1(reverse) is not accepted|- |- |- |- |
 
-write(1), motor(1), right(1), forward(0), Vref level(255)
+(*) to be adjusted to the level corresponding to max 3V.
+
+write(1), motor(1), right(1), forward(0), Vref level(100)
 ```
-1110255\n
+1110100\n
 ```
 ![motor_forward](./doc/motor_forward.png)
 
-write(1), motor(1), right & left(0), reverse(1), Vref level(255)
+write(1), motor(1), right & left(0), reverse(1), Vref level(100)
 ```
-1101255\n
+1101100\n
 ```
 write(1), motor(1), right(1), break(2), Vref level(000)
 ```
@@ -211,7 +211,7 @@ read(0), proximity sensor(3), unit#0(0)
 
 #####Events detected by proximity sensors
 
-Arduino Uno emits distance info events every 5 seconds.
+Arduino Uno as the main controller emits distance info events every 5 seconds.
 
 event(2), proximity sensor(3), unit#0(0), value(073)
 ```
