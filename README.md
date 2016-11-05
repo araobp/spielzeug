@@ -128,7 +128,8 @@ The trajectory of the robot:
 Running distance: 10 <- counts from photo-micor sensors
 Orientation at the goal: North-east <- geomagnetic sensor
 
-Speed/direction control: use proximity sensors and a gyro sensor to determin the speed/direction at the point.
+Speed/direction control: use proximity sensors and a gyro sensor
+to determin the speed/direction at the point.
 ```
 
 ### Autonomous robot control
