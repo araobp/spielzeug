@@ -101,6 +101,10 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 ![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=960&h=600)
 
+### Sensors/actuators
+
+The robot is equipped with proximity sensors(ultra-sonic and infrared ones), a pair of photo micro sensors, a gyro sensor, a temperature sensor, motor drivers(TA7291P) and LEDs.
+
 ###Chassis
 
 I am very good at paper craft, so I use paper with wood glue and acrylic paint to make a chassis of the toy:
@@ -318,11 +322,3 @@ Sendind a command "1210090" to the toy with mqtt.js:
 ```
 $ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
 ```
-
-### Future work
-
-Currently, this is just a plan:
-- Apache ZooKeeper for thing management (i.e., toy management in this project)
-- Apache Kafka for data buffering
-- Apache Cassandra, MongoDB etc for data collection
-- Apache Spark, IPython etc for data analysis
