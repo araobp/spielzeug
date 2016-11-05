@@ -103,7 +103,37 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 ### Sensors/actuators
 
-The robot is equipped with proximity sensors(ultra-sonic and infrared ones), a pair of photo micro sensors, a gyro sensor, a temperature sensor, motor drivers(TA7291P) and LEDs.
+The robot is equipped with proximity sensors(ultra-sonic and infrared ones), a pair of photo micro sensors, a geomagnetic sensor, a gyro sensor, a temperature sensor, motor drivers(TA7291P) and LEDs.
+
+The trajectory of the robot:
+```
+                           Goal
+                           10
+                          /
+                         +9
+                        /
+                       +8
+                      /
+           4+--+--+--+7
+            |  5  6
+            +3
+            |
+            +2
+            |
+            +1
+            |
+            0
+          Start
+
+Running distance: 10 <- counts from photo-micor sensors
+Orientation at the goal: North-east <- geomagnetic sensor
+
+Speed/direction control: use proximity sensors and a gyro sensor to determin the speed/direction at the point.
+```
+
+### Autonomous robot control
+
+I am considering to apply some sort of feedback algorithm for the control.
 
 ###Chassis
 
