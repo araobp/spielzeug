@@ -75,8 +75,8 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
-|Geomagnetic/temperature sensor    |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|N|
-|Gyro sensor           |[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |N        |
+|Geomagnetic           |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|N|
+|Gyro/temperature sensor|[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |N        |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |N       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
