@@ -79,6 +79,8 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Gyro/temperature sensor|[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |N        |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |N       |
+|Transistor            |2SC1815                        |Tosihba      |1        |N       |
+|MOSFET                |2SK2232                        |Toshiba      |1        |N       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
 |Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
@@ -91,6 +93,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |N       |
 |Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|  | 1 |N  |
 |Toggle switch         |                             |             |1        |Y       |
+|Tactile switch        |                             |Alps         |2        |N       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
 |Vanila shield and pin headers #2|                         |             |1        |Y       |
 
@@ -135,6 +138,13 @@ to determin the speed/direction at the point.
 ### Autonomous robot control
 
 I am considering to apply some sort of feedback algorithm for the control.
+
+
+### Main power switch
+
+I am going to use a toggle switch as a main power switch.
+
+I am also considering using a transistor and MOSFET as a sub power switch unit that is controlled by ESP-WROOM-02.
 
 ###Chassis
 
