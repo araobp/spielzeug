@@ -104,7 +104,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 ### Circuit diagram
 
-![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=960&h=600)
+![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
 
 ### Sensors/actuators
 
