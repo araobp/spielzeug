@@ -146,6 +146,8 @@ I am going to use a toggle switch as a main power switch.
 
 I am also considering using a transistor and MOSFET as a sub power switch unit that is controlled by ESP-WROOM-02.
 
+![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
+
 ###Chassis
 
 I am very good at paper craft, so I use paper with wood glue and acrylic paint to make a chassis of the toy:
