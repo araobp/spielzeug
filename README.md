@@ -67,7 +67,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |WiFi module           |[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview)|Espressif|1|Y|
 |Logic level converter |[8bit bidrectional logic level converter (FXMA408)](http://akizukidenshi.com/catalog/g/gM-04522/)|Akizuki Denshi|1        |Y       |
 |Regulator             |TA48M033F                      |Toshiba      |1        |Y       |
-|Servo motor           |Micro serve g9 SG90            |Tower Pro    |1        |Y       |
+|Servo motor           |Micro servo g9 SG90            |Tower Pro    |1        |Y       |
 |Capacitor             |100 micro farad (for servo motor)               |Rubycon      |1        |Y       |
 |Capacitor             |10 micro farad (for photo micro sensors)                |Rubycon      |1        |Y       |
 |Capacitor             |47 micro farad (for TA48M033F)                |Rubycon      |1        |Y       |
