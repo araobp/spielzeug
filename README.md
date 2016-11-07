@@ -141,11 +141,9 @@ to determin the speed/direction at the point.
 I am considering to apply some sort of feedback algorithm for the control.
 
 
-### Main power switch
+### Power switch control
 
-I am going to use a toggle switch as a main power switch.
-
-I am also considering using a transistor and MOSFET as a sub power switch unit that is controlled by ESP-WROOM-02.
+I use an inverter (or a transistor) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
 
 ![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
 
