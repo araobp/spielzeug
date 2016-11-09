@@ -148,6 +148,7 @@ I use an inverter (or a transistor) and MOSFET to control the power supply to Ar
 
 ![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
 
+The flip-flop circuit is like this (I am going to confirm that the circuit really works):
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
 
 ###Chassis
