@@ -144,11 +144,12 @@ I am considering to apply some sort of feedback algorithm for the control.
 
 ### Power switch control
 
-I use an inverter (or a transistor) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
+I am going to use an inverter IC (SN74HC14N) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
 
 ![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
 
 The flip-flop circuit is like this (I am going to confirm that the circuit really works):
+
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
 
 ###Chassis
