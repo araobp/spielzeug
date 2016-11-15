@@ -142,15 +142,17 @@ to determin the speed/direction at the point.
 I am considering to apply some sort of feedback algorithm for the control.
 
 
-### Power switch control
+### Power switch control for emergency stop
 
-I am going to use an inverter IC (SN74HC14N) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
+I use an inverter IC (SN74HC14N) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
 
 ![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
 
-The flip-flop circuit is like this (I am going to confirm that the circuit really works):
+The flip-flop circuit works as emergecy stop:
 
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
+
+When ESP-WROOM-02 has been started, the GPIO is set to HIGH to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn them off to stop the motor driver. Push the switch again to turn them on.
 
 ###Chassis
 
