@@ -151,6 +151,8 @@ The flip-flop circuit works as emergecy stop:
 
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
 
+I have confirmed that the circuit works: [the test result](./doc/FLIPFLOP.md).
+
 When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
 
 ###Chassis
