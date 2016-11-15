@@ -75,14 +75,13 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Proxymity sensor      |[HC-SR04](http://www.micropik.com/PDF/HCSR04.pdf)|SainSmart    |1        |Y       |
 |Proxymity sensor      |[GP2Y0A21YK0F](http://www.sharpsma.com/webfm_send/1489)|Sharp   |2       |Y       |
 |Photo micro sensor    |[EE-SX460-P1](https://www.omron.com/ecb/products/pdf/en-ee_sx460_p1.pdf)|Omron |2   |Y   |
-|Geomagnetic           |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|N|
-|Gyro/temperature sensor|[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |N        |
+|Geomagnetic           |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|Y|
+|Gyro/temperature sensor|[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |Y        |
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |N       |
-|Transistor            |2SC1815                        |Tosihba      |1        |N       |
+|Transistor            |[2SC1815](http://akizukidenshi.com/download/2sc1815-gr.pdf) |Tosihba      |1        |Y       |
 |MOSFET                |2SK2232                        |Toshiba      |1        |N       |
-|Inverter IC           |[SN74HC04N](http://www.ti.com/lit/ds/symlink/sn54hc04.pdf)|Texas Instruments|1    |N       |
-|Schmitt-triger inverter IC|[SN74HC14N](http://www.ti.com/lit/ds/symlink/sn54hc14.pdf)|Texas Instruments|1    |N       |
+|Schmitt-triger inverter IC|[SN74HC14N](http://www.ti.com/lit/ds/symlink/sn54hc14.pdf)|Texas Instruments|1    |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
 |Track and wheel       |[Track and wheel set 70100](http://www.tamiya.com/japan/kousaku/k_products/70100_t&w.htm)|Tamiya       |1        |Y       |
@@ -92,10 +91,10 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Terminal block        |2pin                           |             |4        |Y       |
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
-|Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |N       |
+|Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |Y       |
 |Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|  | 1 |N  |
 |Toggle switch         |                             |             |1        |Y       |
-|Tactile switch        |                             |Alps         |2        |N       |
+|Tactile switch        |                             |Alps         |2        |Y       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
 |Vanila shield and pin headers #2|                         |             |1        |Y       |
 
@@ -152,7 +151,7 @@ The flip-flop circuit works as emergecy stop:
 
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
 
-When ESP-WROOM-02 has been started, the GPIO is set to HIGH to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
+When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
 
 ###Chassis
 
