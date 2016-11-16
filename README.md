@@ -78,7 +78,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Geomagnetic           |[AE-HMC5883L](http://akizukidenshi.com/catalog/g/gK-09705/)|Akizuki/Honywell|1|Y|
 |Gyro/temperature sensor|[AE-L3GD20](http://akizukidenshi.com/catalog/g/gK-06779/)|Akizuki / ST micro|1        |Y        |
 |LED(red)              |                               |             |1        |Y       |
-|LED(blue)             |                               |             |1        |N       |
+|LED(blue)             |                               |             |1        |Y       |
 |Transistor            |[2SC1815](http://akizukidenshi.com/download/2sc1815-gr.pdf) |Tosihba      |1        |Y       |
 |MOSFET                |[2SK2232](http://akizukidenshi.com/download/2sk2232.pdf)    |Toshiba      |1        |Y       |
 |Schmitt-triger inverter IC|[SN74HC14N](http://www.ti.com/lit/ds/symlink/sn54hc14.pdf)|Texas Instruments|1    |Y       |
@@ -92,7 +92,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |Registers             |                               |             |many     |Y       |
 |Cables                |                               |             |many     |Y       |
 |Battery box           |[AA X 6 (9V)](http://akizukidenshi.com/catalog/g/gP-10611/) |             |1        |Y       |
-|Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|  | 1 |N  |
+|Battery snap          |[BS-IC](http://akizukidenshi.com/catalog/g/gP-00452/)|  | 1 |Y  |
 |Toggle switch         |                             |             |1        |Y       |
 |Tactile switch        |                             |Alps         |2        |Y       |
 |Vanila shield and pin headers #1|                         |             |1        |Y       |
