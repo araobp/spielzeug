@@ -80,7 +80,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 |LED(red)              |                               |             |1        |Y       |
 |LED(blue)             |                               |             |1        |N       |
 |Transistor            |[2SC1815](http://akizukidenshi.com/download/2sc1815-gr.pdf) |Tosihba      |1        |Y       |
-|MOSFET                |2SK2232                        |Toshiba      |1        |N       |
+|MOSFET                |[2SK2232](http://akizukidenshi.com/download/2sk2232.pdf)    |Toshiba      |1        |Y       |
 |Schmitt-triger inverter IC|[SN74HC14N](http://www.ti.com/lit/ds/symlink/sn54hc14.pdf)|Texas Instruments|1    |Y       |
 |Motor driver          |[TA7291P](http://www.promelec.ru/pdf/ta7291p.pdf)|Toshiba      |2        |Y        |
 |Double gearbox        |[Double gearbox 70168](http://www.tamiya.com/japan/products/70168double_gearbox/)|Tamiya       |1        |Y       |
