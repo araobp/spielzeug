@@ -4,26 +4,35 @@ extern "C" {
 #include<ESP8266WiFi.h>
 #include <PubSubClient.h>
 
+#define PIN_STARTED 12
 #define PIN_LED 13
 
 #define TOPIC_EVENT "event"
 
 // WiFi setup
-const char* ssid = "****";
-const char* password = "****";
+const char* ssid = "******";
+const char* password = "******";
 
 // MQTT server
-const char* mqtt_server = "192.168.***.***";
+const char* mqtt_server = "***.***.***.***";
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
 void setup(){
-  pinMode(PIN_LED,OUTPUT);
+  pinMode(PIN_LED, OUTPUT);
+  pinMode(PIN_STARTED, OUTPUT);
   Serial.begin(9600);
+
+  // Setup WiFi and MQTT
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
+  
+  // Start Arduino Uno and TA7291P
+  digitalWrite(PIN_STARTED, HIGH);
+  delay(200);
+  digitalWrite(PIN_STARTED, LOW);
 }
 
 byte mac[6];
