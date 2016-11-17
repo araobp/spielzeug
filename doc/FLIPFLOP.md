@@ -20,6 +20,6 @@
 
 ## Integration with power MOSFET
 
-The red LED is turned on just after ESP-WROOM-02 has been started.
+The red LED is turned on just after ESP-WROOM-02 has been started. The red LED can be turned off by pushing the black tactile switch, and it can be turned on again by pushing the switch.
 
 ![power_mosfet](./power_mosfet.png)
