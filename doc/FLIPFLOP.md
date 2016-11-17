@@ -1,5 +1,7 @@
 # Flip-flop circuit
 
+## Testing the circuit
+
 ### Initial state
 
 ![flipflop1](./flipflop1.png)
@@ -15,3 +17,9 @@
 
 ### Push the tactile switch again (flop)
 ![flipflop5](./flipflop5.png)
+
+## Integration with power MOSFET
+
+The red LED is turned on just after ESP-WROOM-02 has been started.
+
+![power_mosfet](./power_mosfet.png)
