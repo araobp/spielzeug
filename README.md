@@ -58,10 +58,6 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 [Parts list](./doc/PARTS.md)
 
-### Circuit diagram for sensors and actuators
-
-![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
-
 ### Sensors/actuators
 
 The robot is equipped with proximity sensors(ultra-sonic and infrared ones), a pair of photo micro sensors, a geomagnetic sensor, a gyro sensor, a temperature sensor, motor drivers(TA7291P) and LEDs.
@@ -93,10 +89,13 @@ Speed/direction control: use proximity sensors and a gyro sensor
 to determin the speed/direction at the point.
 ```
 
+### Circuit diagram for sensors and actuators
+
+![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
+
 ### Autonomous robot control
 
 I am considering to apply some sort of feedback algorithm for the control.
-
 
 ### Power switch control for emergency stop
 
