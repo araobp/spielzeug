@@ -22,11 +22,7 @@ I am also interested in PLC(Programmable Logic Controller) such as [MELSEC](http
 
 ####Current status
 
-September 12th, 2016.
-
-![model001a](./doc/model001a.png)
-![model001b](./doc/model001b.png)
-![model001d](./doc/model001d.png)
+[September 12th, 2016](./doc/CURRENT_STATUS.md)
 
 ##Infrastructure
 
