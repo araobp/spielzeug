@@ -2,6 +2,10 @@
 
 ![robot_eyes](./doc/robot_eyes.png)
 
+## Background and motivation
+
+Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about noises like "how much money you can make from the thing?".
+
 ##Goal
 
 I often see robots at museums on weekends.
