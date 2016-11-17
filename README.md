@@ -4,9 +4,11 @@
 
 ## Background and motivation
 
-Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about noises like "how much money you can make from the thing?".
+The world of IoT is surrounded by a number of critics and a few of engineers who actually get their hands dirty.
 
-##Goal
+Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about the noise from critics.
+
+## Goal
 
 I often see robots at museums on weekends.
 
@@ -21,36 +23,36 @@ I want to make a toy robot on my own.
 
 I am also interested in PLC(Programmable Logic Controller) such as [MELSEC](http://www.mitsubishielectric.com/fa/products/cnt/plc/). Arduino Uno is something like a tiny version of PLC anyway, so I use Arduino Uno as a controller for a robot.
 
-####Model 001
+#### Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=630&h=400)
 
-####Current status
+#### Current status
 
 [September 12th, 2016](./doc/CURRENT_STATUS.md)
 
 ##Infrastructure
 
-###Device
+### Device
 
-####Arduino Uno (AVR ATmega16U2)
+#### Arduino Uno (AVR ATmega16U2)
 
 Main controller.
 
 [pic of my arduino-uno](./doc/arduino-uno.png)
 
-####Original shield for Arduino Uno
+#### Original shield for Arduino Uno
 
 Control unit for motors.
 
 ![shield](./doc/shield.png)
 
-####Raspberry Pi (ARM Cortex-A53)
+#### Raspberry Pi (ARM Cortex-A53)
 
 "IoT gateway" for connectivity to the Internet.
 
 [pic of my rpi3](./doc/rpi3.png)
 
-####WiFi module
+#### WiFi module
 
 [ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) as an additional micro controller as well as for connectivity to the IoT gateway.
 
@@ -115,13 +117,13 @@ I have confirmed that the circuit works: [the test result](./doc/FLIPFLOP.md).
 
 When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
 
-###Chassis
+### Chassis
 
 I am very good at paper craft, so I use paper with wood glue and acrylic paint to make a chassis of the toy:
 
 ![chassis](./doc/chassis.png)
 
-###Protocol between Rapsberry Pi and Arudino Uno
+### Protocol between Rapsberry Pi and Arudino Uno
 
 I use Raspberry Pi 3 as a remote controller of the robot. The remote controller sends commands to the robot via WiFi or USB cable. The controller also receives events from the robot.
 
@@ -137,7 +139,7 @@ Events
 
 ![arduino-rpi](./doc/arduino-rpi.png)
 
-####Commands(Request/Response)
+#### Commands(Request/Response)
 
 Command format:
 ```
@@ -149,7 +151,7 @@ Acknowledgement:
 - Setter commands return OK(0) or NG(-1)
 - Getter commands return a requested value
 
-#####LED(pin13) control
+##### LED(pin13) control
 
 write(1), led_pin13(0), unit#0(0), plus(0), high(001)
 ```
@@ -160,7 +162,7 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 ```
 1000000\n
 ```
-#####Motor control
+##### Motor control
 
 ```
 TA7291P input/output voltage:
@@ -195,7 +197,7 @@ write(1), motor(1), right(1), break(2), Vref level(000)
 ```
 1112000\n
 ```
-#####Servo motor control
+##### Servo motor control
 
 write(1), servo motor(2), unit#1(1), plus(0), 90 degrees(090)
 ```
@@ -221,7 +223,7 @@ The following is PWM images captured by Sain Smart DSO Note II(DS202):
 
 ![ds202_3](./doc/ds202_1.png)
 
-#####Proximity sensor
+##### Proximity sensor
 
 read(0), proximity sensor(3), unit#0(0)
 ```
@@ -229,9 +231,9 @@ read(0), proximity sensor(3), unit#0(0)
 ```
 ![proximity_sensors](./doc/proximity_sensors.png)
 
-####Events
+#### Events
 
-#####Events detected by proximity sensors
+##### Events detected by proximity sensors
 
 Arduino Uno as the main controller emits distance info events every 5 seconds.
 
@@ -250,7 +252,7 @@ event(2), proximity sensor(3), unit#2(2), value(033)
 232033\n
 ```
 
-#####Events detected by photo micro sensors (Omron EE-SX-460-P1)
+##### Events detected by photo micro sensors (Omron EE-SX-460-P1)
 
 event(2), photo micro sensor(4), right(1), high(001)
 ```
@@ -268,7 +270,7 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 ![photo_micro](./doc/photo_micro.png)
 
-###Electric power for the toy
+### Electric power for the toy
 
 The power source is AA battery 1.5V * 6 = 9V:
 - 9V to Arduino Uno
@@ -285,7 +287,7 @@ Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
                       +-- TA48M033F(3.3V) --> ESP-WROOM-02
 ```
 
-###Serial communication between Arduino Uno and ESP-WROOM-02
+### Serial communication between Arduino Uno and ESP-WROOM-02
 
 ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
