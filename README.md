@@ -8,6 +8,15 @@ The world of IoT is surrounded by a number of critics and a few of engineers who
 
 Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about the noise from critics.
 
+## IoT definition
+
+I think, from a standpoint of IoT users, there are two types of IoThings:
+
+- "Unified Systems" unifying vertically integrated existing systems with the cloud.
+- Robots and sensors taking a person's duty, managed by an application on the cloud.
+
+But IoToys definition is very flexible...
+
 ## Goal
 
 I often see robots at museums on weekends.
