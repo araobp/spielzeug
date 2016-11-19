@@ -138,6 +138,8 @@ ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
 
 ![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
 
+I do not use the logic level converter for this direction "ESP-WROOM-02 TxD => Arduino Uno RxD", for [this reason](https://github.com/araobp/spielzeug/issues/2).
+
 The voltage(5V) at TxD on Arduino Uno:
 
 ![5V](./doc/5V.png)
