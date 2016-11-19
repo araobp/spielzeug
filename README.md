@@ -106,7 +106,13 @@ to determin the speed/direction at the point.
 
 ### Circuit diagram for sensors and actuators
 
+#### Sensors/actuators connected to Arduino Uno
+
 ![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
+
+#### Sensors connected to ESP-WROOM-02
+
+![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=480&h=300)
 
 ### Autonomous robot control
 
