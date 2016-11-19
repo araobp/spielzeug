@@ -104,7 +104,7 @@ Speed/direction control: use proximity sensors and a gyro sensor
 to determin the speed/direction at the point.
 ```
 
-### Circuit diagram for sensors and actuators
+### Circuit diagrams
 
 #### Sensors/actuators connected to Arduino Uno
 
@@ -114,11 +114,7 @@ to determin the speed/direction at the point.
 
 ![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=680&h=400)
 
-### Autonomous robot control
-
-I am considering to apply some sort of feedback algorithm for the control.
-
-### Power switch control for emergency stop
+#### Power switch control for emergency stop
 
 I use an inverter IC (SN74HC14N) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
 
