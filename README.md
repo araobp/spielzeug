@@ -132,7 +132,21 @@ I have confirmed that the circuit works: [the test result](./doc/FLIPFLOP.md).
 
 When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
 
-### Electric power for the toy
+### Serial communication between Arduino Uno and ESP-WROOM-02
+
+ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
+
+![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
+
+The voltage(5V) at TxD on Arduino Uno:
+
+![5V](./doc/5V.png)
+
+The voltage(3.3V) at RxD on ESP-WROOM-02:
+
+![3.3v](./doc/3.3v.png)
+
+### Electric power supply
 
 The power source is AA battery 1.5V * 6 = 9V:
 - 9V to Arduino Uno
@@ -148,20 +162,6 @@ Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
                       |
                       +-- TA48M033F(3.3V) --> ESP-WROOM-02
 ```
-
-### Serial communication between Arduino Uno and ESP-WROOM-02
-
-ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
-
-![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
-
-The voltage(5V) at TxD on Arduino Uno:
-
-![5V](./doc/5V.png)
-
-The voltage(3.3V) at RxD on ESP-WROOM-02:
-
-![3.3v](./doc/3.3v.png)
 
 ### Chassis
 
