@@ -116,7 +116,7 @@ Arduino Uno is a main micro controller for the robot. Most of sensors/actuators 
 
 I use ESP8266 as a micro controller for I2C sensors that require Vdd (3.3V).
 
-![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=680&h=400)
+![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=510&h=300)
 
 #### Power switch control for emergency stop
 
