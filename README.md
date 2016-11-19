@@ -112,7 +112,7 @@ to determin the speed/direction at the point.
 
 #### Sensors connected to ESP-WROOM-02
 
-![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=480&h=300)
+![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=680&h=400)
 
 ### Autonomous robot control
 
