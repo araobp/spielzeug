@@ -8,16 +8,23 @@ The world of IoT is surrounded by a number of critics and a few of engineers who
 
 Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about the noise from critics.
 
-## IoT definition
+## My IoT definition
 
 I think, from a standpoint of IoT users, there are two types of IoThings:
 
 - "Unified Systems" unifying vertically integrated existing systems with the cloud.
 - Robots and sensors taking a person's duty, managed by an application on the cloud.
 
-But IoToys definition is very flexible...
+## Technologies for IoT PoC (Proof-of-Concept)
 
-## Goal
+Since this project is not for a commercial IoT service, I use technologies/components targetting IoT hobby in this project, such as:
+- Arduino Uno (AVR)
+- ESP-WROOM-02 (ESP8266)
+- Arduino IDE
+- NodeMCU (I am planning to use it later on)
+- And electronic components　I can purchase in Akihabara or on Amazon.
+
+## Goal of this project
 
 I often see robots at museums on weekends.
 
