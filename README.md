@@ -108,25 +108,60 @@ to determin the speed/direction at the point.
 
 #### Sensors/actuators connected to Arduino Uno
 
+Arduino Uno is a main micro controller for the robot. Most of sensors/actuators for the robot are connected to Arduino Uno.
+
 ![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
 
 #### Sensors connected to ESP-WROOM-02
+
+I use ESP8266 as a micro controller for I2C sensors that require Vdd (3.3V).
 
 ![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=680&h=400)
 
 #### Power switch control for emergency stop
 
-I use an inverter IC (SN74HC14N) and MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
+I use an inverter IC (SN74HC14N) and a power MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
 
 ![switches](https://docs.google.com/drawings/d/142T6dvYpsqCeAjY8CEPyFbnrM0wG-Z_mCg9EFyrUCuY/pub?w=680&h=400)
 
-The flip-flop circuit works as emergecy stop:
+The flip-flop circuit works as emergecy stop.
 
 ![flip-flop](https://docs.google.com/drawings/d/1nohxvKnRK1qy8eH2Y72xueg6zDirNLbzRaSeWqpTgeo/pub?w=480&h=270)
 
 I have confirmed that the circuit works: [the test result](./doc/FLIPFLOP.md).
 
 When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
+
+### Electric power for the toy
+
+The power source is AA battery 1.5V * 6 = 9V:
+- 9V to Arduino Uno
+- 9V to the motors via TA7291P motor drivers
+- 9V -> 3.3V to ESP-WROOM-02 via TA48M033F
+
+```
+Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
+                      |
+                      +-- TA7291P(0 ~ 3V) --> Motor#1
+                      |
+                      +-- TA7291P(0 ~ 3V) --> Motor#2
+                      |
+                      +-- TA48M033F(3.3V) --> ESP-WROOM-02
+```
+
+### Serial communication between Arduino Uno and ESP-WROOM-02
+
+ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
+
+![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
+
+The voltage(5V) at TxD on Arduino Uno:
+
+![5V](./doc/5V.png)
+
+The voltage(3.3V) at RxD on ESP-WROOM-02:
+
+![3.3v](./doc/3.3v.png)
 
 ### Chassis
 
@@ -280,38 +315,6 @@ event(2), photo micro sensor(4), left(2), low(000)
 My toy has just been equipped with Omron's photo micro sensors:
 
 ![photo_micro](./doc/photo_micro.png)
-
-### Electric power for the toy
-
-The power source is AA battery 1.5V * 6 = 9V:
-- 9V to Arduino Uno
-- 9V to the motors via TA7291P motor drivers
-- 9V -> 3.3V to ESP-WROOM-02 via TA48M033F
-
-```
-Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
-                      |
-                      +-- TA7291P(0 ~ 3V) --> Motor#1
-                      |
-                      +-- TA7291P(0 ~ 3V) --> Motor#2
-                      |
-                      +-- TA48M033F(3.3V) --> ESP-WROOM-02
-```
-
-### Serial communication between Arduino Uno and ESP-WROOM-02
-
-ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
-
-![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
-
-The voltage(5V) at TxD on Arduino Uno:
-
-![5V](./doc/5V.png)
-
-The voltage(3.3V) at RxD on ESP-WROOM-02:
-
-![3.3v](./doc/3.3v.png)
-
 
 #### Connecting Arduino Uno to ESP-WROOM-02
 
