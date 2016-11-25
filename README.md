@@ -125,6 +125,8 @@ I use ESP8266 as a micro controller for I2C sensors that require Vdd (3.3V).
 
 ![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=510&h=300)
 
+I have made [test code](./misc/esp_i2c) for those I2C devices.
+
 #### Power switch control for emergency stop
 
 I use an inverter IC (SN74HC14N) and a power MOSFET to control the power supply to Arduino Uno and the motor driver TA7291P.
