@@ -25,7 +25,7 @@ float Xoff=0.0;
 float Yoff=0.0;
 
 // set X-axis/Y-axix scale factor
-void set_calibration_constants(int16_t x_max, int16_t x_min, int16_t y_max, int16_t y_min) {
+void set_constants(int16_t x_max, int16_t x_min, int16_t y_max, int16_t y_min) {
   int16_t x_sf = (y_max - y_min) / (x_max - x_min);
   if (x_sf > 1.0) {
     Xsf = x_sf;
