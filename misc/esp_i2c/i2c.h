@@ -19,3 +19,4 @@ void i2c_write(byte device_address, byte register_address, byte data)
   Wire.write(data);
   Wire.endTransmission(false);
 }
+
