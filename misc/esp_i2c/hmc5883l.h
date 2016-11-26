@@ -7,16 +7,16 @@
 const byte HMC5883L = 0x1E;
 
 // Register list
-#define X_MSB_REG 0x03
-#define X_LSB_REG 0x04
-#define Z_MSB_REG 0x05
-#define Z_LSB_REG 0x06
-#define Y_MSB_REG 0x07
-#define Y_LSB_REG 0x08
+const byte X_MSB_REG = 0x03;
+const byte X_LSB_REG = 0x04;
+const byte Z_MSB_REG = 0x05;
+const byte Z_LSB_REG = 0x06;
+const byte Y_MSB_REG = 0x07;
+const byte Y_LSB_REG = 0x08;
 
 // Mode
-#define MODE_REGISTER 0x02
-#define CONTINUOUS_MEASUREMENT 0x00
+const byte MODE_REGISTER = 0x02;
+const byte CONTINUOUS_MEASUREMENT = 0x00;
 
 // constants for calibration
 float Xsf=1.0;
