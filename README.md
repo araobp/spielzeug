@@ -125,6 +125,8 @@ I use ESP8266 as a micro controller for I2C sensors that require Vdd (3.3V).
 
 ![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=510&h=300)
 
+![i2c_devices2](./doc/i2c_devices2.png)
+
 I have made [test code](./misc/esp_i2c) for those I2C devices and [calibrated HMC5883L](./doc/HMC5883L.md).
 
 #### Power switch control for emergency stop
