@@ -4,24 +4,24 @@
 const byte L3GD20 = B1101011;
 
 // Register list
-#define WHO_AM_I 0x0f
-#define OK 0xd4
-#define CTRL_REG1 0x20
-#define OUT_TEMP 0x26
-#define OUT_X_L 0x28
-#define OUT_X_H 0x29
-#define OUT_Y_L 0x2a
-#define OUT_Y_H 0x2b
-#define OUT_Z_L 0x2c
-#define OUT_Z_H 0x2d
+const byte WHO_AM_I = 0x0f;
+const byte RES_OK = 0xd4;
+const byte CTRL_REG1 = 0x20;
+const byte OUT_TEMP = 0x26;
+const byte OUT_X_L = 0x28;
+const byte OUT_X_H = 0x29;
+const byte OUT_Y_L = 0x2a;
+const byte OUT_Y_H = 0x2b;
+const byte OUT_Z_L = 0x2c;
+const byte OUT_Z_H = 0x2d;
 
-#define ENABLE 0x0f  // power on
-#define SENSIVITY 0.00875  // as per the L3GD20 datasheet
+const byte ENABLE = 0x0f;  // power on
+const float SENSIVITY = 0.00875;  // as per the L3GD20 datasheet
 
 // initialize the device
 void init_l3gd20() {
   byte who = i2c_read(L3GD20, WHO_AM_I);
-  if (who == OK) {
+  if (who == RES_OK) {
     Serial.println("L3GD20 WHO_AM_I OK");
   } else {
     Serial.println("L3GD20 WHO_AM_I NG");
@@ -31,7 +31,8 @@ void init_l3gd20() {
 
 // get temperature
 int8_t get_temp() {
-  return (int8_t)i2c_read(L3GD20, OUT_TEMP);
+  byte t = i2c_read(L3GD20, OUT_TEMP);
+  return (int8_t)t;
 }
 
 // get motion
