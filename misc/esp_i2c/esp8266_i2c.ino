@@ -16,7 +16,7 @@ void setup()
   Wire.begin();  // ESP8266: IO4 SDA, IO5 SCL
   Serial.begin(9600);
   delay(1000);
-  init_hmc5883l;  // initialize HMC5883L
+  init_hmc5883l();  // initialize HMC5883L
   init_l3gd20();  // initialize L3GD20
 }
 
