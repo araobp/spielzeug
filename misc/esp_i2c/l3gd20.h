@@ -5,6 +5,7 @@ const byte L3GD20 = B1101011;
 
 // Register list
 #define WHO_AM_I 0x0f
+#define OK 0xd4
 #define CTRL_REG1 0x20
 #define OUT_TEMP 0x26
 #define OUT_X_L 0x28
@@ -20,7 +21,11 @@ const byte L3GD20 = B1101011;
 // initialize the device
 void init_l3gd20() {
   byte who = i2c_read(L3GD20, WHO_AM_I);
-  Serial.println(who);
+  if (who == OK) {
+    Serial.println("L3GD20 WHO_AM_I OK");
+  } else {
+    Serial.println("L3GD20 WHO_AM_I NG");
+  }
   i2c_write(L3GD20, CTRL_REG1, ENABLE);
 }
 
