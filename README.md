@@ -21,8 +21,8 @@ Since this project is not for a commercial IoT service, I use technologies/compo
 - Arduino Uno (AVR)
 - ESP-WROOM-02 (ESP8266)
 - Arduino IDE
-- [NodeMCU](http://nodemcu.com/index_en.html) (I am planning to use it later on)
 - And electronic components　I can purchase in Akihabara or on Amazon.
+- Raspberry Pi 3 Model B (ARM/Broadcom)
 
 ## Goal of this project
 
