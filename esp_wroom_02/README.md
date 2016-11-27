@@ -25,6 +25,8 @@ PubSubClient.h
 
 ### MQTT message monitoring at Raspberry Pi 3
 
+Note: I am changing the message format from JSON to CSV now (in the form of "deviceId,data,data,data...").
+
 ```
 pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t temp
 {"device_id":"5C:CF:7F:08:29:F3","temp":19}
