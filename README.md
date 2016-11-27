@@ -364,6 +364,5 @@ $ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
 
 ## Future work
 
-- I am interested in [NodeMCU](http://www.nodemcu.com/index_en.html)
-- TensorFlow for feedback control?
+Use TensorFlow for feedback control.
 
