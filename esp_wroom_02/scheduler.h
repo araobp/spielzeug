@@ -38,7 +38,7 @@ void set_tasks(Function task_a, Function task_b, Function task_c) {
 }
 
 // call this function from loop() to execute periodic tasks
-void periodic_tasks() {
+void scheduler_loop() {
   // Periodic tasks
   now = millis();
   // TIMER_A
