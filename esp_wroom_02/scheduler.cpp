@@ -3,14 +3,6 @@
 
 // task scheduller
 
-// timers
-const unsigned long TIMER_A = 100; // 100 msec
-const unsigned long TIMER_B = 1000; // 1sec
-const unsigned long TIMER_C = 5000; // 5sec
-
-// function pointer
-typedef void (*Function) ();
-
 // null tasks
 void null_task_a() {};
 void null_task_b() {};
