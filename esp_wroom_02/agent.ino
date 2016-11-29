@@ -3,7 +3,7 @@ extern "C" {
 }
 #include<ESP8266WiFi.h>
 #include <PubSubClient.h>
-
+#include <Wire.h>
 #include "scheduler.h"
 
 // I2C devices
@@ -36,7 +36,7 @@ WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
 // get data from I2C devices
-void i2c() {
+void get_data_i2c() {
   int8_t t = get_temp();
   double r = get_radian();
   int16_t x = get_motion('x');
@@ -70,7 +70,7 @@ void setup(){
   init_l3gd20();  // initialize L3GD20
 
   // periodic tasks
-  set_tasks(NULL, NULL, i2c);
+  set_tasks(NULL, NULL, get_data_i2c);
     
   // Start Arduino Uno and TA7291P
   digitalWrite(PIN_STARTED, HIGH);
@@ -151,4 +151,3 @@ void loop() {
     }
   }
 }
-
