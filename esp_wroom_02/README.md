@@ -1,6 +1,6 @@
 # ESP-WROOM-02
 
-I use ESP-WROOM-02 as an additional micro controller as well as WiFi module for Arduino.
+I use ESP-WROOM-02 as a main MCU for the robot.
    
 ## MQTT messaging
 
@@ -21,21 +21,6 @@ PubSubClient.h
 //#ifndef MQTT_VERSION
 //#define MQTT_VERSION MQTT_VERSION_3_1_1
 //#endif
-```
-
-### MQTT message monitoring at Raspberry Pi 3
-
-Note: I am changing the message format from JSON to CSV now (in the form of "deviceId,data,data,data...").
-
-```
-pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t temp
-{"device_id":"5C:CF:7F:08:29:F3","temp":19}
-{"device_id":"5C:CF:7F:08:29:F3","temp":20}
-{"device_id":"5C:CF:7F:08:29:F3","temp":19}
-{"device_id":"5C:CF:7F:08:29:F3","temp":19}
-{"device_id":"5C:CF:7F:08:29:F3","temp":19}
-{"device_id":"5C:CF:7F:08:29:F3","temp":18}
-                :
 ```
 
 ## Test code: MQTT-Serial relay
