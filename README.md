@@ -329,6 +329,18 @@ My toy has just been equipped with Omron's photo micro sensors:
 
 ![photo_micro](./doc/photo_micro.png)
 
+##### Events from I2C sensors (3.3V)
+
+events(3), temperature(5), plus(0), value(023)
+
+events(3), geomagnetic(6), minus(1), value(056)
+
+events(4), gyroscope(7), x(0), plus(1), value(00023)
+
+events(4), gyroscope(7), y(1), minus(1), value(00345)
+
+events(4), gyroscope(7), z(2), minus(1), value(00006)
+
 #### Connecting Arduino Uno to ESP-WROOM-02
 
 This is my work:
