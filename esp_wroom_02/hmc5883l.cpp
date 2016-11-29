@@ -72,3 +72,8 @@ double get_radian(void)
   // return radian
   return atan2((double)y, (double)x);
 }
+
+// get direction in degree
+int16_t get_degree() {
+  return (int16_t)(get_radian() * 180 / PI);
+}
