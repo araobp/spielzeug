@@ -25,6 +25,10 @@ extern "C" {
 // MQTT topic
 #define TOPIC_EVENT "event"
 
+// Sign
+#define PLUS '0'
+#define MINUS '1'
+
 // WiFi setup
 const char* ssid = "****";
 const char* password = "****";
@@ -35,10 +39,31 @@ const char* mqtt_server = "192.168.***.***";
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
+char sign8(int8_t v) {
+  char s;
+  if (v > 0) {
+    s = PLUS;
+  } else {
+    s = MINUS;
+  }
+  return s;
+}
+
+char sign16(int16_t v) {
+  char s;
+  if (v > 0) {
+    s = PLUS;
+  } else {
+    s = MINUS;
+  }
+  return s;
+}
+
 // get data from I2C devices
 void get_data_i2c() {
   int8_t t = get_temp();
   double r = get_radian();
+  int16_t d = get_degree();
   int16_t x = get_motion('x');
   int16_t y = get_motion('y');
   int16_t z = get_motion('z');
@@ -49,6 +74,9 @@ void get_data_i2c() {
   Serial.println(y);
   Serial.println(z);
   Serial.println("---");
+  char event[256];
+  sprintf(event, "35%c%03d,36%c%03d\0", sign8(t), abs(t), sign16(d), abs(d)); 
+  publish(event);
 }
 
 void setup(){
@@ -123,7 +151,7 @@ void publish(char* event) {
   //012345678901234567890123456789012345678901234
   //AA:BB:CC:DD:EE:FF,DDDDDD
   char msg[44];
-  sprintf(msg, "device_id,%s,%s", mac_addr, event);
+  sprintf(msg, "%s,%s", mac_addr, event);
   client.publish(TOPIC_EVENT, msg); 
 }
 
