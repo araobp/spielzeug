@@ -4,7 +4,9 @@ extern "C" {
 #include<ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include <Wire.h>
+#include "lan.h"
 #include "scheduler.h"
+#include "protocol.h"
 
 // I2C devices
 #include "i2c.h"
@@ -22,25 +24,15 @@ extern "C" {
 #define PIN_STARTED 12
 #define PIN_LED 13
 
+
 // MQTT topic
 #define TOPIC_EVENT "event"
-
-// Sign
-#define PLUS '0'
-#define MINUS '1'
-
-// WiFi setup
-const char* ssid = "****";
-const char* password = "****";
-
-// MQTT server
-const char* mqtt_server = "192.168.***.***";
 
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
-char sign8(int8_t v) {
-  char s;
+int sign8(int8_t v) {
+  int s;
   if (v > 0) {
     s = PLUS;
   } else {
@@ -49,8 +41,8 @@ char sign8(int8_t v) {
   return s;
 }
 
-char sign16(int16_t v) {
-  char s;
+int sign16(int16_t v) {
+  int s;
   if (v > 0) {
     s = PLUS;
   } else {
@@ -59,24 +51,32 @@ char sign16(int16_t v) {
   return s;
 }
 
-// get data from I2C devices
-void get_data_i2c() {
+// get data from I2C devices (category 1)
+void get_data_i2c_dev1() {
   int8_t t = get_temp();
   double r = get_radian();
   int16_t d = get_degree();
+  Serial.println(t);
+  Serial.println(r);
+  Serial.println(d);
+  Serial.println("---");
+  char event_i2c_dev1[13];
+  sprintf(event_i2c_dev1, "%d%d%d%03d,%d%d%d%03d\0,", EVENT_I2C_DEV1, TEMPERATURE, sign8(t), abs(t), EVENT_I2C_DEV1, GYROSCOPE, sign16(d), abs(d)); 
+  publish(event_i2c_dev1);
+}
+
+// get data from I2C devices (category2)
+void get_data_i2c_dev2() {
   int16_t x = get_motion('x');
   int16_t y = get_motion('y');
   int16_t z = get_motion('z');
-  Serial.println(r);
-  Serial.println("-");
-  Serial.println(t);
   Serial.println(x);
   Serial.println(y);
   Serial.println(z);
   Serial.println("---");
-  char event[256];
-  sprintf(event, "35%c%03d,36%c%03d\0", sign8(t), abs(t), sign16(d), abs(d)); 
-  publish(event);
+  char event_i2c_dev2[28];
+  sprintf(event_i2c_dev2, "%d%d%d%d%05d,%d%d%d%d%05d,%d%d%d%d%05d\0,", EVENT_I2C_DEV2, GYROSCOPE, X, sign16(x), abs(x), EVENT_I2C_DEV2, GYROSCOPE, Y, sign16(y), abs(y), EVENT_I2C_DEV2, GYROSCOPE, Z, sign16(z), abs(z)); 
+  publish(event_i2c_dev2);
 }
 
 void setup(){
@@ -88,7 +88,7 @@ void setup(){
 
   // setup WiFi and MQTT
   setup_wifi();
-  client.setServer(mqtt_server, 1883);
+  client.setServer(MQTT_SERVER, MQTT_PORT);
   client.setCallback(callback);
  
   // setup I2C devices
@@ -98,7 +98,7 @@ void setup(){
   init_l3gd20();  // initialize L3GD20
 
   // periodic tasks
-  set_tasks(NULL, NULL, get_data_i2c);
+  set_tasks(NULL, get_data_i2c_dev2, get_data_i2c_dev1);
     
   // Start Arduino Uno and TA7291P
   digitalWrite(PIN_STARTED, HIGH);
@@ -108,18 +108,18 @@ void setup(){
 }
 
 byte mac[6];
-char mac_addr[18];
+char mac_addr[13];
 
 void setup_wifi() {
   delay(100);
-  WiFi.begin(ssid, password);
+  WiFi.begin(WIFI_SSID, PASSWORD);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println(".");
   }
   Serial.println(WiFi.localIP());
   WiFi.macAddress(mac);
-  sprintf(mac_addr, "%02X:%02X:%02X:%02X:%02X:%02X",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]); 
+  sprintf(mac_addr, "%02X%02X%02X%02X%02X%02X",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]); 
   Serial.println(mac_addr);
 }
 
@@ -147,9 +147,6 @@ void callback(char* topic, byte* payload, unsigned int len) {
 
 // publish a message to MQTT server
 void publish(char* event) {
-  //0         1         2         3         4
-  //012345678901234567890123456789012345678901234
-  //AA:BB:CC:DD:EE:FF,DDDDDD
   char msg[44];
   sprintf(msg, "%s,%s", mac_addr, event);
   client.publish(TOPIC_EVENT, msg); 
