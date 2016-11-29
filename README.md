@@ -341,7 +341,9 @@ events(4), gyroscope(7), y(1), minus(1), value(00345)
 
 events(4), gyroscope(7), z(2), minus(1), value(00006)
 
-Event stream from ESP-WROOM-02:
+#####　Example of event stream from ESP-WROOM-02 to MQTT server on Raspberry Pi 3
+
+Events from I2C devices on ESP-WROOM-02:
 ```
 $ ./mqtt.js sub -t event
 18FE34EF5369,350023,370157
@@ -359,38 +361,29 @@ $ ./mqtt.js sub -t event
      :
 ```
 
+Events from sensors on Arduino Uno via ESP-WROOM-02:
+```
+$ ./mqtt.js sub -t event
+18FE34EF5369,230025
+18FE34EF5369,231035
+18FE34EF5369,232033
+18FE34EF5369,230036
+18FE34EF5369,231037
+18FE34EF5369,232034
+18FE34EF5369,230036
+18FE34EF5369,231045
+18FE34EF5369,232035
+18FE34EF5369,230036
+18FE34EF5369,231037
+18FE34EF5369,232035
+       :
+```
+
 #### Connecting Arduino Uno to ESP-WROOM-02
 
 This is my work:
 
 ![work](./doc/work.png)
-
-JSON stream from Arduino Uno to MQTT server on Raspberry Pi 3 via ESP-WROOM-02:
-```
-$ ./mqtt.js sub -t event
-{"device_id":"18:FE:34:EF:53:69","event":230025}
-{"device_id":"18:FE:34:EF:53:69","event":231035}
-{"device_id":"18:FE:34:EF:53:69","event":232033}
-{"device_id":"18:FE:34:EF:53:69","event":230036}
-{"device_id":"18:FE:34:EF:53:69","event":231037}
-{"device_id":"18:FE:34:EF:53:69","event":232034}
-{"device_id":"18:FE:34:EF:53:69","event":230036}
-{"device_id":"18:FE:34:EF:53:69","event":231045}
-{"device_id":"18:FE:34:EF:53:69","event":232035}
-{"device_id":"18:FE:34:EF:53:69","event":230036}
-{"device_id":"18:FE:34:EF:53:69","event":231037}
-{"device_id":"18:FE:34:EF:53:69","event":232035}
-{"device_id":"18:FE:34:EF:53:69","event":230038}
-{"device_id":"18:FE:34:EF:53:69","event":231046}
-{"device_id":"18:FE:34:EF:53:69","event":232035}
-{"device_id":"18:FE:34:EF:53:69","event":230034}
-                    :
-```
-
-Sendind a command "1210090" to the toy with mqtt.js:
-```
-$ ./mqtt.js pub -t 18:FE:34:EF:53:69 1210090
-```
 
 ## Future work
 
