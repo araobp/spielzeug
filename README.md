@@ -341,7 +341,7 @@ events(4), gyroscope(7), y(1), minus(1), value(00345)
 
 events(4), gyroscope(7), z(2), minus(1), value(00006)
 
-#####　Example of event stream from ESP-WROOM-02 to MQTT server on Raspberry Pi 3
+#####Example of event stream from ESP-WROOM-02 to MQTT server on Raspberry Pi 3
 
 Events from I2C devices on ESP-WROOM-02:
 ```
