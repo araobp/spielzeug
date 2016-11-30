@@ -48,33 +48,29 @@ I am also interested in PLC(Programmable Logic Controller) such as [MELSEC](http
 
 ##Infrastructure
 
-### Device
+### Controller units
 
-#### Arduino Uno (AVR ATmega16U2)
+#### Main controller : ESP-WROOM-02
 
-Main controller.
-
-[pic of my arduino-uno](./doc/arduino-uno.png)
-
-#### Original shield for Arduino Uno
-
-Control unit for motors.
-
-![shield](./doc/shield.png)
-
-#### Raspberry Pi (ARM Cortex-A53)
-
-"IoT gateway" for connectivity to the Internet.
-
-[pic of my rpi3](./doc/rpi3.png)
-
-#### WiFi module
-
-[ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) as an additional micro controller as well as for connectivity to the IoT gateway.
+I use [ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/overview) as a main controller as well as for connectivity to MQTT server:
 
 ![esp-wroom-02](./doc/esp-wroom-02.png)
 
 Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx) and [Akizuki Denshi](http://akizukidenshi.com/catalog/g/gK-09758/).
+
+#### Peripheral controller : Arduino Uno (AVR ATmega16U2)
+
+[pic of my arduino-uno](./doc/arduino-uno.png)
+
+I have also developed an original actuator shield for Arduino Uno to control a servo motor and DC motors:
+
+![shield](./doc/shield.png)
+
+#### Remote controller : Raspberry Pi 3 (ARM Cortex-A53)
+
+MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
+
+[pic of my rpi3](./doc/rpi3.png)
 
 ### Parts
 
