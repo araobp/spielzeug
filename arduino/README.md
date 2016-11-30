@@ -1,10 +1,10 @@
 # Agent for Arduino Uno
 
 ```
-Arduino Uno                        RaspberryPi 3
-  [ agent ]<--------- USB ---------->[ agent ]<------ The Internet ------>[IoT platform]
-      |                                  |
-  sensors                             sensors
-  actuators                           LEDs
+Arduino Uno          ESP-WROOM-02
+  [ agent ]<---UART--->[ agent ]<---MQTT--->[ mosquitto ]
+      |                    |
+  sensors              sensors
+  actuators            LEDs
   LEDs
 ```
