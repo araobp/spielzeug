@@ -1,14 +1,12 @@
-# ESP-WROOM-02
+#ESP-WROOM-02
 
 I use ESP-WROOM-02 as a main MCU for the robot.
-   
-## MQTT messaging
 
-```
-ESP-WROOM-02 ---- topic: temp ----> mosquitto on Raspberry Pi 3
-```
+##Agent
 
-### MQTT lib
+I have developed an [agent](./agent.ino) that runs on ESP-WROOM-02 to control the robot.
+
+###MQTT lib
 
 Download and unzip this in Arduino IDE's libralies folder:
 https://github.com/knolleary/pubsubclient
@@ -23,29 +21,17 @@ PubSubClient.h
 //#endif
 ```
 
-## Test code: MQTT-Serial relay
+##MQTT messaging
 
-[code](./agent.ino)
-
+The agent collects data from each sensor devices and send it to MQTT server on Raspberry Pi 3:
+```
+ESP-WROOM-02 ---- topic: temp ----> mosquitto on Raspberry Pi 3
 ```
 
-  Serial <==> [wifi_serial.ino / ESP-WROOM-02] <==> [MQTT Server / Raspberry Pi 3] <==> MQTT client
+##MQTT-UART bridge
 
+The agent also works as a MQTT-UART bridge between sensors/actuators on Arduino Uno and Mosquitto/RaspberryPi:
 ```
+[Sensors&actuators/ArduinoUno]TxD/RxD<---UART--->RxD/TxD[ESP-WROOM-02]<---MQTT--->[Mosquitto/RaspberryPi]
 
-```
-pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js sub -t event
-{"device_id":"5C:CF:7F:08:29:F3","event":1}
-{"device_id":"5C:CF:7F:08:29:F3","event":123}
-{"device_id":"5C:CF:7F:08:29:F3","event":test}
-                :
-```
-
-```
-pi@raspberrypi:~/node_modules/mqtt $ node mqtt.js pub -t 5C:CF:7F:08:29:F3 test
-
-
-On the serial monitor,
-
-test
 ```
