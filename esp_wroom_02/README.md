@@ -21,17 +21,27 @@ PubSubClient.h
 //#endif
 ```
 
-##MQTT messaging
-
-The agent collects data from each sensor devices and send it to MQTT server on Raspberry Pi 3:
-```
-ESP-WROOM-02 ---- topic: temp ----> mosquitto on Raspberry Pi 3
-```
-
 ##MQTT-UART bridge
 
 The agent also works as a MQTT-UART bridge between sensors/actuators on Arduino Uno and Mosquitto/RaspberryPi:
 ```
-[Sensors&actuators/ArduinoUno]TxD/RxD<---UART--->RxD/TxD[ESP-WROOM-02]<---MQTT--->[Mosquitto/RaspberryPi]
+[sensors&actuators/ArduinoUno]TxD/RxD<---UART--->RxD/TxD[ESP-WROOM-02]<---MQTT--->[Mosquitto/RaspberryPi]<--> MQTT client
 
+```
+
+##MQTT messaging
+
+The agent collects data from each sensor devices and send it to MQTT server on Raspberry Pi 3:
+```
+[sensorss/ArduinoUno]---UART--->[agent/ESP-WROOM-02]--- MQTT topic: "event" --->[mosquitto/RaspberryPi]--> MQTT client
+                                    ^
+                                    |
+                                   I2C
+                                    |
+                                [sensors]
+```
+
+The agent also receives data from MQTT server and transfers it to Arduino Uno to control actuators.
+```
+[actuators/ArduinoUno]<---UART---[agent/ESP-WROOM-02]<--- MQTT topic: "<mac address>" ---[mosquitto/RaspberryPi]<-- MQTT client
 ```
