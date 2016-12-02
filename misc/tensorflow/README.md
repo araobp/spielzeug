@@ -57,11 +57,9 @@ beaver (score = 0.03204)
 hare (score = 0.01051)
 ```
 
-
-
 ####Cars
 
-Sample image1: https://media.ed.edmunds-media.com/lexus/is-250/2014/oem/2014_lexus_is-250_sedan_base_fq_oem_3_423.jpg
+Lexus IS 250: https://media.ed.edmunds-media.com/lexus/is-250/2014/oem/2014_lexus_is-250_sedan_base_fq_oem_3_423.jpg
 ```
 sports car, sport car (score = 0.35326)
 car wheel (score = 0.29320)
@@ -70,7 +68,7 @@ beach wagon, station wagon, wagon, estate car, beach waggon, station waggon, wag
 racer, race car, racing car (score = 0.01234)
 ```
 
-Sample image2: https://car.kurumagt.com/wp-content/uploads/2015/08/ivo20150017-300x205.jpg
+Nissan Note: https://car.kurumagt.com/wp-content/uploads/2015/08/ivo20150017-300x205.jpg
 ```
 minivan (score = 0.90877)
 minibus (score = 0.02228)
