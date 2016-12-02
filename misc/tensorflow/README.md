@@ -82,11 +82,3 @@ vacuum, vacuum cleaner (score = 0.00121)
 ```
 
 Nissan Note is not a mini van, but the shape is certainly like a mini van...
-
-##Jyputer
-
-###Installation
-
-```
-$ sudo pip install jupyter
-```
