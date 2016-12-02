@@ -19,6 +19,8 @@ beach wagon, station wagon, wagon, estate car, beach waggon, station waggon, wag
 vacuum, vacuum cleaner (score = 0.00121)
 ```
 
+Nissan Note is not a mini van, but the shape is certainly like a mini van...
+
 ##Jupyter for Raspberry Pi
 
 https://github.com/kleinee/jns
