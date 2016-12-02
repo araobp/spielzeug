@@ -101,4 +101,5 @@ $ jupyter-notebook --ip="*"
 
 ```
 $ sudo pip --no-cache-dir matplotlib
+$ sudo pip install scikit-image
 ```
