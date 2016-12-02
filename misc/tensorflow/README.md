@@ -101,6 +101,5 @@ $ jupyter-notebook --ip="*"
 
 ```
 $ sudo pip --no-cache-dir matplotlib
-$ sudo pip install atlas-devel lapack-devel blas-devel
 $ sudo pip install scikit-image
 ```
