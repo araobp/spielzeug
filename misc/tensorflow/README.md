@@ -4,11 +4,9 @@ I have installed TensorFlow on my Raspberry Pi 3 Model B.
 
 ##TensorFlow for Raspberry Pi
 
-###Installation
+###Installation and test
 
 https://github.com/samjabrahams/tensorflow-on-raspberry-pi
-
-###Test
 
 ```
 pi@raspberrypi:/usr/local/lib/python2.7/dist-packages/tensorflow/models/image/imagenet $ python classify_image.py
@@ -19,7 +17,7 @@ custard apple (score = 0.00141)
 earthstar (score = 0.00107)
 ```
 
-####Hamster
+###My hamster
 
 She is my hamster "Ruby" (her name is NOT Python).
 
@@ -63,7 +61,7 @@ beaver (score = 0.03204)
 hare (score = 0.01051)
 ```
 
-####Cars
+###Cars
 
 Lexus IS 250: https://media.ed.edmunds-media.com/lexus/is-250/2014/oem/2014_lexus_is-250_sedan_base_fq_oem_3_423.jpg
 ```
