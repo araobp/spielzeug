@@ -85,7 +85,20 @@ Nissan Note is not a mini van, but the shape is certainly like a mini van...
 
 ##Jupyter
 
+###Installation
+
 ```
 $ sudo pip install jupyter
+```
+
+###Running Juypter
+
+```
+$ jupyter-notebook --ip="*"
+```
+
+###Libraries
+
+```
 $ sudo pip --no-cache-dir matplotlib
 ```
