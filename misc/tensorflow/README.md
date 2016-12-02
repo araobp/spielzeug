@@ -22,6 +22,16 @@ fox squirrel, eastern fox squirrel, Sciurus niger (score = 0.01677)
 mousetrap (score = 0.01429)
 radiator (score = 0.00905)
 ```
+![ruby2](./ruby2.jpg)
+
+```
+pi@raspberrypi:/usr/local/lib/python2.7/dist-packages/tensorflow/models/image/imagenet $ python classify_image.py --image_file ~/tensorflow/ruby2.jpg
+hamster (score = 0.72409)
+wombat (score = 0.05403)
+black-footed ferret, ferret, Mustela nigripes (score = 0.04547)
+polecat, fitch, foulmart, foumart, Mustela putorius (score = 0.04081)
+weasel (score = 0.01739)
+```
 
 ####Nissan Note
 Sample image: https://car.kurumagt.com/wp-content/uploads/2015/08/ivo20150017-300x205.jpg
