@@ -1,5 +1,7 @@
 #TensorFlow
 
+I have installed TensorFlow on my Raspberry Pi 3 Model B.
+
 ##TensorFlow for Raspberry Pi
 
 ###Installation
@@ -8,9 +10,13 @@ https://github.com/samjabrahams/tensorflow-on-raspberry-pi
 
 ###Test
 
-Python script for recognizing images:
 ```
-pi@raspberrypi:/usr/local/lib/python2.7/dist-packages/tensorflow/models/image/imagenet $ python classify_image.py --image_file ~/tensorflow/ruby1.png
+pi@raspberrypi:/usr/local/lib/python2.7/dist-packages/tensorflow/models/image/imagenet $ python classify_image.py
+giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca (score = 0.89233)
+indri, indris, Indri indri, Indri brevicaudatus (score = 0.00859)
+lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens (score = 0.00264)
+custard apple (score = 0.00141)
+earthstar (score = 0.00107)
 ```
 
 ####Hamster
