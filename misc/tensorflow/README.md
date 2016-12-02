@@ -101,5 +101,6 @@ $ jupyter-notebook --ip="*"
 
 ```
 $ sudo pip --no-cache-dir matplotlib
+$ sudo apt-get install libblas-dev liblapack-dev libatlas-base-dev gfortran
 $ sudo pip install scikit-image
 ```
