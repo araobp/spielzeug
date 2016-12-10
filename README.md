@@ -72,6 +72,17 @@ MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
 
 [pic of my rpi3](./doc/rpi3.png)
 
+### Programming languages and IDEs
+
+|Controller        |Language              | IDE         | Role                  |
+|------------------|----------------------|-------------|-----------------------|
+|ESP8266           |Arduino lang(C/C++)   | Arduino IDE | Main controller       |
+|Arduino Uno       |Arduino lang(C/C++)   | Arduino IDE | Peripheral controller |
+|Raspberry Pi 3    |Java                  | BlueJ       | Robot manager         |
+|DELL PC (Core i7) |Java(or Scala)        | Eclipse     | Robot manager         |
+
+For code portability between my DELL PC(Windows) and Raspberry Pi, I use Java for robot management.
+
 ### Parts
 
 [Parts list](./doc/PARTS.md)
@@ -219,7 +230,7 @@ Vcc = 5(V)
 
 Vs = Vref = 9V
 
-|unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)| 
+|unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)|
 |------|---------|-----|---|---|----|
 |1(right) or 2(left)|0(forward)        |0 ~ 255  |0 ~ 100(*)|0  |0 ~ +3|
 |0(right & left)     |1(reverse)        |0 ~ 255  |0  |0 ~ 100(*)|0 ~ -3|
@@ -379,4 +390,3 @@ This is my work:
 ## Future work
 
 Use TensorFlow for feedback control.
-
