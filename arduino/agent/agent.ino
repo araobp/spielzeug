@@ -160,6 +160,25 @@ void periodic_task_c() {
 }
 
 void loop(){
+
+  // Periodic tasks
+  now = millis();
+  // TIMER_A
+  if (now - prev_a >= TIMER_A) {
+    periodic_task_a();
+    prev_a = prev_a + TIMER_A;
+  }
+  // TIMER_B
+  if (now - prev_b >= TIMER_B) {
+    periodic_task_b();
+    prev_b = prev_b + TIMER_B;
+  }
+  // TIMER_C
+  if (now - prev_c >= TIMER_C) {
+    periodic_task_c();
+    prev_c = prev_c + TIMER_C;
+  }
+
   if (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
     if (cmd != NULL) {
@@ -263,22 +282,5 @@ void loop(){
     }
   }
 
-  // Periodic tasks
-  now = millis();
-  // TIMER_A
-  if (now - prev_a >= TIMER_A) {
-    periodic_task_a();
-    prev_a = prev_a + TIMER_A;
-  }
-  // TIMER_B
-  if (now - prev_b >= TIMER_B) {
-    periodic_task_b();
-    prev_b = prev_b + TIMER_B;
-  }
-  // TIMER_C
-  if (now - prev_c >= TIMER_C) {
-    periodic_task_c();
-    prev_c = prev_c + TIMER_C;
-  }
-
 }
+
