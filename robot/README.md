@@ -15,3 +15,16 @@
 
 - [ESP-WROOM-02](./esp_wroom_02)
 - [Arduino-Uno](./arduino_uno)
+
+## Config management
+
+Connect your PC to the USB port (USB-UART bridge), then send a command to write config onto the built-in EEPROM of ESP8266:
+
+```
+   [PC]----- USB ----->[FTDI USB-UART bridge]--->[ESP8266]
+```
+
+Config command:
+```
+"c,<wifi_ssid>,<password>,<matt_server>,<mqtt_port>"
+```
