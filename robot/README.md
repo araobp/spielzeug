@@ -40,3 +40,5 @@ I use file sharing between my Windows10 PC and Raspberry Pi to share Java code:
 ```
 
 I use Eclipse on my Windows10 PC to write Java code and run it on Raspberry Pi.
+
+[Reference] http://www.opentechguides.com/how-to/article/raspberry-pi/86/shared-folder-windows.html
