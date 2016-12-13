@@ -9,7 +9,7 @@ struct Config {
   int mqtt_port;
 };
 
-void put_config(char* wifi_ssid, char* password, char* mqtt_server, int mqtt_port);
+void put_config(Config conf);
 
 Config get_config();
 

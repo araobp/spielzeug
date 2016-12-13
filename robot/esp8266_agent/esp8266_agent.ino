@@ -32,6 +32,10 @@ extern "C" {
 WiFiClient wifiClient;
 PubSubClient client(wifiClient);
 
+Config conf;
+byte mac[6];
+char mac_addr[13];
+
 int sign8(int8_t v) {
   int s;
   if (v > 0) {
@@ -80,6 +84,17 @@ void get_data_i2c_dev2() {
   publish(event_i2c_dev2);
 }
 
+void show_config() {
+  Serial.print("SSID: ");
+  Serial.println(conf.wifi_ssid);
+  Serial.print("Password: ");
+  Serial.println(conf.password);
+  Serial.print("MQTT server: ");
+  Serial.println(conf.mqtt_server);
+  Serial.print("MQTT port: ");
+  Serial.println(conf.mqtt_port);  
+}
+
 void setup(){
 
   // setup pins and serial interface
@@ -88,17 +103,10 @@ void setup(){
   Serial.begin(9600);
 
   // setup WiFi and MQTT
-  Config conf = get_config();
-  char *wifi_ssid = conf.wifi_ssid;
-  char *password = conf.password;
-  char *mqtt_server = conf.mqtt_server;
-  int mqtt_port = conf.mqtt_port;
-  Serial.println(wifi_ssid);
-  Serial.println(password);
-  Serial.println(mqtt_server);
-  Serial.println(mqtt_port);  
-  setup_wifi(wifi_ssid, password);
-  client.setServer(mqtt_server, mqtt_port);
+  conf = get_config();
+  Serial.println("<<Config from EEPROM>>");
+  show_config();
+  connect();
   client.setCallback(callback);
  
   // setup I2C devices
@@ -117,34 +125,63 @@ void setup(){
 
 }
 
-byte mac[6];
-char mac_addr[13];
-
-void setup_wifi(const char* wifi_ssid, const char* password) {
-  delay(100);
-  WiFi.begin(wifi_ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println(".");
-  }
-  Serial.println(WiFi.localIP());
-  WiFi.macAddress(mac);
-  sprintf(mac_addr, "%02X%02X%02X%02X%02X%02X",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]); 
-  Serial.println(mac_addr);
+// read config from EEPROM
+void read_config(char* event) {
+  char* wifi_ssid, password, mqtt_server;
+  int mqtt_port;
+  strtok(event, ",");
+  strcpy(conf.wifi_ssid, strtok(NULL, ","));
+  strcpy(conf.password, strtok(NULL, ","));
+  strcpy(conf.mqtt_server, strtok(NULL, ","));
+  conf.mqtt_port = atoi(strtok(NULL, ","));
+  put_config(conf);
 }
 
-void reconnect() {
-  while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    if (client.connect("ESP8266Client")) {
-      client.subscribe(mac_addr);
-      Serial.println("connected");
-    } else {
-      Serial.print("failed, rc=");
-      Serial.print(client.state());
-      Serial.println(" try again in 5 seconds");
-      delay(5000);
+// connect to WiFi access point and then MQTT server
+void connect() {
+  int state = 0;  // state machine: state 0
+  delay(2000);
+  while(1) {
+    if (Serial.available() > 0) {
+      WiFi.disconnect();
+      char event[256];
+      int len = Serial.readBytesUntil('\n', event, 256);
+      if (len > 0 && event[0] == 'c') {
+        read_config(event);
+        Serial.println("<Config changed>");
+        show_config();
+        state = 0;
+      }
     }
+    switch(state) {
+      case 0:
+        WiFi.begin(conf.wifi_ssid, conf.password);
+        delay(3000);
+        if (WiFi.status() == WL_CONNECTED) {
+          Serial.print("WiFi local IP: ");
+          Serial.println(WiFi.localIP());
+          WiFi.macAddress(mac);
+          sprintf(mac_addr, "%02X%02X%02X%02X%02X%02X",mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]); 
+          Serial.println(mac_addr);
+          client.setServer(conf.mqtt_server, conf.mqtt_port);
+          Serial.println("Attempting MQTT connection...");
+          state = 1;
+        } else {
+          Serial.println("Attempting WiFi connection...");
+        }
+        break;
+      case 1:
+        if (client.connect("ESP8266Client")) {
+          client.subscribe(mac_addr);
+          Serial.println("connected");
+          state = 2;
+        } else {
+          Serial.println(client.state());
+        }
+        delay(1000);
+        break;
+    }
+    if (state == 2) break;
   }
 }
 
@@ -165,7 +202,7 @@ void publish(char* event) {
 void loop() {
   
   if (!client.connected()) {
-    reconnect();
+    connect();
   }
   client.loop();
 
@@ -177,23 +214,12 @@ void loop() {
     int len = Serial.readBytesUntil('\n', event, 256);
 
     if (len > 0) {
-      if (event[0] == 'c') {    // config via USB port
-        char *wifi_ssid, *password, *mqtt_server;
-        int mqtt_port;
-        strtok(event, ",");
-        wifi_ssid = strtok(event, ",");
-        password = strtok(event, ",");
-        mqtt_server = strtok(event, ",");
-        mqtt_port = atoi(strtok(event, ","));
-        put_config(wifi_ssid, password, mqtt_server, mqtt_port);
-      } else {    // event from Arduino Uno
-        event[len-1] = NULL;
-        publish(event);
-        // blink LED
-        digitalWrite(PIN_LED, HIGH);
-        delay(200);
-        digitalWrite(PIN_LED, LOW);
-      }
+      event[len-1] = NULL;
+      publish(event);
+      // blink LED
+      digitalWrite(PIN_LED, HIGH);
+      delay(200);
+      digitalWrite(PIN_LED, LOW);
     }
   }
 }
