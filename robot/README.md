@@ -21,7 +21,8 @@
 Connect your PC to the USB port (USB-UART bridge), then send a command to write config onto the built-in EEPROM of ESP8266:
 
 ```
-   [PC]----- USB ----->[FTDI USB-UART bridge]--->[ESP8266]
+                                                 ESP8266
+   [PC]----- USB ----->[FTDI USB-UART bridge]--->[EEPROM]
 ```
 
 Config command:
