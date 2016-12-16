@@ -29,3 +29,4 @@ Config command:
 ```
 "c,<wifi_ssid>,<password>,<matt_server>,<mqtt_port>"
 ```
+
