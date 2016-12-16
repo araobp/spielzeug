@@ -122,13 +122,13 @@ to determin the speed/direction at the point.
 
 #### Sensors/actuators connected to Arduino Uno
 
-Arduino Uno is a main micro controller for the robot. Most of sensors/actuators for the robot are connected to Arduino Uno.
+Arduino Uno is a peripheral controller for the robot. Most of sensors/actuators for the robot are connected to Arduino Uno.
 
 ![circuit](https://docs.google.com/drawings/d/1W1SPfQz1a28t77bc4uBEEQULt6kQg9OV3ybjiGFNwjw/pub?w=640&h=400)
 
 #### Sensors connected to ESP-WROOM-02
 
-I use ESP8266 as a micro controller for I2C sensors that require Vdd (3.3V).
+I use ESP8266 as a main controller for the robot. It also controls I2C sensors that require Vdd (3.3V).
 
 ![circuit2](https://docs.google.com/drawings/d/18I_pgsZUnvplvQndcKiZdZVeY_VCXkdooMTkfAHKn44/pub?w=510&h=300)
 
@@ -291,7 +291,7 @@ read(0), proximity sensor(3), unit#0(0)
 
 ##### Events detected by proximity sensors
 
-Arduino Uno as the main controller emits distance info events every 5 seconds.
+Arduino Uno as a peripheral controller emits distance info events every 5 seconds.
 
 event(2), proximity sensor(3), unit#0(0), value(073)
 ```
