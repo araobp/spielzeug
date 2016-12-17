@@ -3,8 +3,8 @@
 ## Architecture
 
 ```
- Arduino Uno          ESP-WROOM-02
-  [ agent ]<---UART--->[ agent ]<---MQTT--->[ mosquitto ]
+ Arduino Uno          ESP-WROOM-02                             Raspberry Pi 3
+  [ agent ]<---UART--->[ agent ]<--MQTT-->[ mosquitto ]<--MQTT-->[ manager]
       |                    |
   sensors              sensors
   actuators            LEDs
@@ -13,8 +13,9 @@
 
 ## Code
 
-- [ESP-WROOM-02](./esp_wroom_02)
-- [Arduino-Uno](./arduino_uno)
+- [Agent for ESP-WROOM-02](./esp8266_agent)
+- [Agent for Arduino Uno](./arduino_agent)
+- [Manager on Raspberry Pi 3](./rpi)
 
 ## Config management
 
@@ -29,4 +30,3 @@ Config command:
 ```
 "c,<wifi_ssid>,<password>,<matt_server>,<mqtt_port>"
 ```
-
