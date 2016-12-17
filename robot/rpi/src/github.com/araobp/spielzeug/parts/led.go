@@ -2,7 +2,7 @@ package parts
 
 import (
 	"fmt"
-	"github.com/araobp/model001/util"
+	"github.com/araobp/spielzeug/util"
 	"log"
 	"time"
 )

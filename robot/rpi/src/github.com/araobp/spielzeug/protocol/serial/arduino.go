@@ -1,4 +1,4 @@
-package parts
+package protocol
 
 import (
 	"bufio"
@@ -17,37 +17,6 @@ func init() {
 		log.Print(err)
 	}
 }
-
-const (
-	READ  = "0"
-	WRITE = "1"
-)
-
-const (
-	LED              = "0"
-	MOTOR            = "1"
-	SERVO_MOTOR      = "2"
-	PROXIMITY_SENSOR = "3"
-)
-
-const (
-	RIGHT  = "0"
-	LEFT   = "1"
-	UNIT_0 = "0"
-	UNIT_1 = "1"
-)
-
-const (
-	FORWARD  = "0"
-	BACKWARD = "1"
-	PLUS     = "0"
-	MINUS    = "1"
-)
-
-const (
-	LED_LOW  = "000"
-	LED_HIGH = "001"
-)
 
 func control(command string) {
 	if port == nil {
