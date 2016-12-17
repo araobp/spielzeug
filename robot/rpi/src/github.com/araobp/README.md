@@ -1,10 +1,10 @@
 # Robot manager
 
-## Status
+## Programming language
 
-The current code is old. I use MQTT via WiFi to control the robot.
+Go lang is perfect for writing a multi-thread program running on a multi-core CPU such as ARM Cortex-A53.
 
-## Plan
+## Status as of 2016/12/18
 
-1. Support MQTT to control/manage the robot
-2. Add config management for WiFi and MQTT config
+I have started writing the manager part.
+
