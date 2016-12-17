@@ -66,7 +66,7 @@ void get_data_i2c_dev1() {
   Serial.println(d);
   Serial.println("---");
   char event_i2c_dev1[13];
-  sprintf(event_i2c_dev1, "%d%d%d%03d,%d%d%d%03d\0,", EVENT_I2C_DEV1, TEMPERATURE, sign8(t), abs(t), EVENT_I2C_DEV1, GYROSCOPE, sign16(d), abs(d)); 
+  sprintf(event_i2c_dev1, "%d%d%d%03d,%d%d%d%03d\0,", EVENT_I2C_DEV1, TEMPERATURE, sign8(t), abs(t), EVENT_I2C_DEV1, GEOMAGNETIC, sign16(d), abs(d)); 
   publish(event_i2c_dev1);
 }
 
