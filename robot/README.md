@@ -3,11 +3,15 @@
 ## Architecture
 
 ```
- Arduino Uno          ESP-WROOM-02                             Raspberry Pi 3
-  [ agent ]<---UART--->[ agent ]<--MQTT-->[ mosquitto ]<--MQTT-->[ manager]
-      |                    |
-  sensors              sensors
-  actuators            LEDs
+-- Arduino Uno -- -- ESP-WROOM-02 -- --------------- Raspberry Pi 3 -- - - - - - - - -
+
+   [agent]<---UART--->[agent]<--MQTT-->[mosquitto]<--MQTT-->[manager]-->[Apache Kafka]
+      |                  |
+    GPIO               GPIO
+     PWM                I2C
+      |                  |
+  sensors             sensors
+  actuators           LEDs
   LEDs
 ```
 
@@ -17,7 +21,13 @@
 - [Agent for Arduino Uno](./arduino_agent)
 - [Manager on Raspberry Pi 3](./rpi)
 
-## Config management
+## Sensor data streaming
+
+I am going to use Apache Kafka as a conduit to other services (e.g., Cassandra).
+
+I am also planning to use Apache ZooKeeper for device management.
+
+## Config management for ESP8266
 
 Connect your PC to the USB port (USB-UART bridge), then send a command to write config onto the built-in EEPROM of ESP8266:
 
