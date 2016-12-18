@@ -138,7 +138,7 @@ I use ESP8266 as a main controller for the robot. It also controls I2C sensors t
 
 ![i2c_devices2](./doc/i2c_devices2.png)
 
-I have made [test code](./misc/esp_i2c) for those I2C devices and [calibrated HMC5883L](./doc/HMC5883L_L3GD20.md).
+I have made [test code](./doc/esp_i2c) for those I2C devices and [calibrated HMC5883L](./doc/HMC5883L_L3GD20.md).
 
 #### Power switch control for emergency stop
 
