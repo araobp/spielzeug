@@ -4,7 +4,8 @@
 
 // timers
 const unsigned long TIMER_A = 100; // 100 msec
-const unsigned long TIMER_B = 1000; // 1sec
+//const unsigned long TIMER_B = 1000; // 1sec
+const unsigned long TIMER_B = 5000; // 5sec
 const unsigned long TIMER_C = 5000; // 5sec
 
 // function pointer
