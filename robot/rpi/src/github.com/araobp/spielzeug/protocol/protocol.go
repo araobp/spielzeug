@@ -1,7 +1,6 @@
 package protocol
 
 import (
-	_ "bufio"
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"log"
 	"strconv"
@@ -100,15 +99,16 @@ func Loop() {
 	select {}
 }
 
-func init() {
-	opts := MQTT.NewClientOptions().AddBroker(SERVER).SetClientID(CLIENT_ID)
+func Init(confPath string) {
+	conf := GetConfig(confPath)
+	opts := MQTT.NewClientOptions().AddBroker(conf.MqttServer).SetClientID(conf.MqttClientId)
 	client = MQTT.NewClient(opts)
 	token := client.Connect()
 	if token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}
 
-	token = client.Subscribe(TOPIC_EVENT, 0, handler)
+	token = client.Subscribe(conf.MqttTopicEvent, 0, handler)
 	if token.Wait() && token.Error() != nil {
 		panic(token.Error())
 	}

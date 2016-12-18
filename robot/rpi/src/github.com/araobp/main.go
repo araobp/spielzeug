@@ -5,5 +5,6 @@ import (
 )
 
 func main() {
+	protocol.Init("./conf.json")
 	protocol.Loop()
 }
