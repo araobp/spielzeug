@@ -43,3 +43,9 @@ const (
 	LED_LOW  = "000"
 	LED_HIGH = "001"
 )
+
+const (
+	X_AXIS = "0"
+	Y_AXIS = "1"
+	Z_AXIS = "2"
+)
