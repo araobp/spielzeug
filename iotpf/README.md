@@ -20,3 +20,6 @@ pi@raspberrypi:~/kafka_2.11-0.10.1.0/bin $ ./zookeeper-server-start.sh ../config
 pi@raspberrypi:~/kafka_2.11-0.10.1.0/bin $ ./kafka-server-start.sh ../config/server.properties
 ```
 
+## Apache Kafka for Golang
+
+https://github.com/confluentinc/confluent-kafka-go
