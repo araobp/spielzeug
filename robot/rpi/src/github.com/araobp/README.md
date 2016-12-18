@@ -8,7 +8,7 @@ Go lang is perfect for writing a multi-thread program running on a multi-core CP
 
 I have started writing the manager part.
 
-Here is an event log received by the manager:
+Here is events received by the manager:
 ```
 2016/12/18 21:51:20 Temperature: 22 (degrees Celsius)
 2016/12/18 21:51:20 Event received: 361007
