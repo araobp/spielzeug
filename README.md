@@ -24,6 +24,10 @@ Since this project is not for a commercial IoT service, I use technologies/compo
 - And electronic components　I can purchase in Akihabara or on Amazon.
 - Raspberry Pi 3 Model B (ARM/Broadcom)
 
+I also use several components from Apache to construct IoT platform for the robot:
+- Apache ZooKeeper
+- Apache Kafka
+
 ## Goal of this project
 
 I often see robots at museums on weekends.
