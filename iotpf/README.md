@@ -22,5 +22,4 @@ pi@raspberrypi:~/kafka_2.11-0.10.1.0/bin $ ./kafka-server-start.sh ../config/ser
 
 ## Apache Kafka for Golang
 
-https://github.com/confluentinc/confluent-kafka-go
-https://github.com/edenhill/librdkafka
+https://github.com/Shopify/sarama
