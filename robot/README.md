@@ -15,6 +15,10 @@
   LEDs
 ```
 
+You see that Internet of Things is just about data flow among things. Why do they misunderstand what IoT is about?
+
+Just focus on the networking aspects! GPIO, I2C, SPI, UART, IPv4, TCP, MQTT and Kafka.
+
 ## Code
 
 - [Agent for ESP-WROOM-02](./esp8266_agent)
