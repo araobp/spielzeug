@@ -1,6 +1,7 @@
 package protocol
 
 import (
+	"github.com/araobp/spielzeug/util"
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 	"log"
 	"strconv"
@@ -99,8 +100,7 @@ func Loop() {
 	select {}
 }
 
-func Init(confPath string) {
-	conf := GetConfig(confPath)
+func Init(conf util.Config) {
 	opts := MQTT.NewClientOptions().AddBroker(conf.MqttServer).SetClientID(conf.MqttClientId)
 	client = MQTT.NewClient(opts)
 	token := client.Connect()

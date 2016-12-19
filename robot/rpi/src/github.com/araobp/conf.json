@@ -1,6 +1,8 @@
 {
         "mqtt_server": "tcp://localhost:1883",
         "mqtt_client_id": "manager",
-        "mqtt_topic_event": "event"
+        "mqtt_topic_event": "event",
+        "kafka_server": "localhost:9092",
+        "kafka_topic": "robot"
 }
 

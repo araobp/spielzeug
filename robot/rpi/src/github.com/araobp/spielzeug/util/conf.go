@@ -1,4 +1,4 @@
-package protocol
+package util
 
 import (
 	"encoding/json"
@@ -10,6 +10,8 @@ type Config struct {
 	MqttServer     string `json:"mqtt_server"`
 	MqttClientId   string `json:"mqtt_client_id"`
 	MqttTopicEvent string `json:"mqtt_topic_event"`
+	KafkaServer    string `json:"kafka_server"`
+	KafkaTopic     string `json:"kafka_topic"`
 }
 
 func GetConfig(confPath string) Config {
