@@ -64,6 +64,8 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 #### Peripheral controller : Arduino Uno (AVR ATmega16U2)
 
+(I am currently migrating from Arduino Uno to PIC16F...)
+
 [pic of my arduino-uno](./doc/arduino-uno.png)
 
 I have also developed an original actuator shield for Arduino Uno to control a servo motor and DC motors:
@@ -75,6 +77,15 @@ I have also developed an original actuator shield for Arduino Uno to control a s
 MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
 
 [pic of my rpi3](./doc/rpi3.png)
+
+### Power supply board
+
+![power supply board1](.doc/power_circuit1.png)
+
+![power supply board2](.doc/power_circuit2.png)
+
+### I2C sensor board
+![i2c sensor board](.doc/i2c_circuit.png)
 
 ### Programming languages and IDEs
 
