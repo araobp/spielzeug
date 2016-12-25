@@ -62,13 +62,13 @@ I use [ESP-WROOM-02](http://espressif.com/en/products/hardware/esp-wroom-02/over
 
 Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx) and [Akizuki Denshi](http://akizukidenshi.com/catalog/g/gK-09758/).
 
-#### Peripheral controller : Arduino Uno (AVR ATmega16U2)
+#### Peripheral controller : PIC16F1825
 
-(I am currently migrating from Arduino Uno to PIC16F...)
+I am currently migrating from Arduino Uno to PIC16F. I have just purchased PICKIT3 and PIC16F1825.
 
-[pic of my arduino-uno](./doc/arduino-uno.png)
+![pickit3](./doc/pickit3.png)
 
-I have also developed an original actuator shield for Arduino Uno to control a servo motor and DC motors:
+I have also developed an original actuator shield to control a servo motor and DC motors:
 
 ![shield](./doc/shield.png)
 
