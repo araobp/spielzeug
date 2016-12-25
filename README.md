@@ -15,19 +15,6 @@ I think, from a standpoint of IoT users, there are two types of IoThings:
 - "Unified Systems" unifying vertically integrated existing systems with the cloud.
 - Robots and sensors taking a person's duty, managed by an application on the cloud.
 
-## Technologies for IoT PoC (Proof-of-Concept)
-
-Since this project is not for a commercial IoT service, I use technologies/components targetting IoT hobby in this project, such as:
-- Arduino Uno (AVR)
-- ESP-WROOM-02 (ESP8266)
-- Arduino IDE
-- And electronic components　I can purchase in Akihabara or on Amazon.
-- Raspberry Pi 3 Model B (ARM/Broadcom)
-
-I also use several components from Apache to construct IoT platform for the robot:
-- Apache ZooKeeper
-- Apache Kafka
-
 ## Goal of this project
 
 I often see robots at museums on weekends.
@@ -46,11 +33,23 @@ I am also interested in PLC(Programmable Logic Controller) such as [MELSEC](http
 #### Model 001
 ![type001](https://docs.google.com/drawings/d/1EXrgaz9V5ETb_SwbJseOQWrdF1Rf3bmqhidnRHBVv6E/pub?w=630&h=400)
 
+## Technologies
+
+I use the following hardware to develop the robot:
+- ESP-WROOM-02 (ESP8266) w/ Arduino IDE
+- PIC16F1825 w/ PICkit3 an MPLAB X IDE
+- And electronic components　I can purchase in Akihabara or on Amazon.
+- Raspberry Pi 3 Model B (ARM/Broadcom)
+
+I also use several components from Apache to construct IoT platform for the robot:
+- Apache ZooKeeper
+- Apache Kafka
+
 #### Current status
 
 [September 12th, 2016](./doc/CURRENT_STATUS.md)
 
-##Infrastructure
+## Infrastructure
 
 ### Controller units
 
@@ -64,7 +63,9 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 #### Peripheral controller : PIC16F1825
 
-I am currently migrating from Arduino Uno to PIC16F. I have just purchased PICkit3 and PIC16F1825.
+Originally I used Arduino Uno but it was bulky for such a small robot. I am currently migrating from Arduino Uno to PIC16F.
+
+I have just purchased PICkit3 and PIC16F1825.
 
 ![pickit3](./doc/pickit3.png)
 
@@ -80,6 +81,8 @@ MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
 
 ### Power supply board
 
+I have developed an original power supply board for the robot.
+
 Right terminal block (power in): AA(1.5V) x 4 = 6V,
 left terminal block (power out): 6V, turn the toggle switch on (left) to turn on the circuit (and the blue LED turns on)
 
@@ -89,11 +92,13 @@ Right pin headers (power out): 5V, left pin headers (power out):3.3V, green jump
 
 ![power supply board1](./doc/power_circuit1.png)
 
-I used the power supply board for Christmas:
+(Just for testing it) I used the power supply board for Christmas:
 - [Lighting interior of German ceramic house](./doc/german_house.png)
 - [Powering rainbow-color LEDs](./doc/power_supply_test.png)
 
 ### I2C sensor board
+
+This I2C sensor board connects to ESP8266:
 
 ![i2c sensor board](./doc/i2c_circuit.png)
 
@@ -102,11 +107,8 @@ I used the power supply board for Christmas:
 |Controller        |Language              | IDE         | Role                  |
 |------------------|----------------------|-------------|-----------------------|
 |ESP8266           |Arduino lang(C/C++)   | Arduino IDE | Main controller       |
-|Arduino Uno       |Arduino lang(C/C++)   | Arduino IDE | Peripheral controller |
-|Raspberry Pi 3    |Java                  | BlueJ       | Robot manager         |
-|DELL PC (Core i7) |Java(or Scala)        | Eclipse     | Robot manager         |
-
-For code portability between my DELL PC(Windows) and Raspberry Pi, I use Java for robot management.
+|PIC16F1825        |C                     | MPLAB X IDE | Peripheral controller |
+|Raspberry Pi 3    |Go                    | Vim         | Robot manager         |
 
 ### Parts
 
@@ -173,33 +175,31 @@ The flip-flop circuit works as emergecy stop.
 
 I have confirmed that the circuit works: [the test result](./doc/FLIPFLOP.md).
 
-When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on Arduino Uno and the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
+When ESP-WROOM-02 has been started, the GPIO is set to LOW => HIGH => LOW to turn on the motor driver. In case of emergency, push the tact switch to turn off the motor driver. Push the switch again to turn it on.
 
-### Serial communication between Arduino Uno and ESP-WROOM-02
+### Serial communication between PIC16F1825 and ESP-WROOM-02
 
-ESP-WROOM-02 and Arduino Uno use UART to communicate with each other.
+ESP-WROOM-02 and PIC16F1825 use UART to communicate with each other.
 
 ![UART](https://docs.google.com/drawings/d/1aDB81Uy6aha3X3MEjAcQDwg6ZVhnqG4ljFiO93TYRgk/pub?w=680&h=420)
 
-I do not use the logic level converter for this direction "ESP-WROOM-02 TxD => Arduino Uno RxD", for [this reason](https://github.com/araobp/spielzeug/issues/2).
-
-The voltage(5V) at TxD on Arduino Uno:
+The voltage(5V) on TxD:
 
 ![5V](./doc/5V.png)
 
-The voltage(3.3V) at RxD on ESP-WROOM-02:
+The voltage(3.3V) on RxD:
 
 ![3.3v](./doc/3.3v.png)
 
 ### Electric power supply
 
-The power source is AA battery 1.5V * 6 = 9V:
-- 9V to Arduino Uno
-- 9V to the motors via TA7291P motor drivers
-- 9V -> 3.3V to ESP-WROOM-02 via TA48M033F
+The power source is AA battery 1.5V * 4 = 6V:
+- 5V to PIC16F1825
+- 6V to the motors via TA7291P motor drivers
+- 3.3V to ESP-WROOM-02
 
 ```
-Battery 9V (1.5V*6) --+--> Vin on Arduino Uno
+Battery 6V (1.5V*4) --+-->TA48M05F(5V) --> PIC16F1825
                       |
                       +-- TA7291P(0 ~ 3V) --> Motor#1
                       |
@@ -217,8 +217,6 @@ I am very good at paper craft, so I use paper with wood glue and acrylic paint t
 ### Protocol between Rapsberry Pi and the robot
 
 I use Raspberry Pi 3 as a remote controller of the robot. The remote controller sends commands to the robot via WiFi or USB cable. The controller also receives events from the robot.
-
-![arduino-rpi](./doc/arduino-rpi.png)
 
 #### Commands(Request/Response)
 
@@ -247,13 +245,13 @@ write(1), led_pin13(0), unit#0(0), plus(0), low(000)
 
 ```
 TA7291P input/output voltage:
-Vs = Vref = 9(V)
+Vs = Vref = 6(V)
 Vcc = 5(V)
 ```
 
 ![shield_and_tank](./doc/shield_and_tank.png)
 
-Vs = Vref = 9V
+Vs = Vref = 6V
 
 |unit# |direction|level|IN1(PWM)|IN2(PWM)|OUT1(V)|
 |------|---------|-----|---|---|----|
