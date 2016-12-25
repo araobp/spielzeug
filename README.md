@@ -64,7 +64,7 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 #### Peripheral controller : PIC16F1825
 
-I am currently migrating from Arduino Uno to PIC16F. I have just purchased PICKIT3 and PIC16F1825.
+I am currently migrating from Arduino Uno to PIC16F. I have just purchased PICkit3 and PIC16F1825.
 
 ![pickit3](./doc/pickit3.png)
 
@@ -83,11 +83,15 @@ MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
 Right terminal block (power in): AA(1.5V) x 4 = 6V,
 left terminal block (power out): 6V, turn the toggle switch on (left) to turn on the circuit (and the blue LED turns on)
 
-![power supply board2](./doc/power_circuit2.png)
+![power supply board3](./doc/power_circuit3.png)
 
 Right pin headers (power out): 5V, left pin headers (power out):3.3V, green jumper pin to input 5V to the power MOSFET's base.
 
 ![power supply board1](./doc/power_circuit1.png)
+
+I used the power supply board for Christmas:
+- [Lighting interior of German ceramic house](./doc/german_house.png)
+- [Powering rainbow-color LEDs](./doc/power_supply_test.png)
 
 ### I2C sensor board
 
