@@ -82,9 +82,11 @@ MQTT server and MQTT clients run on Raspberry Pi 3 to control/manage the robot:
 
 Right terminal block (power in): AA(1.5V) x 4 = 6V,
 left terminal block (power out): 6V, turn the toggle switch on (left) to turn on the circuit (and the blue LED turns on)
+
 ![power supply board2](./doc/power_circuit2.png)
 
 Right pin headers (power out): 5V, left pin headers (power out):3.3V, green jumper pin to input 5V to the power MOSFET's base.
+
 ![power supply board1](./doc/power_circuit1.png)
 
 ### I2C sensor board
