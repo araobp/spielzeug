@@ -65,9 +65,9 @@ Thanks to [TORANJISTA GIJYUTSU](http://toragi.cqpub.co.jp/tabid/775/Default.aspx
 
 Originally I used Arduino Uno but it was bulky for such a small robot. I am currently migrating from Arduino Uno to PIC16F.
 
-I have just purchased PICkit3 and PIC16F1825.
+I have just purchased PICkit3 and PIC16F1825-I/P.
 
-![pickit3](./doc/pickit3.png)
+![pic_writer](./doc/pic_writer.png)
 
 I have also developed an original actuator shield to control a servo motor and DC motors:
 
