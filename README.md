@@ -6,6 +6,8 @@
 
 The world of IoT is surrounded by a number of critics and a few of engineers who actually get their hands dirty.
 
+Those critics always talk about "big data", although IoT is just about "IP <-> UART/SPI/I2C/GPIO gateway" -- just about a tiny gateway connecting sensors/actuators to the Internet. Such a gateway costs as low as $5.
+
 Making "Internet of Toys" as my personal hobby is fun, because I do not need to worry about the noise from critics.
 
 ## My IoT definition
