@@ -15,7 +15,7 @@ LED blinking powered by AA x 3:
 The test code is as follows:
 
 ```
-#define _XTAL_FREQ 31000
+#define _XTAL_FREQ 500000  // 500kHz
 
 #include <xc.h>
 
@@ -40,8 +40,8 @@ The test code is as follows:
 
 int main()
 {
-  OSCCON = 0x00;
-  TRISC3 = 0;
+  OSCCONbits.IRCF = 0b0111;  // 500kHz
+  TRISCbits.TRISC3 = 0;  // RC3 as output GPIO
   while(1)
   {
     RC3 = 1;
