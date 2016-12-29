@@ -42,12 +42,10 @@ int main()
 {
   OSCCONbits.IRCF = 0b0111;  // 500kHz
   TRISCbits.TRISC3 = 0;  // RC3 as output GPIO
-  while(1)
-  {
-    RC3 = 1;
+  LATCbits.LATC3 = 1;
+  while(1) {
     __delay_ms(1000);
-    RC3 = 0;
-    __delay_ms(1000);
+    LATCbits.LATC3 ^= 1;
   }
   return 0;
 }
