@@ -4,11 +4,13 @@
 
 I have just tested LED blinking with PIC16F1825-I/P.
 
-Code writing:
+I use PICkit3 to upload code to PIC:
 
 ![code_writing](./code_writing.png)
 
-LED blinking powered by AA x 3:
+## LED blinking
+
+I have tried out LED blinking powered by AA x 3:
 
 ![blinking](./blinking.png)
 
@@ -49,4 +51,23 @@ int main()
   }
   return 0;
 }
+```
+
+## Testing USART
+
+I use  [this module (FT234X)](http://akizukidenshi.com/catalog/g/gM-08461/) to get access to PIC16F1825 from my PC via USB.
+
+Set up:
+```
+         +---------------------------------+
+         |                PIC16F1825       |
+         |                 +-----+         |
+         |  +-------- VDD 1|     |14 VSS --+
+         |  |             2|     |
+         |  |             3|     |
+       +------+           4|     |
+USB ---|FTDI  |--- RX/RC5 5|     |
+       |FT234X|--- TX/RC4 6|     |
+       +------+           7|     |
+                           +-----+
 ```
