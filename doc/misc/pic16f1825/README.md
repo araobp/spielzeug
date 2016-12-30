@@ -79,6 +79,8 @@ I test PWM at 50Hz. 50Hz PWM is to be used for controlling motors such as a serv
 
 ### Source code
 
+Note that anode of LED (red) is connected to RC5 rather than RC3 in this case, since RC5 supports CCP1 to generate PWM.
+
 ```
 #include <xc.h>
 #include <math.h>
