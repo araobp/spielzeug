@@ -69,12 +69,13 @@ I test PWM at 50Hz. 50Hz PWM is to be used for controlling motors such as a serv
 
 ### Parameters for generating 50Hz PWM
 
-Internal oscillator: 500kHz
-Prescaller: 16
-PWM frequency: 50Hz
-PR2: 155
-CCPR1: 0 - 155
-
+|Parameter                       |Value  |
+|--------------------------------|-------|
+|Frequency of internal oscillator|500kHz |
+|Prescaller                      |16     |
+|PWM frequency                   |50Hz   |
+|PR2                             |155    |
+|CCPR1                           |0 - 155|
 
 ### Source code
 
