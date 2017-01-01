@@ -85,6 +85,12 @@ Note that anode of LED (red) is connected to RC5 rather than RC3 in this case, s
 
 [Source code](./pwm.X/)
 
+### Confirmation by using SainSmart DS202
+
+The following is PWM at 50Hz with 20% duty:
+
+![duty20@50Hz](./duty20@50Hz.BMP)
+
 ## Testing USART
 
 I use  [this module (FT234X)](http://akizukidenshi.com/catalog/g/gM-08461/) to get access to PIC16F1825 from my PC via USB.
