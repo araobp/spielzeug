@@ -148,7 +148,7 @@ The PIC-based tiny system provides the following capabilities:
 
 ![hc_sr04_test](./hc_sr04_test.png)
 
-It is nice to use this tiny 5V system as a 5V peripheral controller with another 3.3V system (e.g., ESP-WROOM-02 or Raspberry Pi) like this:
+It is nice to use this tiny 5V system as a 5V peripheral controller with another 3.3V system (e.g., ESP-WROOM-02 or Raspberry Pi), like this:
 
 ```
        Events (Serial at 9600 baud)
