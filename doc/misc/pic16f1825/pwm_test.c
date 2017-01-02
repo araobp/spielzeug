@@ -38,6 +38,7 @@ int main(void)
     CCPR1 = PR2 * DUTY;
    while (1)
     {
+        CLRWDT();
     }
     return 0;
 }

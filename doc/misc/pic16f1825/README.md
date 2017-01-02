@@ -76,6 +76,7 @@ I test PWM at 50Hz. 50Hz PWM is to be used for controlling motors such as a serv
 |PWM frequency                   |50Hz   |
 |PR2                             |155    |
 |CCPR1                           |0 - 155|
+|WatchDog Timer (WDT)            |enabled|
 
 ### Source code
 
@@ -90,6 +91,20 @@ Note that anode of LED (red) is connected to RC5 rather than RC3 in this case, s
 The following is PWM at 50Hz with 20% duty:
 
 ![duty20@50Hz](./duty20@50Hz.BMP)
+
+### Testing Watchdog Timer (WDT)
+
+It's easy. Just comment out CLRWDT(); in the code above.
+
+I have confirmed that the LED blinks, since WDT resets PIC16F1825 every two seconds that is a default WDT timeout value.
+
+### PWM resolution problem
+
+Servo motor "Tower Pro sg90" requires 1 - 2 msec HIGH within 20msec (50Hz). 1 msec range covers -90 degrees to 90 degrees.
+
+155/20 = 7.75 that is too coarse. I know how to resolve this issue, and I will try to increase the resolution later on.
+
+The resolution is OK for controlling TA7291P or LED blightness.
 
 ## Testing USART
 
