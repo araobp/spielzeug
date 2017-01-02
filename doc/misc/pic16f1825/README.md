@@ -112,21 +112,27 @@ I use  [this module (FT234X)](http://akizukidenshi.com/catalog/g/gM-08461/) to g
 
 Set up:
 ```
-         +---------------------------------+
-         |                PIC16F1825       |
-         |                 +-----+         |
-         |  +-------- VDD 1|     |14 VSS --+
-         |  |             2|     |
-         |  |             3|     |
-       +------+           4|     |
-USB ---|FTDI  |--- RX/RC5 5|     |
-       |FT234X|--- TX/RC4 6|     |
-       +------+           7|     |
-                           +-----+
+                               +---------------------------------+
+                               |                PIC16F1825       |
+                               |                 +-----+         |
+                               |  +-------- VDD 1|     |14 VSS --+
+                               |  |             2|     |
+                               |  |             3|     |
+                             +------+           4|     |
+[TeraTerm on Win10]---USB ---|FTDI  |--- RX/RC5 5|     |
+                             |FT234X|--- TX/RC4 6|     |
+                             +------+           7|     |
+                                                 +-----+
 ```
 
-## Goal
+![usart_test](./usart_test.png)
+
+### TeraTerm set up
 
 ```
-  [ESP8266]--- UART ---[PIC16F1825]
+Setup -> Serial port -> Baud rate: 9600
+Setup -> Terminal -> New Line -> Receive: LF, Transmit: LF
 ```
+### Source code
+
+[source code](./usart_test.c)
