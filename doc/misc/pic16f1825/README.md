@@ -136,3 +136,30 @@ Setup -> Terminal -> New Line -> Receive: LF, Transmit: LF
 ### Source code
 
 [source code](./usart_test.c)
+
+## Testing digital input with HC-SR04
+
+This is something I wanted for my other project as well as for this project.
+
+The PIC-based tiny system provides the following capabilities:
+- USB-UART bridge
+- Distance measurement with HC-SR04 ultra sonic sensor
+- Status indicator (LED red)
+
+![hc_sr04_test](./hc_sr04_test.png)
+
+It is nice to use this tiny 5V system as a 5V peripheral controller with another 3.3V system (e.g., ESP-WROOM-02 or Raspberry Pi) like this:
+
+```
+       Events (Serial at 9600 baud)
+      ============================>
+[PIC16F1825]--- USB ---[ESP8266 or Raspberry Pi 3]
+      |
+  GPIO/AnalogIn
+      |
+[5V sensors]
+```
+
+### Source code
+
+[source code](./hc_sr04_test.c)
