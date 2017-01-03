@@ -102,7 +102,7 @@ I have confirmed that the LED blinks, since WDT resets PIC16F1825 every two seco
 
 Servo motor "Tower Pro sg90" requires 1 - 2 msec HIGH within 20msec (50Hz). 1 msec range covers -90 degrees to 90 degrees.
 
-155/20 = 7.75 that is too coarse. I know how to resolve this issue, and I will try to increase the resolution later on.
+155/20 = 7.75 that is too coarse. I know how to resolve this issue, and I will try to increase the resolution later on: for example, 4MHz/4/16/62Hz gives Max 1008 PR2 value that is less than 1023(10bits PWM timer).
 
 The resolution is OK for controlling TA7291P or LED blightness.
 
