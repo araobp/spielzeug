@@ -154,7 +154,7 @@ It is nice to use this tiny 5V system as a 5V peripheral controller with another
 ```
        Events (Serial at 9600 baud)
       ============================>
-[PIC16F1825]--- USB ---[/dev/ACM0 on Raspberry Pi 3]
+[PIC16F1825]--- USB ---[/dev/USB0 on Raspberry Pi 3]
       |
   GPIO/AnalogIn
       |
@@ -175,3 +175,44 @@ It is nice to use this tiny 5V system as a 5V peripheral controller with another
 ### Source code
 
 [source code](./hc_sr04_test.c)
+
+## Connecting it to Raspberry Pi 3
+
+Raspberry Pi 3 (Raspbian) identifies FTDI USB-UART bridge:
+```
+pi@raspberrypi:~ $ lsusb
+Bus 001 Device 004: ID 0403:6015 Future Technology Devices International, Ltd Bridge(I2C/SPI/UART/FIFO)
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. SMSC9512/9514 Fast Ethernet Adapter
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp.
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+
+Distance data is sent every 500msec from PIC16F1825 to Raspberry Pi 3 via USB:
+```
+pi@raspberrypi:~ $ cat /dev/ttyUSB0
+45
+39
+48
+36
+35
+44
+41
+38
+42
+45
+ :
+```
+
+Raspbian (Debian-based) can also identify the device by USB path:
+```
+pi@raspberrypi:~ $ ls /dev/serial/by-id
+usb-FTDI_FT230X_Basic_UART_DJ00LKSL-if00-port0
+pi@raspberrypi:~ $ cat /dev/serial/by-path/platform-3f980000.usb-usb-0\:1.2\:1.0-port0
+34
+40
+42
+44
+42
+42
+ :
+```
