@@ -205,8 +205,8 @@ pi@raspberrypi:~ $ cat /dev/ttyUSB0
 
 Raspbian (Debian-based) can also identify the device by USB path:
 ```
-pi@raspberrypi:~ $ ls /dev/serial/by-id
-usb-FTDI_FT230X_Basic_UART_DJ00LKSL-if00-port0
+pi@raspberrypi:~ $ ls /dev/serial/by-path/
+platform-3f980000.usb-usb-0:1.2:1.0-port0
 pi@raspberrypi:~ $ cat /dev/serial/by-path/platform-3f980000.usb-usb-0\:1.2\:1.0-port0
 34
 40
