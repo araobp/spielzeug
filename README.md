@@ -1,3 +1,5 @@
+## (This project has been suspended. I will come back to this after I have completed the other project "blocks".)
+
 # Internet of Toys (IoT)
 
 ![robot_eyes](./doc/robot_eyes.png)
